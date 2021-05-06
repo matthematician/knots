@@ -2,11 +2,11 @@
 <pretext xmlns:xi="http://www.w3.org/2001/XInclude">
   <docinfo>
      
-     <html>
+
     <author-biographies length="short"/>
     <initialism>OAK</initialism>
     
-     </html>
+    
      <brandlogo url="./index.html" source="images/trefoil256.png" />
       <favicon/>
     <macros>\newcommand{\foo}{bar}</macros>
