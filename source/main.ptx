@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<pretext xmlns:xi="http://www.w3.org/2001/XInclude">
+  <docinfo>
+    <author-biographies length="short"/>
+    <initialism>OAK</initialism>
+    <brandlogo url="./index.html" source="images/trefoil256.png" />
+    <macros>\newcommand{\foo}{bar}</macros>
+    <latex-image-preamble>\usepackage{tikz}
+    </latex-image-preamble>
+  </docinfo>
+  <book xml:id="oak">
+    
+    <title>Open Algebra and Knots</title>
+      
+    <xi:include href="./frontmatter.xml"/>
+    
+    
+    <xi:include href="./chap1.ptx"/>
+    <xi:include href="./chap2.ptx"/>
+    <xi:include href="./chap3.ptx"/>
+    <xi:include href="./chap4.ptx"/>
+    <xi:include href="./chap5.ptx"/>
+
+
+    
+  </book>
+</pretext>

@@ -1,0 +1,16 @@
+<frontmatter xml:id="frontmatter" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <titlepage>
+
+        <author>
+            <personname>Matt Salomone</personname>
+            <department>Department of Mathematics</department>
+            <institution>Bridgewater State University</institution>
+            <email>msalomone@bridgew.edu</email>
+        </author>
+
+        <date><today /></date>
+
+    </titlepage>
+
+</frontmatter>
