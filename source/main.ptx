@@ -6,8 +6,8 @@
     <author-biographies length="short"/>
     <initialism>OAK</initialism>
     <brandlogo url="./index.html" source="images/trefoil256.png" />
-    <favicon/>
      </html>
+      <favicon/>
     <macros>\newcommand{\foo}{bar}</macros>
     <latex-image-preamble>\usepackage{tikz}
     </latex-image-preamble>
