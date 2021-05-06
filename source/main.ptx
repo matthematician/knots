@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <pretext xmlns:xi="http://www.w3.org/2001/XInclude">
   <docinfo>
-     <html><favicon/></html>
+    <favicon/>
 
     <author-biographies length="short"/>
     <initialism>OAK</initialism>
