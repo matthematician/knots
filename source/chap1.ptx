@@ -1,5 +1,14 @@
-<chapter xml:id="permutationalgebra">
-    <title>Permutations and Algebraic Structures</title>
+<chapter xml:id="algebra">
+    <title>Algebraic Structures</title>
+
+    <introduction>
+        <p>This is an intro.</p>
+
+    </introduction>
+    <xi:include href="./alg1.ptx"/>
+    <xi:include href="./alg2.ptx"/>
+
+
 
     
 

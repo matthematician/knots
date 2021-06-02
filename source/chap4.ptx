@@ -1,4 +1,8 @@
 <chapter xml:id="keisquandles">
     <title>Keis and Quandles</title>
 
+    <xi:include href="keis.ptx"/>
+    <xi:include href="quandles.ptx"/>
+
+
 </chapter>

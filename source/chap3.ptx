@@ -1,4 +1,7 @@
 <chapter xml:id="knotsinvariants">
     <title>Knots and Invariants</title>
 
+    <xi:include href="knots.ptx"/>
+    <xi:include href="invariants.ptx"/>
+
 </chapter>

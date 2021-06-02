@@ -1,4 +1,7 @@
 <chapter xml:id="braidstangles">
     <title>Braids and Rational Tangles</title>
 
+    <xi:include href="braids.ptx"/>
+    <xi:include href="tangles.ptx"/>
+
 </chapter>

@@ -1,4 +1,6 @@
 <chapter xml:id="knotgroup">
     <title>Knot Groups</title>
 
+    <xi:include href="groups.ptx"/>
+    <xi:include href="knotgroups.ptx"/>
 </chapter>
