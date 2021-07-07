@@ -1,5 +1,84 @@
 <section xml:id="algebra2">
 <title>Permutations and Presentations</title>
 
+<objectives>
+    <ol>
+        <li>
+            <p>Simplify, solve, and describe algebraic structure in subgroups of permutation groups, using “braid-a-grams”, cycle notation, and/or the Coxeter presentation.
+            </p>
+        </li>
+    </ol>       
+</objectives>
+
+<p>One of the richest algebraic structures with a finite set of elements is that which describes permutations (rearrangements) of those elements. We can begin by thinking of this structure in terms of anagrams of English words.</p>
+
+
+<video youtube="oMVLkp75nSU"/>
+
+<definition xml:id="def_anagram">
+    <statement>
+        <p>Let <m>X = \{1,2,\ldots,n\}</m> be an enumerated finite set. A <term>permutation of n symbols</term> is a bijective function <m>\sigma \colon X\to X</m>.</p>
+    </statement>
+</definition>
+
+<p>In other words, a permutation of <m>n</m> symbols is a way of rearranging all the numbers <m>1</m> through <m>n</m> (called the <q>positions</q> of the permutation) so that no two positions end up in the same spot: <me>\text{If } i\neq j \text{ then } \sigma(i) \neq \sigma(j).</me></p> 
+
+ <example xml:id="ex_permutation">
+    <statement>
+        <p>An example of a permutation of five symbols might be the function <m>\sigma \colon \{1,2,3,4,5\} \to \{1,2,3,4,5\}</m> for which <md><mrow>\sigma(1) \amp= 2</mrow><mrow>\sigma(2) \amp= 1</mrow><mrow>\sigma(3) \amp= 5</mrow><mrow>\sigma(4) \amp= 3</mrow><mrow>\sigma(5) \amp= 4.</mrow></md>
+        Note that no two <q>starting</q> positions have the same <q>ending</q> position.</p>
+
+        <p>If instead of the numbers <m>1</m> through <m>5</m> we had used the letters of the word <m>ALERT</m> as the elements of our set, we would obtain 
+        <md><mrow>\sigma(A) \amp= L</mrow><mrow>\sigma(L) \amp= A</mrow><mrow>\sigma(E) \amp= T</mrow><mrow>\sigma(R) \amp= E</mrow><mrow>\sigma(T) \amp= R.</mrow></md>
+        In this way, anagrams of English words can be understood as permutations on the set of its letters. (We will typically use words that do not have any repeated letters -- otherwise, we might be unable to define the permutation uniquely!)
+        </p>
+    </statement>
+</example>
+
+<activity xml:id="act_perm1">
+    <statement>
+        <ol>
+            <li>
+            <p>Find at least two anagrams of the word <m>LEAST</m> that are dictionary English words.</p>
+            </li>
+            <li>
+                <p>Give step-by-step instructions for how you would perform the anagram <m>STONE \mapsto ONSET</m> by moving one letter at a time, but <em>without</em> mentioning any of the letters by name.</p>
+            </li>
+            <li>
+                <p>Give step-by-step instructions for how you would perform the anagram <m>SHALE \mapsto LEASH</m> by moving one letter at a time, but <em>without</em> mentioning any of the letters by name.</p>
+            </li>
+        </ol>
+    </statement>
+</activity>
+
+<p>You may remember from finite mathematics that there are <m>n! = n(n-1)(n-2)\cdots(2)(1)</m> different permutations for a set of <m>n</m> symbols. Taken together with the <em>composition of functions</em> operation -- that is, perform one permutation and then another permutation, using the result of the former as the input for the latter -- we have an algebraic structure.</p>
+
+<definition xml:id="def_permgroup">
+    <statement>
+        <p>Let <m>S_n</m> denote the set of all permutations on <m>n</m> symbols. Together with the composition of functions operation <m>\circ : (\sigma,\tau) \mapsto \sigma\circ\tau</m>, we call <m>(S_n,\circ)</m> the <term>permutation group on n symbols</term>.</p>
+    </statement>
+</definition>
+
+<p>You might notice that <xref ref="def_permgroup"/> is more than a definition -- it is a theorem in disguise! This is because of the word <term>group</term>: the magma <m>(S_n,\circ)</m> is associative, it has the identity property via the <q>trivial permutation</q> <me>\sigma(1) = 1, \quad \sigma(2)=2, \quad \ldots \quad, \sigma(n)=n</me>, and it has the invertibility property: anything a permutation does, can be undone.</p>
+
+<activity xml:id="act_permprop1">
+    <statement>
+        <ol>
+        <li>
+        <p>Refer to your step-by-step instructions for the permutation <m>STONE\mapsto ONSET</m> in <xref ref="act_perm1"/>. What is the result of applying the <em>same</em> instructions to the beginning word <m>ONSET</m> instead? Sketch a diagram that shows how each letter moves, from beginning to end of <m>STONE \mapsto ONSET \mapsto ?????</m>
+        </p>
+        </li>
+        <li>
+        <p>Refer to your step-by-step instructions for the permutation <m>SHALE\mapsto LEASH</m> in <xref ref="act_perm1"/>. What is the result of applying the <em>same</em> instructions to the beginning word <m>LEASH</m> instead? Sketch a diagram that shows how each letter moves, from beginning to end of <m>SHALE \mapsto LEASH \mapsto ?????</m>
+        </p>
+        </li>
+        <li>
+        <p>What do your answers tell you about whether the permutations you found are invertible?</p>
+        </li>
+        </ol>
+    </statement>
+</activity>
+
+<p>The diagrams you sketched in <xref ref="act_permprop1"/> are called <q>braid-a-grams</q>, and give us a convenient way to analyze and dissect permutations.</p>
 
 </section>

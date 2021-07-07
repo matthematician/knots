@@ -1,6 +1,592 @@
 <section xml:id="algebra1">
 <title>Algebraic Operations</title>
 
-<introduction>This thing on?</introduction>
+<objectives>
+    <ol>
+    <li>
+    <p>Define what is meant by an “algebraic structure”, both in reference to and in contrast to what the high school math curriculum calls Algebra.</p>
+    </li>
+    </ol>
+</objectives>
+
+<definition xml:id="def_operation">
+    <statement>
+        <p>An <m>n</m>-ary <term>operation</term> on a set <m>S</m> is a function which assigns to every <q>input</q> collection of <m>n</m> elements of <m>S</m>, an <q>output</q> element of <m>S</m>.</p>
+
+        <p>When <m>n=1</m> we call an operation <term>unary</term>.</p>
+        <p>When <m>n=2</m> we call an operation <term>binary</term>.</p>
+        <p>When <m>n=3</m> we call an operation <term>ternary</term>.</p>
+    </statement>
+</definition>
+
+<!-- <theorem xml:id="ex_operations">
+    <statement>
+         <p>
+            An example of a unary operation on the set <m>S=\mathbb{Z}</m> of integers is the negation operation: <me>- \colon \mathbb{Z}\to\mathbb{Z}, \qquad n \mapsto -n.</me>
+            Under this operation, for example, <m>3 \mapsto -3</m> and <m>-15 \mapsto 15</m>.
+        </p> 
+        <p>
+            An example of a binary operation on the set <m>S = \mathbb{Q}</m> of integers is the multiplication operation: <me>\cdot \colon \mathbb{Q}\times\mathbb{Q} \to \mathbb{Q}, \qquad (x,y) \mapsto x\cdot y.</me>
+            Under this operation, for example, <m>(\frac15, -20) \mapsto -4</m> and <m>(-\frac25, -\frac52) \mapsto 1.</m>
+        </p>
+        <p>
+            An example of a ternary operation on the set <m>S = \mathbb{R}^3</m> of vectors in 3-space is the vector sum:</m> 
+            <me> [ -,-,- ] \colon \mathbb{R}^3\times\mathbb{R}^3\times\mathbb{R}^3 \to \mathbb{R}^3, \qquad ({\bf u}, {\bf v},{\bf w}) \mapsto {\bf u} + {\bf v} + {\bf w}. </me>
+        </p>
+    </statement>
+</theorem> -->
+
+<example xml:id="ex_operations">
+    <p>
+        An example of a unary operation on the set <m>S=\mathbb{Z}</m> of integers is the negation operation: <me>- \colon \mathbb{Z}\to\mathbb{Z}, \qquad n \mapsto -n.</me>
+        Under this operation, for example, <m>3 \mapsto -3</m> and <m>-15 \mapsto 15</m>.
+    </p>
+    <p>
+            An example of a binary operation on the set <m>S = \mathbb{Q}</m> of integers is the multiplication operation: <me>\cdot \colon \mathbb{Q}\times\mathbb{Q} \to \mathbb{Q}, \qquad (x,y) \mapsto x\cdot y.</me>
+            Under this operation, for example, <m>(\frac15, -20) \mapsto -4</m> and <m>(-\frac25, -\frac52) \mapsto 1.</m>
+        </p>
+        <p>
+            An example of a ternary operation on the set <m>S = \mathbb{R}^3</m> of vectors in 3-space is the vector sum:
+            <me> [ -,-,- ] \colon \mathbb{R}^3\times\mathbb{R}^3\times\mathbb{R}^3 \to \mathbb{R}^3, \qquad ({\bf u}, {\bf v},{\bf w}) \mapsto {\bf u} + {\bf v} + {\bf w}. </me>
+        </p>
+</example>
+
+
+<definition xml:id="def_structure">
+    <statement>
+        <p>An <term>algebraic structure</term> consists of a set <m>S</m> of elements, together with one or more operations on <m>S</m>.
+        </p>
+    </statement>
+</definition>
+
+<activity xml:id="act_operations">
+    <p>Give a brief description of an algebraic structure that students might first encounter in <term>(a)</term> early elementary school (pre-K to 2nd grade). <term>(b)</term> later elementary school (2nd to 5th grade) <term>(c)</term> high school.</p>
+    <p>In each case, describe: What is the set <m>S</m> of elements? What is the operation? Is it unary/binary/ternary?</p>
+</activity>
+
+<p>Perhaps the most well-studied operations in algebra are binary operations. (You may have noticed these came most readily to mind in the above activity.)</p>
+
+<definition xml:id="def_binaries">
+    <statement>
+        <p>A <term>magma</term> is an algebraic structure with a single binary operation.
+        </p>
+        <p>In other words, a magma <m>(S,\cdot)</m> consists of a set <m>S</m> of elements, together with a binary operation <m>\cdot \colon S\times S \to S</m> that assigns to every <q>input</q> pair of elements of <m>S</m>, an <q>output</q> element of <m>S</m>. </p>
+    </statement>
+</definition>
+
+<p>When the set of elements in a magma is small and finite, it is convenient to represent it using a <q>times-table</q>-like chart called an operation table.</p>
+
+ <definition xml:id="def_optable">
+    <statement>
+        <p>Let <m>(S,\cdot)</m> be a magma for which <m>S</m> is a finite set. An <term>operation table</term> for <m>(S,\cdot)</m> is a table showing, for all <m>x,y\in S</m>, the result of the operation <m>x\cdot y</m> on the same row as <m>x</m> and the same column as <m>y</m>:</p>
+        <p>
+        <table>
+  <tabular>
+    <row bottom="medium">
+      <cell right="medium">
+        <m>(S,\cdot)</m>
+      </cell>
+      <cell>
+        <m>\cdots</m>
+      </cell>
+      <cell>
+        <m>\cdots</m>
+      </cell>
+      <cell>
+        <m>y</m>
+      </cell>
+      <cell>
+        <m>\cdots</m>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        <m>\vdots</m>
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        <m>x</m>
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+        <m>x\cdot y</m>
+      </cell>
+      <cell>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        <m>\vdots</m>
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        <m>\vdots</m>
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+      </cell>
+    </row>
+  </tabular>
+</table>
+</p>
+    </statement>
+</definition> 
+
+<activity xml:id="act_magma1">
+    <statement>
+        <p>Shown below is the operation table for a magma on the set <me>S = \{ {\rm positive}, {\rm negative}\}.</me> <term>(a)</term> What do you think the operation of this magma is? Why?</p>
+        <p>
+        <table>
+  <tabular>
+    <row bottom="medium">
+      <cell right="medium">
+        <m>(S,\cdot)</m>
+      </cell>
+      <cell>
+        positive
+      </cell>
+      <cell>
+        negative
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        positive
+      </cell>
+      <cell>
+        positive
+      </cell>
+      <cell>
+        negative
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        negative
+      </cell>
+      <cell>
+        negative
+      </cell>
+      <cell>
+        positive
+      </cell>
+    </row>
+  </tabular>
+</table>
+        </p>
+        <p><term>(b)</term> Write an operation table for a magma on the set <m>S = \{ {\rm even}, {\rm odd}\}</m> that <q>looks the same</q> as the one above. Explain what the operation you chose is.</p>
+        <p><term>(c)</term> Write an operation table for a magma on the set <m>S = \{ {\rm even}, {\rm odd}\}</m> that <q>looks fundamentally different</q> as the one above. Explain what the operation you chose is.</p>
+        
+    </statement>
+</activity>
+
+<p>Magmas are like the <q>wild west</q> of algebraic structure; there are in general no rules that the operation in a magma must satisfy. That also means that magmas are, mathematically, rather uninteresting on their own. In order to study more interesting algebraic structures, we would like to have operations that satisfy nice properties. Some of these properties will be familiar to you from high-school algebra; others may be more baroque.</p>
+
+<definition xml:id="def_algprop">
+    <statement>
+        <p>An <term>algebraic property</term> on a magma <m>(S,\cdot)</m> is an equation involving one or more elements of <m>S</m> and the operation <m>\cdot</m>, in which at least one element is universally quantified on <m>S</m>.</p>
+    </statement>
+</definition>
+
+<p>In other words, an algebraic property is an assertion that some equation involving the elements of <m>S</m> must be true, <q>for all</q> values that we could fill in for one or more of its variables.</p>
+
+<definition xml:id="def_props">
+    <statement>
+        <p>The following is a list of some selected algebraic properties on a magma <m>(S,\cdot)</m>.</p>
+
+        <mdn>
+            <mrow xml:id="prop_idempotent">\text{For all }x\in S: \amp\amp x\cdot x \amp= x \amp \text{Idempotent property}</mrow>
+            <mrow xml:id="prop_commutative">\text{For all }x,y\in S: \amp\amp x\cdot y \amp = y\cdot x \amp \text{Commutative property}</mrow>
+            <mrow xml:id="prop_flexible">\text{For all }x,y\in S: \amp\amp (x\cdot y)\cdot x \amp = x\cdot (y\cdot x)  \amp \text{Flexible property}</mrow>
+            <mrow xml:id="prop_unipotent">\text{For all }x,y\in S: \amp\amp x\cdot x \amp = y\cdot y \amp \text{Unipotent property}</mrow>            
+            <mrow xml:id="prop_associative">\text{For all }x,y,z\in S: \amp\amp (x\cdot y)\cdot z \amp = x\cdot (y\cdot z) \amp \text{Associative property}</mrow>
+            <mrow xml:id="prop_leftdist">\text{For all }x,y,z\in S: \amp\amp x\cdot (y\cdot z) \amp = (x\cdot y) \cdot (x\cdot z) \amp \text{Left-distributive property}</mrow>
+            <mrow xml:id="prop_rightdist">\text{For all }x,y,z\in S: \amp\amp (x\cdot y)\cdot z \amp = (x\cdot z) \cdot (y\cdot z) \amp \text{Right-distributive property}</mrow>
+            <mrow xml:id="prop_leftcanc">\text{For all }x,y,z\in S: \amp\amp x\cdot y = x\cdot z \amp \text{ implies } y=z \amp \text{Left-cancel property}</mrow>
+            <mrow xml:id="prop_rightcanc">\text{For all }x,y,z\in S: \amp\amp y\cdot x = z\cdot x \amp \text{ implies } y=z \amp \text{Right-cancel property}</mrow>
+            <mrow xml:id="prop_identity">\text{There exists }e\in S\text{ such that for all }x\in S: \amp\amp e\cdot x = x\cdot e \amp= x \amp \text{Identity property}</mrow>
+            <mrow xml:id="prop_inverse">\text{For all }x\in S\text{ there exists }y\in S: \amp\amp x\cdot y = y\cdot x\amp = e \amp \text{Invertibility property}</mrow>
+        </mdn>
+    </statement>
+</definition>
+
+<p>A given magma may have none of these properties, or many. The more properties a magma has, the more ability we have to simplify algebraic expressions and solve equations within it.</p>
+
+<activity xml:id="act_props1">
+    <statement>
+    <ol>
+        <li>
+            <p>
+                Give three examples of properties from the above list which are satisfied by the magma of integers with subtraction, <m>(\mathbb{Z}, -)</m>. Justify your answers.
+            </p>
+        </li>
+        <li>
+            <p>
+                Give three examples of properties from the above list which are <em>not</em> satisfied by the magma of integers with subtraction, <m>(\mathbb{Z}, -)</m>. Justify your answers, using specific counterexamples.
+            </p>
+        </li>
+        <li>
+            <p>
+                Can you think of a example of a magma having the idempotent property, that a grade school student would recognize?
+            </p>
+        </li>
+    </ol>
+    </statement>
+    <hint>
+        <p>For part (c), reflect on your answers to <xref ref="act_magma1"/>.</p>
+    </hint>
+</activity>
+
+<p>Magmas with additional properties often are given more specialized names; of which some are as follows.</p>
+
+<definition xml:id="def_namedmagmas">
+    <statement>
+        <p>We say that a magma <m>(S,\cdot)</m> is a <m>\underline{\hspace{1in}}</m> if it enjoys the following combinations of properties:</p>
+        <table>
+  <tabular>
+    <row>
+      <cell right="medium">
+        <term>unital magma</term>
+      </cell>
+      <cell>
+        identity
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        <term>quasi-group</term>
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+        invertibility
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        <term>Moufang loop</term>
+      </cell>
+      <cell>
+        identity
+      </cell>
+      <cell>
+        invertibility
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        <term>semi-group</term>
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+        associative
+      </cell>
+      <cell>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        <term>inverse semi-group</term>
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+        invertibility
+      </cell>
+      <cell>
+        associative
+      </cell>
+      <cell>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        <term>monoid</term>
+      </cell>
+      <cell>
+        identity
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+        associative
+      </cell>
+      <cell>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        <term>commutative monoid</term>
+      </cell>
+      <cell>
+        identity
+      </cell>
+      <cell>
+      </cell>
+      <cell>
+        associative
+      </cell>
+      <cell>
+        commutative
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        <term>group</term>
+      </cell>
+      <cell>
+        identity
+      </cell>
+      <cell>
+        invertibility
+      </cell>
+      <cell>
+        associative
+      </cell>
+      <cell>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        <term>abelian group</term>
+      </cell>
+      <cell>
+        identity
+      </cell>
+      <cell>
+        invertibility
+      </cell>
+      <cell>
+        associative
+      </cell>
+      <cell>
+        commutative
+      </cell>
+    </row>
+  </tabular>
+  <title>A selection of named algebraic structures.</title>
+</table>
+
+    </statement>
+</definition>
+<p>Further examples of algebraic structures can be found on this Wikipedia entry: <url href="https://en.wikipedia.org/wiki/Magma_(algebra)#Classification_by_properties"/></p>
+
+<activity xml:id="act_workprops">
+    <statement>
+        <p>Use the operation table below for the magma <m>(S,\cdot)</m> on the set <m>S=\{a,b,c\}</m> to answer the questions that follow.</p>
+        <p>
+<table>
+  <tabular>
+    <row bottom="medium">
+      <cell right="medium">
+      </cell>
+      <cell>
+        a
+      </cell>
+      <cell>
+        b
+      </cell>
+      <cell>
+        c
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        a
+      </cell>
+      <cell>
+        a
+      </cell>
+      <cell>
+        a
+      </cell>
+      <cell>
+        c
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        b
+      </cell>
+      <cell>
+        a
+      </cell>
+      <cell>
+        b
+      </cell>
+      <cell>
+        c
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        c
+      </cell>
+      <cell>
+        b
+      </cell>
+      <cell>
+        c
+      </cell>
+      <cell>
+        c
+      </cell>
+    </row>
+  </tabular>
+</table>
+        </p>
+        <p>
+        <ol>
+            <li>
+                <p>What is the value of <m>c\cdot a</m>?
+                </p>
+            </li>
+            <li>
+                <p>What is/are the solution(s) of the equation <m>a\cdot x = a</m>?
+                </p>
+            </li>
+            <li>
+                <p>What is/are the solution(s) of the equation <m>x\cdot c = b</m>?
+                </p>
+            </li>
+            <li>
+                <p>Explain why <m>(S,\cdot)</m> <em>is</em> a unital magma.</p>
+            </li>
+            <li>
+                <p>Explain why <m>(S,\cdot)</m> <em>is not</em> a monoid.</p>
+                
+            </li>
+            <li>
+                <p>Is <m>(S,\cdot)</m> a Moufang loop? Why or why not?</p>
+            </li>
+        </ol>
+        </p> 
+    </statement>
+</activity>
+
+<activity xml:id="act_grouptable">
+    <statement>
+        <p>Use the operation table below for the magma <m>(S,\cdot)</m> on the set <m>S=\{a,b,c\}</m> to answer the questions that follow. Four of the entries are missing.</p>
+        <p>
+    <table>
+  <tabular>
+    <row bottom="medium">
+      <cell right="medium">
+      </cell>
+      <cell>
+        a
+      </cell>
+      <cell>
+        b
+      </cell>
+      <cell>
+        c
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        a
+      </cell>
+      <cell>
+        a
+      </cell>
+      <cell>
+        b
+      </cell>
+      <cell>
+        c
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        b
+      </cell>
+      <cell>
+        b
+      </cell>
+      <cell>
+        <m>\underline{\hspace{2ex}}</m>
+      </cell>
+      <cell>
+        <m>\underline{\hspace{2ex}}</m>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        c
+      </cell>
+      <cell>
+        c
+      </cell>
+      <cell>
+        <m>\underline{\hspace{2ex}}</m>
+      </cell>
+      <cell>
+        <m>\underline{\hspace{2ex}}</m>
+      </cell>
+    </row>
+  </tabular>
+</table>
+        </p>
+    
+    <p>
+        <ol>
+            <li>
+                <p>Explain how we can already tell that <m>(S,\cdot)</m> is a unital magma.</p>
+            </li>
+            <li>
+                <p>Fill in two of the four missing entries to make <m>(S,\cdot)</m> into a Moufang loop.</p>
+            </li>
+            <li>
+                <p>Beginning with your previous answer, can you fill in the remaining two entries to make <m>(S,\cdot)</m> into a group? Why or why not?</p>
+            </li>
+        </ol>
+        
+    </p>
+</statement>
+</activity>
 
 </section>

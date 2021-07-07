@@ -1,0 +1,4 @@
+Messages from application of C:\Users\msalo\AppData\Roaming\Python\Python39\site-packages\pretext\static\xsl\pretext-html.xsl:
+MBX:DEPRECATE: (2019-06-28) the "table" element needs a "title", not a "caption".  An existing "caption" will be used instead.  Both will display below the "tabular" (1 time)
+             located within: "def_namedmagmas" (xml:id)
+--------------

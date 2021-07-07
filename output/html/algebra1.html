@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-06-01T20:37:56-04:00       *-->
+<!--*       on 2021-07-07T16:23:32-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -114,7 +114,292 @@ MathJax.Hub.Config({
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="algebra1"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">1.1</span> <span class="title">Algebraic Operations</span>
 </h2>
-<section class="introduction" id="introduction-2">This thing on?</section></section></div></main>
+<article class="objectives goal-like" id="objectives-1"><h6 class="heading"><span class="type">Objectives</span></h6>
+<ol class="decimal"><li id="li-1"><p id="p-2">Define what is meant by an “algebraic structure”, both in reference to and in contrast to what the high school math curriculum calls Algebra.</p></li></ol></article><article class="definition definition-like" id="def_operation"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-3">An \(n\)-ary <dfn class="terminology">operation</dfn> on a set \(S\) is a function which assigns to every “input” collection of \(n\) elements of \(S\text{,}\) an “output” element of \(S\text{.}\)</p>
+<p id="p-4">When \(n=1\) we call an operation <dfn class="terminology">unary</dfn>.</p>
+<p id="p-5">When \(n=2\) we call an operation <dfn class="terminology">binary</dfn>.</p>
+<p id="p-6">When \(n=3\) we call an operation <dfn class="terminology">ternary</dfn>.</p></article><article class="example example-like" id="ex_operations"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_operations"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_operations"><article class="example example-like"><p id="p-7">An example of a unary operation on the set \(S=\mathbb{Z}\) of integers is the negation operation:</p>
+<div class="displaymath">
+\begin{equation*}
+- \colon \mathbb{Z}\to\mathbb{Z}, \qquad n \mapsto -n.
+\end{equation*}
+</div>
+<p data-braille="continuation">Under this operation, for example, \(3 \mapsto -3\) and \(-15 \mapsto 15\text{.}\)</p>
+<p id="p-8">An example of a binary operation on the set \(S = \mathbb{Q}\) of integers is the multiplication operation:</p>
+<div class="displaymath">
+\begin{equation*}
+\cdot \colon \mathbb{Q}\times\mathbb{Q} \to \mathbb{Q}, \qquad (x,y) \mapsto x\cdot y.
+\end{equation*}
+</div>
+<p data-braille="continuation">Under this operation, for example, \((\frac15, -20) \mapsto -4\) and \((-\frac25, -\frac52) \mapsto 1.\)</p>
+<p id="p-9">An example of a ternary operation on the set \(S = \mathbb{R}^3\) of vectors in 3-space is the vector sum:</p>
+<div class="displaymath">
+\begin{equation*}
+[ -,-,- ] \colon \mathbb{R}^3\times\mathbb{R}^3\times\mathbb{R}^3 \to \mathbb{R}^3, \qquad ({\bf u}, {\bf v},{\bf w}) \mapsto {\bf u} + {\bf v} + {\bf w}. 
+\end{equation*}
+</div></article></div>
+<article class="definition definition-like" id="def_structure"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
+</h6>
+<p id="p-10">An <dfn class="terminology">algebraic structure</dfn> consists of a set \(S\) of elements, together with one or more operations on \(S\text{.}\)</p></article><article class="activity project-like" id="act_operations"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-11">Give a brief description of an algebraic structure that students might first encounter in <dfn class="terminology">(a)</dfn> early elementary school (pre-K to 2nd grade). <dfn class="terminology">(b)</dfn> later elementary school (2nd to 5th grade) <dfn class="terminology">(c)</dfn> high school.</p>
+<p id="p-12">In each case, describe: What is the set \(S\) of elements? What is the operation? Is it unary/binary/ternary?</p></article><p id="p-13">Perhaps the most well-studied operations in algebra are binary operations. (You may have noticed these came most readily to mind in the above activity.)</p>
+<article class="definition definition-like" id="def_binaries"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h6>
+<p id="p-14">A <dfn class="terminology">magma</dfn> is an algebraic structure with a single binary operation.</p>
+<p id="p-15">In other words, a magma \((S,\cdot)\) consists of a set \(S\) of elements, together with a binary operation \(\cdot \colon S\times S \to S\) that assigns to every “input” pair of elements of \(S\text{,}\) an “output” element of \(S\text{.}\)</p></article><p id="p-16">When the set of elements in a magma is small and finite, it is convenient to represent it using a “times-table”-like chart called an operation table.</p>
+<article class="definition definition-like" id="def_optable"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span>
+</h6>
+<p id="p-17">Let \((S,\cdot)\) be a magma for which \(S\) is a finite set. An <dfn class="terminology">operation table</dfn> for \((S,\cdot)\) is a table showing, for all \(x,y\in S\text{,}\) the result of the operation \(x\cdot y\) on the same row as \(x\) and the same column as \(y\text{:}\)</p>
+<p id="p-18"><figure class="table table-like" id="table-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.6<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">\((S,\cdot)\)</td>
+<td class="l m b2 r0 l0 t0 lines">\(\cdots\)</td>
+<td class="l m b2 r0 l0 t0 lines">\(\cdots\)</td>
+<td class="l m b2 r0 l0 t0 lines">\(y\)</td>
+<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">\(\cdots\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">\(\vdots\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">\(x\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">\(x\cdot y\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">\(\vdots\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">\(\vdots\)</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+</table></figure></p></article><article class="activity project-like" id="act_magma1"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
+</h6>
+<p id="p-19">Shown below is the operation table for a magma on the set</p>
+<div class="displaymath">
+\begin{equation*}
+S = \{ {\rm positive}, {\rm negative}\}.
+\end{equation*}
+</div>
+<p data-braille="continuation"><dfn class="terminology">(a)</dfn> What do you think the operation of this magma is? Why?</p>
+<p id="p-20"><figure class="table table-like" id="table-2"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.7<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">\((S,\cdot)\)</td>
+<td class="l m b2 r0 l0 t0 lines">positive</td>
+<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">negative</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">positive</td>
+<td class="l m b0 r0 l0 t0 lines">positive</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">negative</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">negative</td>
+<td class="l m b0 r0 l0 t0 lines">negative</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">positive</td>
+</tr>
+</table></figure></p>
+<p id="p-21"><dfn class="terminology">(b)</dfn> Write an operation table for a magma on the set \(S = \{ {\rm even}, {\rm odd}\}\) that “looks the same” as the one above. Explain what the operation you chose is.</p>
+<p id="p-22"><dfn class="terminology">(c)</dfn> Write an operation table for a magma on the set \(S = \{ {\rm even}, {\rm odd}\}\) that “looks fundamentally different” as the one above. Explain what the operation you chose is.</p></article><p id="p-23">Magmas are like the “wild west” of algebraic structure; there are in general no rules that the operation in a magma must satisfy. That also means that magmas are, mathematically, rather uninteresting on their own. In order to study more interesting algebraic structures, we would like to have operations that satisfy nice properties. Some of these properties will be familiar to you from high-school algebra; others may be more baroque.</p>
+<article class="definition definition-like" id="def_algprop"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span>
+</h6>
+<p id="p-24">An <dfn class="terminology">algebraic property</dfn> on a magma \((S,\cdot)\) is an equation involving one or more elements of \(S\) and the operation \(\cdot\text{,}\) in which at least one element is universally quantified on \(S\text{.}\)</p></article><p id="p-25">In other words, an algebraic property is an assertion that some equation involving the elements of \(S\) must be true, “for all” values that we could fill in for one or more of its variables.</p>
+<article class="definition definition-like" id="def_props"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.9</span><span class="period">.</span>
+</h6>
+<p id="p-26">The following is a list of some selected algebraic properties on a magma \((S,\cdot)\text{.}\)</p>
+<div class="displaymath">
+\begin{align}
+\text{For all }x\in S: \amp\amp x\cdot x \amp= x \amp \text{Idempotent property}\label{prop_idempotent}\tag{1.1.1}\\
+\text{For all }x,y\in S: \amp\amp x\cdot y \amp = y\cdot x \amp \text{Commutative property}\label{prop_commutative}\tag{1.1.2}\\
+\text{For all }x,y\in S: \amp\amp (x\cdot y)\cdot x \amp = x\cdot (y\cdot x)  \amp \text{Flexible property}\label{prop_flexible}\tag{1.1.3}\\
+\text{For all }x,y\in S: \amp\amp x\cdot x \amp = y\cdot y \amp \text{Unipotent property}\label{prop_unipotent}\tag{1.1.4}\\
+\text{For all }x,y,z\in S: \amp\amp (x\cdot y)\cdot z \amp = x\cdot (y\cdot z) \amp \text{Associative property}\label{prop_associative}\tag{1.1.5}\\
+\text{For all }x,y,z\in S: \amp\amp x\cdot (y\cdot z) \amp = (x\cdot y) \cdot (x\cdot z) \amp \text{Left-distributive property}\label{prop_leftdist}\tag{1.1.6}\\
+\text{For all }x,y,z\in S: \amp\amp (x\cdot y)\cdot z \amp = (x\cdot z) \cdot (y\cdot z) \amp \text{Right-distributive property}\label{prop_rightdist}\tag{1.1.7}\\
+\text{For all }x,y,z\in S: \amp\amp x\cdot y = x\cdot z \amp \text{ implies } y=z \amp \text{Left-cancel property}\label{prop_leftcanc}\tag{1.1.8}\\
+\text{For all }x,y,z\in S: \amp\amp y\cdot x = z\cdot x \amp \text{ implies } y=z \amp \text{Right-cancel property}\label{prop_rightcanc}\tag{1.1.9}\\
+\text{There exists }e\in S\text{ such that for all }x\in S: \amp\amp e\cdot x = x\cdot e \amp= x \amp \text{Identity property}\label{prop_identity}\tag{1.1.10}\\
+\text{For all }x\in S\text{ there exists }y\in S: \amp\amp x\cdot y = y\cdot x\amp = e \amp \text{Invertibility property}\label{prop_inverse}\tag{1.1.11}
+\end{align}
+</div></article><p id="p-27">A given magma may have none of these properties, or many. The more properties a magma has, the more ability we have to simplify algebraic expressions and solve equations within it.</p>
+<article class="activity project-like" id="act_props1"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span>
+</h6>
+<ol class="decimal">
+<li id="li-2"><p id="p-28">Give three examples of properties from the above list which are satisfied by the magma of integers with subtraction, \((\mathbb{Z}, -)\text{.}\) Justify your answers.</p></li>
+<li id="li-3"><p id="p-29">Give three examples of properties from the above list which are <em class="emphasis">not</em> satisfied by the magma of integers with subtraction, \((\mathbb{Z}, -)\text{.}\) Justify your answers, using specific counterexamples.</p></li>
+<li id="li-4"><p id="p-30">Can you think of a example of a magma having the idempotent property, that a grade school student would recognize?</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><p id="p-31">For part (c), reflect on your answers to <a class="xref" data-knowl="./knowl/act_magma1.html" title="Activity 1.1.2">Activity 1.1.2</a>.</p></div></div>
+</div></article><p id="p-32">Magmas with additional properties often are given more specialized names; of which some are as follows.</p>
+<article class="definition definition-like" id="def_namedmagmas"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.10</span><span class="period">.</span>
+</h6>
+<p id="p-33">We say that a magma \((S,\cdot)\) is a \(\underline{\hspace{1in}}\) if it enjoys the following combinations of properties:</p>
+<figure class="table table-like" id="table-3"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.11<span class="period">.</span></span><span class="space"> </span>A selection of named algebraic structures.</figcaption><table>
+<tr>
+<td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">unital magma</dfn></td>
+<td class="l m b0 r0 l0 t0 lines">identity</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">quasi-group</dfn></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">invertibility</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">Moufang loop</dfn></td>
+<td class="l m b0 r0 l0 t0 lines">identity</td>
+<td class="l m b0 r0 l0 t0 lines">invertibility</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">semi-group</dfn></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">associative</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">inverse semi-group</dfn></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">invertibility</td>
+<td class="l m b0 r0 l0 t0 lines">associative</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">monoid</dfn></td>
+<td class="l m b0 r0 l0 t0 lines">identity</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">associative</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">commutative monoid</dfn></td>
+<td class="l m b0 r0 l0 t0 lines">identity</td>
+<td class="l m b0 r0 l0 t0 lines"></td>
+<td class="l m b0 r0 l0 t0 lines">associative</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">commutative</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">group</dfn></td>
+<td class="l m b0 r0 l0 t0 lines">identity</td>
+<td class="l m b0 r0 l0 t0 lines">invertibility</td>
+<td class="l m b0 r0 l0 t0 lines">associative</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">abelian group</dfn></td>
+<td class="l m b0 r0 l0 t0 lines">identity</td>
+<td class="l m b0 r0 l0 t0 lines">invertibility</td>
+<td class="l m b0 r0 l0 t0 lines">associative</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">commutative</td>
+</tr>
+</table></figure></article><p id="p-34">Further examples of algebraic structures can be found on this Wikipedia entry: <a class="external" href="https://en.wikipedia.org/wiki/Magma_(algebra)#Classification_by_properties" target="_blank"><code class="code-inline tex2jax_ignore">https://en.wikipedia.org/wiki/Magma_(algebra)#Classification_by_properties</code></a></p>
+<article class="activity project-like" id="act_workprops"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
+</h6>
+<p id="p-35">Use the operation table below for the magma \((S,\cdot)\) on the set \(S=\{a,b,c\}\) to answer the questions that follow.</p>
+<p id="p-36"><figure class="table table-like" id="table-4"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.12<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines">a</td>
+<td class="l m b2 r0 l0 t0 lines">b</td>
+<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">c</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">a</td>
+<td class="l m b0 r0 l0 t0 lines">a</td>
+<td class="l m b0 r0 l0 t0 lines">a</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">c</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">b</td>
+<td class="l m b0 r0 l0 t0 lines">a</td>
+<td class="l m b0 r0 l0 t0 lines">b</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">c</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">c</td>
+<td class="l m b0 r0 l0 t0 lines">b</td>
+<td class="l m b0 r0 l0 t0 lines">c</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">c</td>
+</tr>
+</table></figure></p>
+<ol id="p-37" class="decimal">
+<li id="li-5"><p id="p-38">What is the value of \(c\cdot a\text{?}\)</p></li>
+<li id="li-6"><p id="p-39">What is/are the solution(s) of the equation \(a\cdot x = a\text{?}\)</p></li>
+<li id="li-7"><p id="p-40">What is/are the solution(s) of the equation \(x\cdot c = b\text{?}\)</p></li>
+<li id="li-8"><p id="p-41">Explain why \((S,\cdot)\) <em class="emphasis">is</em> a unital magma.</p></li>
+<li id="li-9"><p id="p-42">Explain why \((S,\cdot)\) <em class="emphasis">is not</em> a monoid.</p></li>
+<li id="li-10"><p id="p-43">Is \((S,\cdot)\) a Moufang loop? Why or why not?</p></li>
+</ol></article><article class="activity project-like" id="act_grouptable"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span>
+</h6>
+<p id="p-44">Use the operation table below for the magma \((S,\cdot)\) on the set \(S=\{a,b,c\}\) to answer the questions that follow. Four of the entries are missing.</p>
+<p id="p-45"><figure class="table table-like" id="table-5"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.13<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines">a</td>
+<td class="l m b2 r0 l0 t0 lines">b</td>
+<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">c</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">a</td>
+<td class="l m b0 r0 l0 t0 lines">a</td>
+<td class="l m b0 r0 l0 t0 lines">b</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">c</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">b</td>
+<td class="l m b0 r0 l0 t0 lines">b</td>
+<td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\underline{\hspace{2ex}}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">c</td>
+<td class="l m b0 r0 l0 t0 lines">c</td>
+<td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\underline{\hspace{2ex}}\)</td>
+</tr>
+</table></figure></p>
+<ol id="p-46" class="decimal">
+<li id="li-11"><p id="p-47">Explain how we can already tell that \((S,\cdot)\) is a unital magma.</p></li>
+<li id="li-12"><p id="p-48">Fill in two of the four missing entries to make \((S,\cdot)\) into a Moufang loop.</p></li>
+<li id="li-13"><p id="p-49">Beginning with your previous answer, can you fill in the remaining two entries to make \((S,\cdot)\) into a group? Why or why not?</p></li>
+</ol></article></section></div></main>
 </div>
 </body>
 </html>
