@@ -1,4 +1,4 @@
-<chapter xml:id="knotgroup">
+<chapter xml:id="knotgroup" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Knot Groups</title>
 
     <xi:include href="groups.ptx"/>

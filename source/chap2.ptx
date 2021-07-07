@@ -1,4 +1,4 @@
-<chapter xml:id="braidstangles">
+<chapter xml:id="braidstangles" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Braids and Rational Tangles</title>
 
     <xi:include href="braids.ptx"/>

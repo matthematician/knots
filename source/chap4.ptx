@@ -1,4 +1,4 @@
-<chapter xml:id="keisquandles">
+<chapter xml:id="keisquandles" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Keis and Quandles</title>
 
     <xi:include href="keis.ptx"/>

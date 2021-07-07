@@ -1,10 +1,11 @@
-<chapter xml:id="algebra">
+<chapter xml:id="algebra" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Algebraic Structures</title>
 
     <introduction>
         <p>This is an intro.</p>
 
     </introduction>
+
     <xi:include href="./alg1.ptx"/>
     <xi:include href="./alg2.ptx"/>
 

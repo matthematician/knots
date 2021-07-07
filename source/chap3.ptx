@@ -1,4 +1,4 @@
-<chapter xml:id="knotsinvariants">
+<chapter xml:id="knotsinvariants" xmlns:xi="http://www.w3.org/2001/XInclude">
     <title>Knots and Invariants</title>
 
     <xi:include href="knots.ptx"/>
