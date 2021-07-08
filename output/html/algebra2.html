@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-07T16:23:32-04:00       *-->
+<!--*       on 2021-07-08T07:34:30-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -57,7 +57,7 @@ MathJax.Hub.Config({
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\foo}{bar}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\renewcommand\epsilon\varepsilon
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -115,12 +115,12 @@ MathJax.Hub.Config({
 <span class="type">Section</span> <span class="codenumber">1.2</span> <span class="title">Permutations and Presentations</span>
 </h2>
 <article class="objectives goal-like" id="objectives-2"><h6 class="heading"><span class="type">Objectives</span></h6>
-<ol class="decimal"><li id="li-14"><p id="p-50">Simplify, solve, and describe algebraic structure in subgroups of permutation groups, using “braid-a-grams”, cycle notation, and/or the Coxeter presentation.</p></li></ol></article><p id="p-51">One of the richest algebraic structures with a finite set of elements is that which describes permutations (rearrangements) of those elements. We can begin by thinking of this structure in terms of anagrams of English words.</p>
+<ol class="decimal"><li id="li-23"><p id="p-63">Simplify, solve, and describe algebraic structure in subgroups of permutation groups, using “braid-a-grams”, cycle notation, and/or the Coxeter presentation.</p></li></ol></article><p id="p-64">One of the richest algebraic structures with a finite set of elements is that which describes permutations (rearrangements) of those elements. We can begin by thinking of this structure in terms of anagrams of English words.</p>
 <div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-1" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/oMVLkp75nSU?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <article class="definition definition-like" id="def_anagram"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span>
 </h6>
-<p id="p-52">Let \(X = \{1,2,\ldots,n\}\) be an enumerated finite set. A <dfn class="terminology">permutation of n symbols</dfn> is a bijective function \(\sigma \colon X\to X\text{.}\)</p></article><p id="p-53">In other words, a permutation of \(n\) symbols is a way of rearranging all the numbers \(1\) through \(n\) (called the “positions” of the permutation) so that no two positions end up in the same spot:</p>
+<p id="p-65">Let \(X = \{1,2,\ldots,n\}\) be an enumerated finite set. A <dfn class="terminology">permutation of n symbols</dfn> is a bijective function \(\sigma \colon X\to X\text{.}\)</p></article><p id="p-66">In other words, a permutation of \(n\) symbols is a way of rearranging all the numbers \(1\) through \(n\) (called the “positions” of the permutation) so that no two positions end up in the same spot:</p>
 <div class="displaymath">
 \begin{equation*}
 \text{If } i\neq j \text{ then } \sigma(i) \neq \sigma(j).
@@ -128,7 +128,7 @@ MathJax.Hub.Config({
 </div>
 <article class="example example-like" id="ex_permutation"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_permutation"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_permutation"><article class="example example-like"><p id="p-54">An example of a permutation of five symbols might be the function \(\sigma \colon \{1,2,3,4,5\} \to \{1,2,3,4,5\}\) for which</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_permutation"><article class="example example-like"><p id="p-67">An example of a permutation of five symbols might be the function \(\sigma \colon \{1,2,3,4,5\} \to \{1,2,3,4,5\}\) for which</p>
 <div class="displaymath">
 \begin{align*}
 \sigma(1) \amp= 2\\
@@ -139,7 +139,7 @@ MathJax.Hub.Config({
 \end{align*}
 </div>
 <p data-braille="continuation">Note that no two “starting” positions have the same “ending” position.</p>
-<p id="p-55">If instead of the numbers \(1\) through \(5\) we had used the letters of the word \(ALERT\) as the elements of our set, we would obtain</p>
+<p id="p-68">If instead of the numbers \(1\) through \(5\) we had used the letters of the word \(ALERT\) as the elements of our set, we would obtain</p>
 <div class="displaymath">
 \begin{align*}
 \sigma(A) \amp= L\\
@@ -154,28 +154,108 @@ MathJax.Hub.Config({
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.1</span><span class="period">.</span>
 </h6>
 <ol class="decimal">
-<li id="li-15"><p id="p-56">Find at least two anagrams of the word \(LEAST\) that are dictionary English words.</p></li>
-<li id="li-16"><p id="p-57">Give step-by-step instructions for how you would perform the anagram \(STONE \mapsto ONSET\) by moving one letter at a time, but <em class="emphasis">without</em> mentioning any of the letters by name.</p></li>
-<li id="li-17"><p id="p-58">Give step-by-step instructions for how you would perform the anagram \(SHALE \mapsto LEASH\) by moving one letter at a time, but <em class="emphasis">without</em> mentioning any of the letters by name.</p></li>
-</ol></article><p id="p-59">You may remember from finite mathematics that there are \(n! = n(n-1)(n-2)\cdots(2)(1)\) different permutations for a set of \(n\) symbols. Taken together with the <em class="emphasis">composition of functions</em> operation -- that is, perform one permutation and then another permutation, using the result of the former as the input for the latter -- we have an algebraic structure.</p>
+<li id="li-24"><p id="p-69">Find at least two anagrams of the word \(LEAST\) that are dictionary English words.</p></li>
+<li id="li-25"><p id="p-70">Give step-by-step instructions for how you would perform the anagram \(STONE \mapsto ONSET\) by moving one letter at a time, but <em class="emphasis">without</em> mentioning any of the letters by name.</p></li>
+<li id="li-26"><p id="p-71">Give step-by-step instructions for how you would perform the anagram \(SHALE \mapsto LEASH\) by moving one letter at a time, but <em class="emphasis">without</em> mentioning any of the letters by name.</p></li>
+</ol></article><p id="p-72">You may remember from finite mathematics that there are \(n! = n(n-1)(n-2)\cdots(2)(1)\) different permutations for a set of \(n\) symbols. Taken together with the <em class="emphasis">composition of functions</em> operation -- that is, perform one permutation and then another permutation, using the result of the former as the input for the latter -- we have an algebraic structure.</p>
 <article class="definition definition-like" id="def_permgroup"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span>
 </h6>
-<p id="p-60">Let \(S_n\) denote the set of all permutations on \(n\) symbols. Together with the composition of functions operation \(\circ : (\sigma,\tau) \mapsto \sigma\circ\tau\text{,}\) we call \((S_n,\circ)\) the <dfn class="terminology">permutation group on n symbols</dfn>.</p></article><p id="p-61">You might notice that <a class="xref" data-knowl="./knowl/def_permgroup.html" title="Definition 1.2.3">Definition 1.2.3</a> is more than a definition -- it is a theorem in disguise! This is because of the word <dfn class="terminology">group</dfn>: the magma \((S_n,\circ)\) is associative, it has the identity property via the “trivial permutation”</p>
+<p id="p-73">Let \(S_n\) denote the set of all permutations on \(n\) symbols. Together with the composition of functions operation \(\circ : (\sigma,\tau) \mapsto \sigma\circ\tau\text{,}\) we call \((S_n,\circ)\) the <dfn class="terminology">permutation group on n symbols</dfn>.</p></article><p id="p-74">You might notice that <a class="xref" data-knowl="./knowl/def_permgroup.html" title="Definition 1.2.3">Definition 1.2.3</a> is more than a definition -- it is a theorem in disguise! This is because of the word <dfn class="terminology">group</dfn>: the magma \((S_n,\circ)\) is associative, it has the identity property via the “trivial permutation”</p>
 <div class="displaymath">
-\begin{equation*}
-\sigma(1) = 1, \quad \sigma(2)=2, \quad \ldots \quad, \sigma(n)=n\text{,}
-\end{equation*}
+\begin{gather}
+\epsilon(1) = 1, \quad \epsilon(2)=2, \quad \ldots \quad, \epsilon(n)=n\text{,}\label{eq_identitypermutation}\tag{1.2.1}
+\end{gather}
 </div>
 <p data-braille="continuation">and it has the invertibility property: anything a permutation does, can be undone.</p>
+<article class="example example-like" id="ex_permutations"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_permutations"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Composition, identity, inverse permutations.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_permutations"><article class="example example-like"><p id="p-75">The permutation \(\sigma \in S_4\) defined by</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma(1)=3,\quad \sigma(2)=4,\quad \sigma(3)=2, \quad \sigma(4)=1
+\end{equation*}
+</div>
+<p data-braille="continuation">performs, for example, the anagram \(TEAM \mapsto MATE\text{.}\)</p>
+<p id="p-76">We can perform the composition \(\sigma\circ \sigma\) by applying the permutation \(\sigma\) to the <em class="emphasis">result</em> of having applied \(\sigma\text{:}\)</p>
+<figure class="figure figure-like" id="gif_composition"><div class="image-box" style="width: 70%; margin-left: 15%; margin-right: 15%;"><img src="images/gif_composition.gif" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.5<span class="period">.</span></span><span class="space"> </span>Forming the composition \(\sigma\circ\sigma\) using a <a class="xref" data-knowl="./knowl/def_braidagram.html" title="Definition 1.2.8">braid-a-gram</a>.</figcaption></figure><p id="p-77">If we write \(\tau = \sigma\circ\sigma\) for this permutation, then we have</p>
+<div class="displaymath">
+\begin{equation*}
+\tau(1)=2,\quad \tau(2)=1,\quad \tau(3)=4,\quad \tau(4)=3.
+\end{equation*}
+</div>
+<p id="p-78">The identity permutation <a class="xref" data-knowl="./knowl/eq_identitypermutation.html" title="Equation 1.2.1">(1.2.1)</a> is an identity element because composition with \(\epsilon\) does not change a permutation. For example:</p>
+<figure class="figure figure-like" id="gif_identity"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/gif_identity.gif" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.6<span class="period">.</span></span><span class="space"> </span>Demonstrating that the <a class="xref" data-knowl="./knowl/eq_identitypermutation.html" title="Equation 1.2.1">trivial permutation</a> is an identity element.</figcaption></figure><p id="p-79">By “flipping” one of these diagrams upside-down, we can show that permutations are invertible as well.</p>
+<figure class="figure figure-like" id="gif_inverse"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/gif_inverse.gif" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.7<span class="period">.</span></span><span class="space"> </span>Finding an inverse permutation \(\tau\) for \(\sigma\text{.}\)</figcaption></figure><p id="p-80">You should check that both of the above diagrams depict the <a class="xref" data-knowl="./knowl/eq_identitypermutation.html" title="Equation 1.2.1">identity permutation</a>, even though the elements on which they act appear in different orders, and the curves in the diagrams cross over each other a lot! You can also check that the inverse permutation \(\tau\) for our \(\sigma\) satisfies</p>
+<div class="displaymath">
+\begin{equation*}
+\tau(1)=4,\quad \tau(2)=3,\quad \tau(3)=1, \quad \tau(4)=2.
+\end{equation*}
+</div></article></div>
 <article class="activity project-like" id="act_permprop1"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.2</span><span class="period">.</span>
 </h6>
 <ol class="decimal">
-<li id="li-18"><p id="p-62">Refer to your step-by-step instructions for the permutation \(STONE\mapsto ONSET\) in <a class="xref" data-knowl="./knowl/act_perm1.html" title="Activity 1.2.1">Activity 1.2.1</a>. What is the result of applying the <em class="emphasis">same</em> instructions to the beginning word \(ONSET\) instead? Sketch a diagram that shows how each letter moves, from beginning to end of \(STONE \mapsto ONSET \mapsto ?????\)</p></li>
-<li id="li-19"><p id="p-63">Refer to your step-by-step instructions for the permutation \(SHALE\mapsto LEASH\) in <a class="xref" data-knowl="./knowl/act_perm1.html" title="Activity 1.2.1">Activity 1.2.1</a>. What is the result of applying the <em class="emphasis">same</em> instructions to the beginning word \(LEASH\) instead? Sketch a diagram that shows how each letter moves, from beginning to end of \(SHALE \mapsto LEASH \mapsto ?????\)</p></li>
-<li id="li-20"><p id="p-64">What do your answers tell you about whether the permutations you found are invertible?</p></li>
-</ol></article><p id="p-65">The diagrams you sketched in <a class="xref" data-knowl="./knowl/act_permprop1.html" title="Activity 1.2.2">Activity 1.2.2</a> are called “braid-a-grams”, and give us a convenient way to analyze and dissect permutations.</p></section></div></main>
+<li id="li-27"><p id="p-81">Refer to your step-by-step instructions for the permutation \(STONE\mapsto ONSET\) in <a class="xref" data-knowl="./knowl/act_perm1.html" title="Activity 1.2.1">Activity 1.2.1</a>. What is the result of applying the <em class="emphasis">same</em> instructions to the beginning word \(ONSET\) instead? Sketch a diagram that shows how each letter moves, from beginning to end of \(STONE \mapsto ONSET \mapsto ?????\)</p></li>
+<li id="li-28"><p id="p-82">Refer to your step-by-step instructions for the permutation \(SHALE\mapsto LEASH\) in <a class="xref" data-knowl="./knowl/act_perm1.html" title="Activity 1.2.1">Activity 1.2.1</a>. What is the result of applying the <em class="emphasis">same</em> instructions to the beginning word \(LEASH\) instead? Sketch a diagram that shows how each letter moves, from beginning to end of \(SHALE \mapsto LEASH \mapsto ?????\)</p></li>
+<li id="li-29"><p id="p-83">What do your answers tell you about whether the permutations you found are invertible?</p></li>
+</ol></article><p id="p-84">The diagrams you sketched in <a class="xref" data-knowl="./knowl/act_permprop1.html" title="Activity 1.2.2">Activity 1.2.2</a> are called “braid-a-grams”, and give us a convenient way to analyze and dissect permutations.</p>
+<article class="definition definition-like" id="def_braidagram"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span>
+</h6>
+<p id="p-85">Let \(\sigma \in S_n\) be a permutation on \(n\) symbols. A <dfn class="terminology">braid-a-gram</dfn> for \(\sigma\) is a diagram in which each initial position \(i\) is joined by a curve to its final position \(\sigma(i)\text{,}\) and in which each <em class="emphasis">crossing</em> of two curves occurs at a different height in the diagram.</p></article><p id="p-86">A braid-a-gram for the permutation \(SOBER \mapsto ROBES\) is shown below.</p>
+<figure class="figure figure-like" id="fig_sober"><div class="image-box" style="width: 30%; margin-left: 35%; margin-right: 35%;"><img src="http://matthematics.com/redoak/images/sober.jpg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.9<span class="period">.</span></span><span class="space"> </span>A braid-a-gram for \(\sigma \colon SOBER \mapsto ROBES\text{.}\)</figcaption></figure><article class="activity project-like" id="act_braidagram1"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.3</span><span class="period">.</span>
+</h6>
+<p id="p-87">Use the braid-a-gram above, reading it from top to bottom, to describe step-by-step how this permutation can be achieved only by <em class="emphasis">interchanging adjacent strands</em>. For example, the first step might be “swap the 4th and 5th strands”.</p>
+<p id="p-88">Then, sketch a <em class="emphasis">different</em> braid-a-gram for this permutation and repeat the above question.</p></article><p id="p-89">The fact that <a class="xref" data-knowl="./knowl/act_braidagram1.html" title="Activity 1.2.3">Activity 1.2.3</a> is even possible to begin with points to a very deep result in the theory of permutations.</p>
+<article class="definition definition-like" id="def_cycle"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.2.10</span><span class="period">.</span>
+</h6>
+<p id="p-90">A permutation \(\sigma \in S_n\) is called a \(k\)-<dfn class="terminology">cycle</dfn> if there exists a sequence of \(k\) positions \(x_1,x_2,\ldots,x_k\) such that</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma(x_1) = x_2, \quad \sigma(x_2) = x_3, \quad \ldots , \sigma(x_{k-1}) = x_k, \quad \sigma(x_k) = x_1.
+\end{equation*}
+</div>
+<p data-braille="continuation">We denote the above \(k\)-cycle using <dfn class="terminology">cycle notation</dfn> as</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma = \bigl( x_1\, x_2\, \cdots\, x_k \bigr).
+\end{equation*}
+</div>
+<p data-braille="continuation">When \(k=2\) we call the cycle a <dfn class="terminology">transposition</dfn>.</p></article><p id="p-91">For example, the anagram \(ALERT \mapsto LATER\) from <a class="xref" data-knowl="./knowl/ex_permutation.html" title="Example 1.2.2">Example 1.2.2</a> can be expressed in cycle notation as \(\sigma = (12)(345)\text{.}\)</p>
+<article class="activity project-like" id="act_cycle"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.4</span><span class="period">.</span>
+</h6>
+<p id="p-92">Determine cycle notation for the permutations \(STONE \mapsto ONSET\) and \(SHALE\mapsto LEASH\) you studied in <a class="xref" data-knowl="./knowl/act_perm1.html" title="Activity 1.2.1">Activity 1.2.1</a>.</p></article><article class="activity project-like" id="act_cycle2"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.5</span><span class="period">.</span>
+</h6>
+<p id="p-93">Determine two different cycle notation expressions for the permutation \(SOBER \mapsto ROBES\) you studied in <a class="xref" data-knowl="./knowl/act_braidagram1.html" title="Activity 1.2.3">Activity 1.2.3</a>.</p></article><p id="p-94">The main result we're seeing here is the following theorem.</p>
+<article class="theorem theorem-like" id="thm_adjacent"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.11</span><span class="period">.</span>
+</h6>
+<p id="p-95">Every permutation of \(n\) symbols can be written as a composition of adjacent transpositions.</p></article><article class="theorem theorem-like" id="thm_coxeter"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">Coxeter Presentation.</span>
+</h6>
+<p id="p-96">Let \(S_n\) be the permutation group on \(n\) symbols, and denote by \(\sigma_i = ( i, i+1 )\) the \(i\)-th adjacent transposition for \(1 \leq i \leq n-1\text{.}\)</p>Then every permutation \(\sigma\in S_n\) can be expressed as a product<div class="displaymath">
+\begin{equation*}
+\sigma = \sigma_{i_1}\circ \sigma_{i_2} \circ \cdots \circ \sigma_{i_k}.
+\end{equation*}
+</div>Furthermore, the transpositions \(\sigma_i\) satisfy the following relations.<div class="displaymath">
+\begin{align}
+\sigma_i^2 \amp= \epsilon \amp\amp \text{for all }1 \leq i \leq n-1.\label{eq_cox1}\tag{1.2.2}\\
+\sigma_i\sigma_j \amp= \sigma_j\sigma_i \amp\amp \text{for all }|i-j| \geq 2.\label{eq_cox2}\tag{1.2.3}\\
+\sigma_i\sigma_{i+1}\sigma_i \amp= \sigma_{i+1}\sigma_i\sigma_{i+1} \amp\amp \text{for all }1 \leq i \leq n-2.\label{eq_cox3}\tag{1.2.4}
+\end{align}
+</div></article><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-97">We will take the procedure you used in <a class="xref" data-knowl="./knowl/act_braidagram1.html" title="Activity 1.2.3">Activity 1.2.3</a> as proof of the assertion that every permutation can be written in terms of adjacent transpositions.</p>
+<p id="p-98">The braid-a-grams shown below suggest the proofs of the three relations.</p>
+<figure class="figure figure-like" id="fig_coxproof"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/gif_coxeter.gif" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.13<span class="period">.</span></span><span class="space"> </span>Braid-a-gram “proofs” of the Coxeter relations.</figcaption></figure></article></div></section></div></main>
 </div>
 </body>
 </html>

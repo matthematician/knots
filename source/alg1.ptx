@@ -589,4 +589,155 @@
 </statement>
 </activity>
 
+<exercises xml:id="exer_alg1">
+    <exercise xml:id="ex_a1_1">
+        <statement>
+            <p>Consider the magma whose elements are integers, <m>\mathbb{Z} = \{ \ldots, -3,-2,-1,0,1,2,3,\ldots,\}</m>, and whose binary operation called <m>\triangleright</m> is defined by <me>x \triangleright y = 2y - x.</me>
+
+            <ol>
+                <li>
+                    <p>Show that <m>(\mathbb{Z},\triangleright)</m> has the idempotent property.
+                    </p>
+                </li>
+                <li>
+                    <p>Show that <m>(\mathbb{Z},\triangleright)</m> has the right-distributive property. Does it also have the left-distributive property?
+                    </p>
+                </li>
+                <li>
+                    <p>Simplify the expression <m>\bigl( x\triangleright y\bigr) \triangleright y</m>. What does this result tell you about whether this magma is associative?</p>
+                </li>
+                <li>
+                    <p>Does <m>(\mathbb{Z},\triangleright)</m> have the identity property? How can you tell?</p>
+                </li>
+            </ol>
+            </p>
+        </statement>
+    </exercise>
+
+    <exercise xml:id="ex_a1_2">
+        <statement>
+            <p>Let <m>(S,\cdot)</m> be a magma.</p>           
+            <ol>
+                <li>
+                    <p>Show that if <m>(S,\cdot)</m> is a group, then it must have both the left-cancel property and the right-cancel property.</p>
+                </li>
+                <li>
+                    <p>Suppose that <m>(S,\cdot)</m> has the identity property <em>and either</em> the left-cancel or right-cancel property. Show that if <m>(S,\cdot)</m> has the idempotent property, then <m>S</m> has only one element.
+                    </p>
+                </li>
+            </ol>
+        </statement>
+    </exercise>
+
+    <exercise xml:id="ex_a1_3">
+        <statement>
+            <p>Suppose <m>(S,\cdot)</m> is a magma on the set <m>S = \{e,a,b,c\}</m> having the operation table shown below.</p>
+            <table>
+  <tabular>
+    <row bottom="medium">
+      <cell right="medium">
+        <m>\cdot</m>
+      </cell>
+      <cell>
+        e
+      </cell>
+      <cell>
+        a
+      </cell>
+      <cell>
+        b
+      </cell>
+      <cell>
+        c
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        e
+      </cell>
+      <cell>
+        e
+      </cell>
+      <cell>
+        a
+      </cell>
+      <cell>
+        b
+      </cell>
+      <cell>
+        c
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        a
+      </cell>
+      <cell>
+        a
+      </cell>
+      <cell>
+        <m>\underline{\hspace{2ex}}</m>
+      </cell>
+      <cell>
+        <m>\underline{\hspace{2ex}}</m>
+      </cell>
+      <cell>
+        <m>\underline{\hspace{2ex}}</m>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        b
+      </cell>
+      <cell>
+        b
+      </cell>
+      <cell>
+        <m>\underline{\hspace{2ex}}</m>
+      </cell>
+      <cell>
+        <m>\underline{\hspace{2ex}}</m>
+      </cell>
+      <cell>
+        <m>\underline{\hspace{2ex}}</m>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        c
+      </cell>
+      <cell>
+        c
+      </cell>
+      <cell>
+        <m>\underline{\hspace{2ex}}</m>
+      </cell>
+      <cell>
+        <m>\underline{\hspace{2ex}}</m>
+      </cell>
+      <cell>
+        <m>\underline{\hspace{2ex}}</m>
+      </cell>
+    </row>
+  </tabular>
+</table>
+<p>We can already see that <m>(S,\cdot)</m> is a unital magma.</p>
+<ol>
+    <li>
+        <p>Explain why, if <m>(S,\cdot)</m> has the left-cancel property, there cannot be a repeated element in any <em>row</em> of its operation table. What property would give the corresponding result for the <em>columns</em>?
+        </p>
+    </li>
+    <li>
+        <p>Find two fundamentally different ways of completing this operation table so that <m>(S,\cdot)</m> has both the left-cancel and right-cancel properties.</p>
+    </li>
+    <li>
+        <p>Does every answer to part (b) make <m>(S,\cdot)</m> an abelian group? If so, explain how you can tell. If not, find an operation table for <m>(S,\cdot)</m> which has both the left- and right-cancel properties but which is not an abelian group.</p>
+    </li>
+</ol>
+</statement>
+
+    </exercise>
+
+</exercises>
+
 </section>

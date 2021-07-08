@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-07T16:23:32-04:00       *-->
+<!--*       on 2021-07-08T07:34:30-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -57,7 +57,7 @@ MathJax.Hub.Config({
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\newcommand{\foo}{bar}
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\renewcommand\epsilon\varepsilon
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -399,7 +399,70 @@ S = \{ {\rm positive}, {\rm negative}\}.
 <li id="li-11"><p id="p-47">Explain how we can already tell that \((S,\cdot)\) is a unital magma.</p></li>
 <li id="li-12"><p id="p-48">Fill in two of the four missing entries to make \((S,\cdot)\) into a Moufang loop.</p></li>
 <li id="li-13"><p id="p-49">Beginning with your previous answer, can you fill in the remaining two entries to make \((S,\cdot)\) into a group? Why or why not?</p></li>
-</ol></article></section></div></main>
+</ol></article><section class="exercises" id="exer_alg1"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">1.1.1</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="ex_a1_1"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-50">Consider the magma whose elements are integers, \(\mathbb{Z} = \{ \ldots, -3,-2,-1,0,1,2,3,\ldots,\}\text{,}\) and whose binary operation called \(\triangleright\) is defined by</p>
+<div class="displaymath">
+\begin{equation*}
+x \triangleright y = 2y - x.
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-14"><p id="p-51">Show that \((\mathbb{Z},\triangleright)\) has the idempotent property.</p></li>
+<li id="li-15"><p id="p-52">Show that \((\mathbb{Z},\triangleright)\) has the right-distributive property. Does it also have the left-distributive property?</p></li>
+<li id="li-16"><p id="p-53">Simplify the expression \(\bigl( x\triangleright y\bigr) \triangleright y\text{.}\) What does this result tell you about whether this magma is associative?</p></li>
+<li id="li-17"><p id="p-54">Does \((\mathbb{Z},\triangleright)\) have the identity property? How can you tell?</p></li>
+</ol></article><article class="exercise exercise-like" id="ex_a1_2"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-55">Let \((S,\cdot)\) be a magma.</p>
+<ol class="lower-alpha">
+<li id="li-18"><p id="p-56">Show that if \((S,\cdot)\) is a group, then it must have both the left-cancel property and the right-cancel property.</p></li>
+<li id="li-19"><p id="p-57">Suppose that \((S,\cdot)\) has the identity property <em class="emphasis">and either</em> the left-cancel or right-cancel property. Show that if \((S,\cdot)\) has the idempotent property, then \(S\) has only one element.</p></li>
+</ol></article><article class="exercise exercise-like" id="ex_a1_3"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-58">Suppose \((S,\cdot)\) is a magma on the set \(S = \{e,a,b,c\}\) having the operation table shown below.</p>
+<figure class="table table-like" id="table-6"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.14<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">\(\cdot\)</td>
+<td class="l m b2 r0 l0 t0 lines">e</td>
+<td class="l m b2 r0 l0 t0 lines">a</td>
+<td class="l m b2 r0 l0 t0 lines">b</td>
+<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">c</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">e</td>
+<td class="l m b0 r0 l0 t0 lines">e</td>
+<td class="l m b0 r0 l0 t0 lines">a</td>
+<td class="l m b0 r0 l0 t0 lines">b</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">c</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">a</td>
+<td class="l m b0 r0 l0 t0 lines">a</td>
+<td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\underline{\hspace{2ex}}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">b</td>
+<td class="l m b0 r0 l0 t0 lines">b</td>
+<td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\underline{\hspace{2ex}}\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">c</td>
+<td class="l m b0 r0 l0 t0 lines">c</td>
+<td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\underline{\hspace{2ex}}\)</td>
+</tr>
+</table></figure><p id="p-59">We can already see that \((S,\cdot)\) is a unital magma.</p>
+<ol class="lower-alpha">
+<li id="li-20"><p id="p-60">Explain why, if \((S,\cdot)\) has the left-cancel property, there cannot be a repeated element in any <em class="emphasis">row</em> of its operation table. What property would give the corresponding result for the <em class="emphasis">columns</em>?</p></li>
+<li id="li-21"><p id="p-61">Find two fundamentally different ways of completing this operation table so that \((S,\cdot)\) has both the left-cancel and right-cancel properties.</p></li>
+<li id="li-22"><p id="p-62">Does every answer to part (b) make \((S,\cdot)\) an abelian group? If so, explain how you can tell. If not, find an operation table for \((S,\cdot)\) which has both the left- and right-cancel properties but which is not an abelian group.</p></li>
+</ol></article></section></section></div></main>
 </div>
 </body>
 </html>

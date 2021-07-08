@@ -59,7 +59,32 @@
     </statement>
 </definition>
 
-<p>You might notice that <xref ref="def_permgroup"/> is more than a definition -- it is a theorem in disguise! This is because of the word <term>group</term>: the magma <m>(S_n,\circ)</m> is associative, it has the identity property via the <q>trivial permutation</q> <me>\sigma(1) = 1, \quad \sigma(2)=2, \quad \ldots \quad, \sigma(n)=n</me>, and it has the invertibility property: anything a permutation does, can be undone.</p>
+<p>You might notice that <xref ref="def_permgroup"/> is more than a definition -- it is a theorem in disguise! This is because of the word <term>group</term>: the magma <m>(S_n,\circ)</m> is associative, it has the identity property via the <q>trivial permutation</q> <mdn><mrow xml:id="eq_identitypermutation">\epsilon(1) = 1, \quad \epsilon(2)=2, \quad \ldots \quad, \epsilon(n)=n</mrow></mdn>, and it has the invertibility property: anything a permutation does, can be undone.</p>
+
+<example xml:id="ex_permutations">
+    <title>Composition, identity, inverse permutations</title>
+    <statement>
+        <p>The permutation <m>\sigma \in S_4</m> defined by <me>\sigma(1)=3,\quad \sigma(2)=4,\quad \sigma(3)=2, \quad \sigma(4)=1</me>
+        performs, for example, the anagram <m>TEAM \mapsto MATE</m>.</p>
+        <p>We can perform the composition <m>\sigma\circ \sigma</m> by applying the permutation <m>\sigma</m> to the <em>result</em> of having applied <m>\sigma</m>:</p>
+        <figure xml:id="gif_composition">
+            <caption>Forming the composition <m>\sigma\circ\sigma</m> using a <xref ref="def_braidagram" text="custom">braid-a-gram</xref>.</caption>
+            <image source="images/gif_composition.gif" width="70%"/>
+        </figure>
+        <p>If we write <m>\tau = \sigma\circ\sigma</m> for this permutation, then we have <me>\tau(1)=2,\quad \tau(2)=1,\quad \tau(3)=4,\quad \tau(4)=3.</me></p>
+        <p>The identity permutation <xref ref="eq_identitypermutation"/> is an identity element because composition with <m>\epsilon</m> does not change a permutation. For example: </p>
+        <figure xml:id="gif_identity">
+            <caption>Demonstrating that the <xref ref="eq_identitypermutation" text="custom">trivial permutation</xref> is an identity element.</caption>
+            <image source="images/gif_identity.gif" width="75%"/>
+        </figure>
+        <p>By <q>flipping</q> one of these diagrams upside-down, we can show that permutations are invertible as well.</p>
+        <figure xml:id="gif_inverse">
+            <caption>Finding an inverse permutation <m>\tau</m> for <m>\sigma</m>.</caption>
+            <image source="images/gif_inverse.gif" width="75%"/>
+        </figure>
+        <p>You should check that both of the above diagrams depict the <xref ref="eq_identitypermutation" text="custom">identity permutation</xref>, even though the elements on which they act appear in different orders, and the curves in the diagrams cross over each other a lot! You can also check that the inverse permutation <m>\tau</m> for our <m>\sigma</m> satisfies <me>\tau(1)=4,\quad \tau(2)=3,\quad \tau(3)=1, \quad \tau(4)=2.</me></p>
+    </statement>
+</example>
 
 <activity xml:id="act_permprop1">
     <statement>
@@ -80,5 +105,89 @@
 </activity>
 
 <p>The diagrams you sketched in <xref ref="act_permprop1"/> are called <q>braid-a-grams</q>, and give us a convenient way to analyze and dissect permutations.</p>
+
+<definition xml:id="def_braidagram">
+    <statement>
+        <p>
+            Let <m>\sigma \in S_n</m> be a permutation on <m>n</m> symbols. A <term>braid-a-gram</term> for <m>\sigma</m> is a diagram in which each initial position <m>i</m> is joined by a curve to its final position <m>\sigma(i)</m>, and in which each <em>crossing</em> of two curves occurs at a different height in the diagram.
+        </p>
+    </statement>
+</definition>
+
+<p>A braid-a-gram for the permutation <m>SOBER \mapsto ROBES</m> is shown below.
+
+</p>
+<figure xml:id="fig_sober">
+    <image source="http://matthematics.com/redoak/images/sober.jpg" width="30%"/>
+    <caption>A braid-a-gram for <m>\sigma \colon SOBER \mapsto ROBES</m>.</caption>
+</figure>
+
+<activity xml:id="act_braidagram1">
+    <statement>
+        <p>Use the braid-a-gram above, reading it from top to bottom, to describe step-by-step how this permutation can be achieved only by <em>interchanging adjacent strands</em>. For example, the first step might be <q>swap the 4th and 5th strands</q>. 
+       </p>
+       <p>Then, sketch a <em>different</em> braid-a-gram for this permutation and repeat the above question. 
+       </p>
+    </statement>
+</activity>
+
+<p>The fact that <xref ref="act_braidagram1"/> is even possible to begin with points to a very deep result in the theory of permutations.</p>
+
+<definition xml:id="def_cycle">
+    <statement>
+        <p>A permutation <m>\sigma \in S_n</m> is called a <m>k</m>-<term>cycle</term> if there exists a sequence of <m>k</m> positions <m>x_1,x_2,\ldots,x_k</m> such that <me>\sigma(x_1) = x_2, \quad \sigma(x_2) = x_3, \quad \ldots , \sigma(x_{k-1}) = x_k, \quad \sigma(x_k) = x_1.</me>
+        We denote the above <m>k</m>-cycle using <term>cycle notation</term> as <me>\sigma = \bigl( x_1\, x_2\, \cdots\, x_k \bigr).</me>
+        When <m>k=2</m> we call the cycle a <term>transposition</term>.</p>
+    </statement>
+</definition>
+
+<p>For example, the anagram <m>ALERT \mapsto LATER</m> from <xref ref="ex_permutation"/> can be expressed in cycle notation as <m>\sigma = (12)(345)</m>.</p>
+
+<activity xml:id="act_cycle">
+    <statement>
+        <p>Determine cycle notation for the permutations <m>STONE \mapsto ONSET</m> and <m>SHALE\mapsto LEASH</m> you studied in <xref ref="act_perm1"/>.
+        </p>
+    </statement>
+</activity>
+
+<activity xml:id="act_cycle2">
+    <statement>
+        <p>Determine two different cycle notation expressions for the permutation <m>SOBER \mapsto ROBES</m> you studied in <xref ref="act_braidagram1"/>.
+        </p>
+    </statement>
+</activity>
+
+<p>The main result we're seeing here is the following theorem.</p> 
+
+<theorem xml:id="thm_adjacent">
+    <statement>
+        <p>Every permutation of <m>n</m> symbols can be written as a composition of adjacent transpositions.</p>
+    </statement>
+</theorem>
+
+<theorem xml:id="thm_coxeter">
+    <title>Coxeter Presentation</title>
+
+    <statement>
+        <p>Let <m>S_n</m> be the permutation group on <m>n</m> symbols, and denote by <m>\sigma_i = ( i, i+1 )</m> the <m>i</m>-th adjacent transposition for <m>1 \leq i \leq n-1</m>.</p>
+        <statement>Then every permutation <m>\sigma\in S_n</m> can be expressed as a product <me>\sigma = \sigma_{i_1}\circ \sigma_{i_2} \circ \cdots \circ \sigma_{i_k}.</me>
+        Furthermore, the transpositions <m>\sigma_i</m> satisfy the following relations.</statement>
+        <mdn>
+            <mrow xml:id="eq_cox1">\sigma_i^2 \amp= \epsilon \amp\amp \text{for all }1 \leq i \leq n-1.</mrow>
+            <mrow xml:id="eq_cox2">\sigma_i\sigma_j \amp= \sigma_j\sigma_i \amp\amp \text{for all }|i-j| \geq 2.</mrow>
+            <mrow xml:id="eq_cox3">\sigma_i\sigma_{i+1}\sigma_i \amp= \sigma_{i+1}\sigma_i\sigma_{i+1} \amp\amp \text{for all }1 \leq i \leq n-2.</mrow>
+        </mdn>
+    </statement>
+    <proof>
+        <p>We will take the procedure you used in <xref ref="act_braidagram1"/> as proof of the assertion that every permutation can be written in terms of adjacent transpositions.</p>
+        <p>The braid-a-grams shown below suggest the proofs of the three relations.</p>
+        <figure xml:id="fig_coxproof">
+            <caption>Braid-a-gram <q>proofs</q> of the Coxeter relations.</caption>
+            <image source="images/gif_coxeter.gif" width="95%"/>
+        </figure>
+    </proof>
+</theorem>
+
+
 
 </section>

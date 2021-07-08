@@ -11,7 +11,7 @@
     
      <brandlogo url="./index.html" source="images/trefoil256.png" />
 
-    <macros>\newcommand{\foo}{bar}</macros>
+    <macros>\renewcommand\epsilon\varepsilon</macros>
     <latex-image-preamble>\usepackage{tikz}
     </latex-image-preamble>
     
