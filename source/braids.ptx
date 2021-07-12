@@ -11,7 +11,54 @@
 	</ol>
 </objectives>
 
-<p>The 
+<p>The <q>braid-a-gram</q> diagrams you sketched in <xref ref="algebra2"/> were our first hint of a connection between algebra (permutations) and knot-like diagrams. Trouble is, braid-a-grams aren't <em>really</em> knot-like, because their strands <em>intersect</em> one another at their crossings, something that physical strings can't do. In this section we'll fix that limitation, and then work out what happens to the algebra.</p>
+
+<definition xml:id="def_braid">
+	<statement>
+		<p>A <term>braid</term> on <m>n</m> strands is a braid-a-gram, each of whose crossings is designated as either a <term>positive</term> crossing (<m>\backslash</m> over <m>/</m>) or a <term>negative</term> crossing (<m>/</m> over <m>\backslash</m>).
+		</p>
+		<figure xml:id="fig_braidcrossings">
+			<caption>A positive crossing and a negative crossing, respectively.</caption>
+			<sidebyside width="10%"><image source="images/poscrossing.png" width="10%"/><image source="images/negcrossing.png" width="10%"/></sidebyside>
+		</figure>
+		<p>A braid whose crossings are all positive is called a <term>positive braid</term>.</p>
+	</statement>
+</definition>
+<p>
+	We can use technology to both visualize and, later, perform algebra using braids. Execute the Sage cell below to visualize an example of a positive braid.
+	<sage>
+		<input>
+B = BraidGroup(4);
+b = B([2,1,3,2]);
+b.plot( orientation='top-bottom', thickness=2 )
+		</input>
+	</sage>
+</p>
+<p>
+	There is a one-to-one correspondence between positive braids and braid-a-grams. Given a positive braid, we can <q>flatten</q> all the crossings to make it a braid-a-gram; conversely, given a braid-a-gram, we can make each crossing positive to turn it into a positive braid.
+	<figure xml:id="fig_yoyo">
+		<caption>A one-to-one correspondence of braid-a-grams to positive braids.</caption>
+		<image source="images/gif_yoyo.gif" width="35%"/>
+	</figure>
+	Accordingly, we can borrow the notation we used for adjacent transpositions to develop notation for braids as follows.
+</p>
+<definition xml:id="def_artin">
+	<statement>
+		<p>In a braid on <m>n</m> strands, for each <m>1 \leq i \leq n-1</m> we denote by <m>s_i</m> the positive crossing of the <m>i</m>-th strand over the <m>(i+1)</m>-st strand.
+		</p>
+	</statement>
+</definition>
+<activity xml:id="act_braid1">
+	<statement>
+		<p>Use the <m>ATOM\mapsto MOAT</m> diagram in <xref ref="fig_yoyo"/> to express the positive braid shown using the generators <m>s_1,s_2,</m> and/or <m>s_3</m>.
+		</p>
+		<p>
+			Then, adapt the Sage code in the above cell to generate a visualization of this positive braid.
+		</p>
+	</statement>
+</activity>
+
+<!-- Goals here: (1) Contrast to Coxeter, (2) Use Sage to perform braid computations, (3) Pure braid stuff as ker of hom Bn -> Sn -->
 
 
 

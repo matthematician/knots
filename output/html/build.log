@@ -1,3 +1,7 @@
 Messages from application of C:\Users\msalo\AppData\Roaming\Python\Python39\site-packages\pretext\static\xsl\pretext-html.xsl:
-PTX:ERROR:   a cross-reference ("xref") uses references [act_permprops1] that do not point to any target.  Maybe you typed an @xml:id value wrong, maybe the target of the @xml:id is nonexistent, or maybe you temporarily removed the target from your source.  Your output will contain some placeholder text that you will not want to distribute to your readers.
-             located within: "act_cycle" (xml:id)
+MBX:ERROR:   computed space between panels of a <sidebyside> is not a number (this value is computed, check that margins ("NaN%, NaN%") and widths ("10 10 ") are percentages of the form "nn%")
+             located within: "fig_braidcrossings" (xml:id)
+MBX:ERROR:   computed space between panels of a <sidebyside> is not a number (this value is computed, check that margins ("NaN%, NaN%") and widths ("10 10 ") are percentages of the form "nn%")
+             located within: "fig_braidcrossings" (xml:id)
+MBX:ERROR:   computed space between panels of a <sidebyside> is not a number (this value is computed, check that margins ("NaN%, NaN%") and widths ("10 10 ") are percentages of the form "nn%")
+             located within: "fig_braidcrossings" (xml:id)

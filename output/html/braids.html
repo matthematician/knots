@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-11T23:01:45-04:00       *-->
+<!--*       on 2021-07-12T00:22:36-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,7 +14,7 @@
 <title>OAK Braids</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/x-mathjax-config">
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
 MathJax.Hub.Config({
     tex2jax: {
         inlineMath: [['\\(','\\)']]
@@ -43,7 +43,15 @@ MathJax.Hub.Config({
         mtextFontInherit: true,
     },
 });
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -115,7 +123,29 @@ MathJax.Hub.Config({
 <span class="type">Section</span> <span class="codenumber">2.1</span> <span class="title">Braids</span>
 </h2>
 <article class="objectives goal-like" id="objectives-3"><h6 class="heading"><span class="type">Objectives</span></h6>
-<ol class="decimal"><li id="li-46"><p id="p-128">Compare and contrast the algebraic structure of permutation groups and braid groups.</p></li></ol></article></section></div></main>
+<ol class="decimal"><li id="li-46"><p id="p-128">Compare and contrast the algebraic structure of permutation groups and braid groups.</p></li></ol></article><p id="p-129">The “braid-a-gram” diagrams you sketched in <a href="algebra2.html" class="internal" title="Section 1.2: Permutations and Presentations">Section 1.2</a> were our first hint of a connection between algebra (permutations) and knot-like diagrams. Trouble is, braid-a-grams aren't <em class="emphasis">really</em> knot-like, because their strands <em class="emphasis">intersect</em> one another at their crossings, something that physical strings can't do. In this section we'll fix that limitation, and then work out what happens to the algebra.</p>
+<article class="definition definition-like" id="def_braid"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-130">A <dfn class="terminology">braid</dfn> on \(n\) strands is a braid-a-gram, each of whose crossings is designated as either a <dfn class="terminology">positive</dfn> crossing (\(\backslash\) over \(/\)) or a <dfn class="terminology">negative</dfn> crossing (\(/\) over \(\backslash\)).</p>
+<figure class="figure figure-like" id="fig_braidcrossings"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;">
+<div class="sbspanel" style="width:16.6666666666667%;justify-content:flex-start;"><img src="images/poscrossing.png" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:16.6666666666667%;justify-content:flex-start;"><img src="images/negcrossing.png" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.2<span class="period">.</span></span><span class="space"> </span>A positive crossing and a negative crossing, respectively.</figcaption></figure><p id="p-131">A braid whose crossings are all positive is called a <dfn class="terminology">positive braid</dfn>.</p></article><p id="p-132">We can use technology to both visualize and, later, perform algebra using braids. Execute the Sage cell below to visualize an example of a positive braid. <div class="sagecell-sage" id="sage-1"><script type="text/x-sage">B = BraidGroup(4);
+b = B([2,1,3,2]);
+b.plot( orientation='top-bottom', thickness=2 )
+</script></div></p>
+<p id="p-133">There is a one-to-one correspondence between positive braids and braid-a-grams. Given a positive braid, we can “flatten” all the crossings to make it a braid-a-gram; conversely, given a braid-a-gram, we can make each crossing positive to turn it into a positive braid. <figure class="figure figure-like" id="fig_yoyo"><div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="images/gif_yoyo.gif" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.3<span class="period">.</span></span><span class="space"> </span>A one-to-one correspondence of braid-a-grams to positive braids.</figcaption></figure> Accordingly, we can borrow the notation we used for adjacent transpositions to develop notation for braids as follows.</p>
+<article class="definition definition-like" id="def_artin"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
+</h6>
+<p id="p-134">In a braid on \(n\) strands, for each \(1 \leq i \leq n-1\) we denote by \(s_i\) the positive crossing of the \(i\)-th strand over the \((i+1)\)-st strand.</p></article><article class="activity project-like" id="act_braid1"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-135">Use the \(ATOM\mapsto MOAT\) diagram in <a class="xref" data-knowl="./knowl/fig_yoyo.html" title="Figure 2.1.3">Figure 2.1.3</a> to express the positive braid shown using the generators \(s_1,s_2,\) and/or \(s_3\text{.}\)</p>
+<p id="p-136">Then, adapt the Sage code in the above cell to generate a visualization of this positive braid.</p></article></section></div></main>
 </div>
 </body>
 </html>
