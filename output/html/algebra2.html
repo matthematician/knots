@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-08T07:34:30-04:00       *-->
+<!--*       on 2021-07-11T23:01:45-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -239,10 +239,47 @@ MathJax.Hub.Config({
 <article class="theorem theorem-like" id="thm_adjacent"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.11</span><span class="period">.</span>
 </h6>
-<p id="p-95">Every permutation of \(n\) symbols can be written as a composition of adjacent transpositions.</p></article><article class="theorem theorem-like" id="thm_coxeter"><h6 class="heading">
+<p id="p-95">Every permutation of \(n\) symbols can be written as a composition of adjacent transpositions.</p></article><p id="p-96">Since the adjacent transpositions play such an important role in permutations, we'll use the shorthand</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma_i = \bigl(i\;i+1\bigr)
+\end{equation*}
+</div>
+<p data-braille="continuation">to denote the transposition that swaps the \(i\)-th position with its neighbor to the right.</p>
+<article class="activity project-like" id="act_cox1"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.6</span><span class="period">.</span>
+</h6>
+<p id="p-97">The <a class="xref" data-knowl="./knowl/eq_identitypermutation.html" title="Equation 1.2.1">identity permutation</a> performs the rather-uninteresting anagram \(BEARS \mapsto BEARS\text{.}\)</p>
+<ol class="decimal">
+<li id="li-30"><p id="p-98">Sketch a braid-a-gram for this anagram which includes <em class="emphasis">at least one</em> crossing, but <em class="emphasis">as few as possible</em>.</p></li>
+<li id="li-31"><p id="p-99">Express your answer to part (a) as an equation involving the adjacent transpositions \(\sigma_1,\sigma_2,\sigma_3,\sigma_4,\) and/or the trivial permutation \(\epsilon\text{.}\)</p></li>
+<li id="li-32"><p id="p-100">Are there other solutions besides the one you found? Describe how your result might be generalized.</p></li>
+</ol></article><article class="activity project-like" id="act_cox2"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.7</span><span class="period">.</span>
+</h6>
+<p id="p-101">Let \(\sigma\in S_4\) be the permutation that performs the anagram \(\sigma \colon OGRE \mapsto GOER\text{.}\)</p>
+<ol class="decimal">
+<li id="li-33"><p id="p-102">Sketch <em class="emphasis">two different</em> braid-a-grams for \(\sigma\text{,}\) using as few crossings as possible.</p></li>
+<li id="li-34"><p id="p-103">Express your answer to part (a) as an equation involving the adjacent transpositions \(\sigma_1,\sigma_2,\sigma_3,\sigma_4,\) and/or the trivial permutation \(\epsilon\text{.}\)</p></li>
+<li id="li-35"><p id="p-104">Describe how your result might be generalized for anagrams of any number of letters.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-2" id="hint-2"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-2"><div class="hint solution-like"><p id="p-105">Recall that in a braid-a-gram, each crossing must be sketched at a <em class="emphasis">different</em> height.</p></div></div>
+</div></article><article class="activity project-like" id="act_cox3"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.8</span><span class="period">.</span>
+</h6>
+<p id="p-106">Let \(\sigma\in S_5\) be the permutation that performs the anagram \(\sigma \colon TONES \mapsto NOTES\text{.}\)</p>
+<ol class="decimal">
+<li id="li-36"><p id="p-107">Sketch <em class="emphasis">two different</em> braid-a-grams for \(\sigma\text{,}\) using as few crossings as possible.</p></li>
+<li id="li-37"><p id="p-108">Express your answer to part (a) as an equation involving the adjacent transpositions \(\sigma_1,\sigma_2,\sigma_3,\sigma_4,\) and/or the trivial permutation \(\epsilon\text{.}\)</p></li>
+<li id="li-38"><p id="p-109">Describe how your result might be generalized for anagrams of any number of letters.</p></li>
+</ol>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-3" id="hint-3"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-3"><div class="hint solution-like"><p id="p-110">Recall that in a braid-a-gram, each crossing must be sketched at a <em class="emphasis">different</em> height.</p></div></div>
+</div></article><article class="theorem theorem-like" id="thm_coxeter"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.2.12</span><span class="period">.</span><span class="space"> </span><span class="title">Coxeter Presentation.</span>
 </h6>
-<p id="p-96">Let \(S_n\) be the permutation group on \(n\) symbols, and denote by \(\sigma_i = ( i, i+1 )\) the \(i\)-th adjacent transposition for \(1 \leq i \leq n-1\text{.}\)</p>Then every permutation \(\sigma\in S_n\) can be expressed as a product<div class="displaymath">
+<p id="p-111">Let \(S_n\) be the permutation group on \(n\) symbols, and denote by \(\sigma_i = ( i, i+1 )\) the \(i\)-th adjacent transposition for \(1 \leq i \leq n-1\text{.}\)</p>Then every permutation \(\sigma\in S_n\) can be expressed as a product<div class="displaymath">
 \begin{equation*}
 \sigma = \sigma_{i_1}\circ \sigma_{i_2} \circ \cdots \circ \sigma_{i_k}.
 \end{equation*}
@@ -252,10 +289,121 @@ MathJax.Hub.Config({
 \sigma_i\sigma_j \amp= \sigma_j\sigma_i \amp\amp \text{for all }|i-j| \geq 2.\label{eq_cox2}\tag{1.2.3}\\
 \sigma_i\sigma_{i+1}\sigma_i \amp= \sigma_{i+1}\sigma_i\sigma_{i+1} \amp\amp \text{for all }1 \leq i \leq n-2.\label{eq_cox3}\tag{1.2.4}
 \end{align}
-</div></article><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-97">We will take the procedure you used in <a class="xref" data-knowl="./knowl/act_braidagram1.html" title="Activity 1.2.3">Activity 1.2.3</a> as proof of the assertion that every permutation can be written in terms of adjacent transpositions.</p>
-<p id="p-98">The braid-a-grams shown below suggest the proofs of the three relations.</p>
-<figure class="figure figure-like" id="fig_coxproof"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/gif_coxeter.gif" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.13<span class="period">.</span></span><span class="space"> </span>Braid-a-gram “proofs” of the Coxeter relations.</figcaption></figure></article></div></section></div></main>
+</div></article><article class="hiddenproof" id="proof-1"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-1"><h6 class="heading"><span class="type">Proof<span class="period">.</span></span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-1"><article class="hiddenproof"><p id="p-112">We will take the procedure you used in <a class="xref" data-knowl="./knowl/act_braidagram1.html" title="Activity 1.2.3">Activity 1.2.3</a> as proof of the assertion that every permutation can be written in terms of adjacent transpositions.</p>
+<p id="p-113">The braid-a-grams shown below suggest the proofs of the three relations.</p>
+<figure class="figure figure-like" id="fig_coxproof"><div class="image-box" style="width: 95%; margin-left: 2.5%; margin-right: 2.5%;"><img src="images/gif_coxeter.gif" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.13<span class="period">.</span></span><span class="space"> </span>Braid-a-gram “proofs” of the Coxeter relations.</figcaption></figure></article></div>
+<p id="p-114">Taken in total, the <a class="xref" data-knowl="./knowl/thm_coxeter.html" title="Theorem 1.2.12: Coxeter Presentation">Coxeter Presentation</a> assures us that we can understand the algebraic structure of permutation groups merely by describing the ways that the adjacent transpositions interact. For example, a complete operation table for the permutation group \(S_3\) is shown below.</p>
+<figure class="table table-like" id="table_s3"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.2.14<span class="period">.</span></span><span class="space"> </span>Operation table for the permutation group \(S_3\)</figcaption><table>
+<tr>
+<td class="l m b2 r2 l0 t0 lines">\((S_3,\circ)\)</td>
+<td class="l m b2 r0 l0 t0 lines">\(\epsilon\)</td>
+<td class="l m b2 r0 l0 t0 lines">\(\sigma_1\)</td>
+<td class="l m b2 r0 l0 t0 lines">\(\sigma_2\)</td>
+<td class="l m b2 r0 l0 t0 lines">\(\sigma_1\sigma_2\)</td>
+<td class="l m b2 r0 l0 t0 lines">\(\sigma_2\sigma_1\)</td>
+<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">\(\sigma_1\sigma_2\sigma_1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">\(\epsilon\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\epsilon\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_1\sigma_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_2\sigma_1\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\sigma_1\sigma_2\sigma_1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">\(\sigma_1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\epsilon\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_1\sigma_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_1\sigma_2\sigma_1\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\sigma_2\sigma_1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">\(\sigma_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_2\sigma_1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\epsilon\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_1\sigma_2\sigma_1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_1\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\sigma_1\sigma_2\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">\(\sigma_1\sigma_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_1\sigma_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_1\sigma_2\sigma_1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_2\sigma_1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\epsilon\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\sigma_2\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">\(\sigma_2\sigma_1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_2\sigma_1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_1\sigma_2\sigma_1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\epsilon\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_1\sigma_2\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\sigma_1\)</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">\(\sigma_1\sigma_2\sigma_1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_1\sigma_2\sigma_1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_1\sigma_2\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_2\sigma_1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_1\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\sigma_2\)</td>
+<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\epsilon\)</td>
+</tr>
+</table></figure><article class="activity project-like" id="act_usecox"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.2.9</span><span class="period">.</span>
+</h6>
+<p id="p-115">Use the <a class="xref" data-knowl="./knowl/thm_coxeter.html" title="Theorem 1.2.12: Coxeter Presentation">Coxeter Presentation</a> to explicitly verify each of the entries in the bottom row of <a class="xref" data-knowl="./knowl/table_s3.html" title="Table 1.2.14: Operation table for the permutation group \(S_3\)">Table 1.2.14</a>.</p>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-4" id="hint-4"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-4"><div class="hint solution-like">
+<p id="p-116">For example, how do the three relations <a class="xref" data-knowl="./knowl/eq_cox1.html" title="Equation 1.2.2">(1.2.2)</a>, <a class="xref" data-knowl="./knowl/eq_cox2.html" title="Equation 1.2.3">(1.2.3)</a>, <a class="xref" data-knowl="./knowl/eq_cox3.html" title="Equation 1.2.4">(1.2.4)</a> help us to simplify the product</p>
+<div class="displaymath">
+\begin{equation*}
+(\sigma_1\sigma_2\sigma_1)\, (\sigma_2\sigma_1) = \sigma_2\qquad ?
+\end{equation*}
+</div>
+</div></div>
+</div></article><section class="exercises" id="exs_permutations"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">1.2.1</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-4"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-117">The five-cycle \(\sigma = (12345)\in S_5\) performs the anagram \(TEAMS \mapsto STEAM\text{.}\)</p>
+<ol class="lower-alpha">
+<li id="li-39"><p id="p-118">Sketch a braid-a-gram that shows how to express \((12345)\) as a composition of the adjacent transpositions \((12),(23),(34),\) and/or \((45)\text{.}\)</p></li>
+<li id="li-40"><p id="p-119">Use a braid-a-gram to determine an <em class="emphasis">inverse</em> for \((12345)\text{,}\) both as a composition of adjacent transpositions and as a (single) cycle.</p></li>
+<li id="li-41"><p id="p-120">Explain in a few sentences how your answer to (a) might generalize to cycles of any length, and what it tells us about <a class="xref" data-knowl="./knowl/thm_adjacent.html" title="Theorem 1.2.11">Theorem 1.2.11</a>.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-5"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-121">The <dfn class="terminology">order</dfn> of an element \(\sigma \in S_n\) is the smallest positive integer \(k\) for which</p>
+<div class="displaymath">
+\begin{equation*}
+\sigma^k := \underbrace{\sigma \circ \sigma \circ \cdots \circ \sigma}_k = \epsilon.
+\end{equation*}
+</div>
+<p data-braille="continuation">For example, the transposition \((13)\) has order 2 since \((35)\circ(35) = \epsilon\text{,}\) as the braid-a-gram below shows.</p>
+<figure class="figure figure-like" id="fig_order2"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/gif_order2.gif" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.2.15<span class="period">.</span></span><span class="space"> </span>A braid-a-gram demonstrating that \((13)\) has order 2.</figcaption></figure><ol class="lower-alpha">
+<li id="li-42"><p id="p-122">For the three-cycle \(\sigma = (345)\in S_5\text{,}\) sketch a braid-a-gram showing the effect of the permutations \(\sigma, \sigma^2, \sigma^3,\) and \(\sigma^4\) on the word \(BEAST\text{.}\)</p></li>
+<li id="li-43"><p id="p-123">What is the order of the permutation \(\sigma = (345)\) according to your answer in (a)? Why?</p></li>
+<li id="li-44"><p id="p-124">Following a similar strategy as the above, determine the order of the permutation \(\tau = (13)(245)\) via a braid-a-gram of its powers acting on the word \(LAPSE\text{.}\) (Not all will be English words.)</p></li>
+<li id="li-45"><p id="p-125">Predict the order of the permutation \(\kappa = (148)(273956)\text{,}\) based on your previous answers. Explain.</p></li>
+</ol></article><article class="exercise exercise-like" id="exercise-6"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
+<p id="p-126">Fill in the blank, and provide a proof:</p>
+<div class="displaymath">
+\begin{equation*}
+S_n \text{ is an abelian group if, and only if, }\underline{\hspace{1in}}.
+\end{equation*}
+</div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-5" id="hint-5"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-5"><div class="hint solution-like"><p id="p-127">An operation table would suffice to prove the “is abelian” case. A specific counterexample to the commutative property would suffice to prove that “is not abelian” case.</p></div></div>
+</div></article></section></section></div></main>
 </div>
 </body>
 </html>

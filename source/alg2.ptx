@@ -165,6 +165,67 @@
     </statement>
 </theorem>
 
+<p>Since the adjacent transpositions play such an important role in permutations, we'll use the shorthand <me>\sigma_i = \bigl(i\;i+1\bigr)</me> to denote the transposition that swaps the <m>i</m>-th position with its neighbor to the right.</p>
+
+<activity xml:id="act_cox1">
+	<statement>
+		<p>The <xref ref="eq_identitypermutation" text="custom">identity permutation</xref> performs the rather-uninteresting anagram <m>BEARS \mapsto BEARS</m>.
+			<ol>
+				<li>
+					<p>Sketch a braid-a-gram for this anagram which includes <em>at least one</em> crossing, but <em>as few as possible</em>.</p>
+				</li>
+				<li>
+					<p>Express your answer to part (a) as an equation involving the adjacent transpositions <m>\sigma_1,\sigma_2,\sigma_3,\sigma_4,</m> and/or the trivial permutation <m>\epsilon</m>.</p>
+				</li>
+				<li>
+					<p>Are there other solutions besides the one you found? Describe how your result might be generalized.</p>
+				</li>
+			</ol>
+		</p>
+	</statement>
+</activity>
+
+<activity xml:id="act_cox2">
+	<statement>
+		<p>Let <m>\sigma\in S_4</m> be the permutation that performs the anagram <m>\sigma \colon OGRE \mapsto GOER</m>.
+			<ol>
+				<li>
+					<p>Sketch <em>two different</em> braid-a-grams for <m>\sigma</m>, using as few crossings as possible.</p>
+				</li>
+				<li>
+					<p>Express your answer to part (a) as an equation involving the adjacent transpositions <m>\sigma_1,\sigma_2,\sigma_3,\sigma_4,</m> and/or the trivial permutation <m>\epsilon</m>.</p>
+				</li>
+				<li>
+					<p>Describe how your result might be generalized for anagrams of any number of letters.</p>
+				</li>
+			</ol>
+		</p>
+	</statement>
+	<hint>
+		<p>Recall that in a braid-a-gram, each crossing must be sketched at a <em>different</em> height.</p>
+	</hint>
+</activity>
+<activity xml:id="act_cox3">
+	<statement>
+		<p>Let <m>\sigma\in S_5</m> be the permutation that performs the anagram <m>\sigma \colon TONES \mapsto NOTES</m>.
+			<ol>
+				<li>
+					<p>Sketch <em>two different</em> braid-a-grams for <m>\sigma</m>, using as few crossings as possible.</p>
+				</li>
+				<li>
+					<p>Express your answer to part (a) as an equation involving the adjacent transpositions <m>\sigma_1,\sigma_2,\sigma_3,\sigma_4,</m> and/or the trivial permutation <m>\epsilon</m>.</p>
+				</li>
+				<li>
+					<p>Describe how your result might be generalized for anagrams of any number of letters.</p>
+				</li>
+			</ol>
+		</p>
+	</statement>
+	<hint>
+		<p>Recall that in a braid-a-gram, each crossing must be sketched at a <em>different</em> height.</p>
+	</hint>
+</activity>
+
 <theorem xml:id="thm_coxeter">
     <title>Coxeter Presentation</title>
 
@@ -188,6 +249,214 @@
     </proof>
 </theorem>
 
+<p>Taken in total, the <xref ref="thm_coxeter" text="title"/> assures us that we can understand the algebraic structure of permutation groups merely by describing the ways that the adjacent transpositions interact. For example, a complete operation table for the permutation group <m>S_3</m> is shown below.</p>
+<table xml:id="table_s3"><title>Operation table for the permutation group <m>S_3</m></title>
+  <tabular>
+    <row bottom="medium">
+      <cell right="medium">
+        <m>(S_3,\circ)</m>
+      </cell>
+      <cell>
+        <m>\epsilon</m>
+      </cell>
+      <cell>
+        <m>\sigma_1</m>
+      </cell>
+      <cell>
+        <m>\sigma_2</m>
+      </cell>
+      <cell>
+        <m>\sigma_1\sigma_2</m>
+      </cell>
+      <cell>
+        <m>\sigma_2\sigma_1</m>
+      </cell>
+      <cell>
+        <m>\sigma_1\sigma_2\sigma_1</m>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        <m>\epsilon</m>
+      </cell>
+      <cell>
+        <m>\epsilon</m>
+      </cell>
+      <cell>
+        <m>\sigma_1</m>
+      </cell>
+      <cell>
+        <m>\sigma_2</m>
+      </cell>
+      <cell>
+        <m>\sigma_1\sigma_2</m>
+      </cell>
+      <cell>
+        <m>\sigma_2\sigma_1</m>
+      </cell>
+      <cell>
+        <m>\sigma_1\sigma_2\sigma_1</m>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        <m>\sigma_1</m>
+      </cell>
+      <cell><m>\sigma_1</m>
+      </cell>
+      <cell><m>\epsilon</m>
+      </cell>
+      <cell><m>\sigma_1\sigma_2</m>
+      </cell>
+      <cell><m>\sigma_2</m>
+      </cell>
+      <cell><m>\sigma_1\sigma_2\sigma_1</m>
+      </cell>
+      <cell><m>\sigma_2\sigma_1</m>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        <m>\sigma_2</m>
+      </cell>
+      <cell><m>\sigma_2</m>
+      </cell>
+      <cell><m>\sigma_2\sigma_1</m>
+      </cell>
+      <cell><m>\epsilon</m>
+      </cell>
+      <cell><m>\sigma_1\sigma_2\sigma_1</m>
+      </cell>
+      <cell><m>\sigma_1</m>
+      </cell>
+      <cell><m>\sigma_1\sigma_2</m>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        <m>\sigma_1\sigma_2</m>
+      </cell>
+      <cell><m>\sigma_1\sigma_2</m>
+      </cell>
+      <cell><m>\sigma_1\sigma_2\sigma_1</m>
+      </cell>
+      <cell><m>\sigma_1</m>
+      </cell>
+      <cell><m>\sigma_2\sigma_1</m>
+      </cell>
+      <cell><m>\epsilon</m>
+      </cell>
+      <cell><m>\sigma_2</m>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        <m>\sigma_2\sigma_1</m>
+      </cell>
+      <cell><m>\sigma_2\sigma_1</m>
+      </cell>
+      <cell><m>\sigma_2</m>
+      </cell>
+      <cell><m>\sigma_1\sigma_2\sigma_1</m>
+      </cell>
+      <cell><m>\epsilon</m>
+      </cell>
+      <cell><m>\sigma_1\sigma_2</m>
+      </cell>
+      <cell><m>\sigma_1</m>
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        <m>\sigma_1\sigma_2\sigma_1</m>
+      </cell>
+      <cell><m>\sigma_1\sigma_2\sigma_1</m>
+      </cell>
+      <cell><m>\sigma_1\sigma_2</m>
+      </cell>
+      <cell><m>\sigma_2\sigma_1</m>
+      </cell>
+      <cell><m>\sigma_1</m>
+      </cell>
+      <cell><m>\sigma_2</m>
+      </cell>
+      <cell><m>\epsilon</m>
+      </cell>
+    </row>
+  </tabular>
+</table>
+
+<activity xml:id="act_usecox">
+	<statement>
+		<p>Use the <xref ref="thm_coxeter" text="title"/> to explicitly verify each of the entries in the bottom row of <xref ref="table_s3"/>.</p>
+	</statement>
+	<hint>
+		<p>For example, how do the three relations <xref ref="eq_cox1"/>, <xref ref="eq_cox2"/>, <xref ref="eq_cox3"/> help us to simplify the product <me>(\sigma_1\sigma_2\sigma_1)\, (\sigma_2\sigma_1) = \sigma_2\qquad ?</me></p>
+	</hint>
+</activity>
+
+<exercises xml:id="exs_permutations">
+  <exercise>
+    <statement>
+      <p>
+        The five-cycle <m>\sigma = (12345)\in S_5</m> performs the anagram <m>TEAMS \mapsto STEAM</m>.
+      </p>
+      <ol>
+        <li>
+          <p>Sketch a braid-a-gram that shows how to express <m>(12345)</m> as a composition of the adjacent transpositions <m>(12),(23),(34),</m> and/or <m>(45)</m>.
+          </p>
+        </li>
+        <li>
+          <p>Use a braid-a-gram to determine an <em>inverse</em> for <m>(12345)</m>, both as a composition of adjacent transpositions and as a (single) cycle.
+          </p>
+        </li>
+        <li>
+          <p>Explain in a few sentences how your answer to (a) might generalize to cycles of any length, and what it tells us about <xref ref="thm_adjacent"/>.
+          </p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+
+   <exercise>
+    <statement>
+      <p>The <term>order</term> of an element <m>\sigma \in S_n</m> is the smallest positive integer <m>k</m> for which <me>\sigma^k := \underbrace{\sigma \circ \sigma \circ \cdots \circ \sigma}_k = \epsilon.</me>
+      For example, the transposition <m>(13)</m> has order 2 since <m>(35)\circ(35) = \epsilon</m>, as the braid-a-gram below shows.
+      </p>
+      <figure xml:id="fig_order2">
+        <caption>A braid-a-gram demonstrating that <m>(13)</m> has order 2.</caption>
+        <image source="images/gif_order2.gif" width="50%"/>
+      </figure>
+      <ol>
+        <li>
+          <p>
+            For the three-cycle <m>\sigma = (345)\in S_5</m>, sketch a braid-a-gram showing the effect of the permutations <m>\sigma, \sigma^2, \sigma^3,</m> and <m>\sigma^4</m> on the word <m>BEAST</m>. 
+          </p>
+          </li>
+          <li>
+            <p>What is the order of the permutation <m>\sigma = (345)</m> according to your answer in (a)? Why?</p></li>
+        <li>
+          <p>Following a similar strategy as the above, determine the order of the permutation <m>\tau = (13)(245)</m> via a braid-a-gram of its powers acting on the word <m>LAPSE</m>. (Not all will be English words.)</p></li>
+        <li>
+          <p>Predict the order of the permutation <m>\kappa = (148)(273956)</m>, based on your previous answers. Explain.</p>
+        </li>
+      </ol>
+    </statement>
+  </exercise>
+  
+  <exercise>
+    <statement>
+      <p>Fill in the blank, and provide a proof: <me>S_n \text{ is an abelian group if, and only if, }\underline{\hspace{1in}}.</me>
+      </p>
+    </statement>
+    <hint>
+      <p>An operation table would suffice to prove the <q>is abelian</q> case. A specific counterexample to the commutative property would suffice to prove that <q>is not abelian</q> case.
+      </p>
+    </hint>
+  </exercise>
+ 
+
+</exercises>  
 
 
 </section>

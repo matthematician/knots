@@ -1,0 +1,15 @@
+Representationality: Come up with two braidagrams that represent the same permutation.
+ Use this to *anticipate* the Coxeter presentation:
+   Represent the identity permutation using one crossing (hard)
+   ...the commutation permutation using two crossings, e.g. OGRE - GOER (using that braidagrams can't have same height cross)
+   ...the skein relation swapping two nonadjacent positions, e.g. STALE - SLATE
+   
+Portfolio problems for 1.2
+REQUIRED: 
+
+Braids goals:
+ Compare and contrast w braidagrams by discovering the one minimal change Coxeter -> Artin
+ Use Sage to visualize and simplify braids
+ "Forgetful" homomorphism Bn -> Sn and pure braid group (= kernel of this hom)
+ 
+ 
