@@ -118,7 +118,7 @@
 
 </p>
 <figure xml:id="fig_sober">
-    <image source="http://matthematics.com/redoak/images/sober.jpg" width="30%"/>
+    <image source="images/sober.jpg" width="30%"/>
     <caption>A braid-a-gram for <m>\sigma \colon SOBER \mapsto ROBES</m>.</caption>
 </figure>
 
