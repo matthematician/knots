@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-12T00:22:36-04:00       *-->
+<!--*       on 2021-07-14T16:31:20-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -145,7 +145,99 @@ b.plot( orientation='top-bottom', thickness=2 )
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span>
 </h6>
 <p id="p-135">Use the \(ATOM\mapsto MOAT\) diagram in <a class="xref" data-knowl="./knowl/fig_yoyo.html" title="Figure 2.1.3">Figure 2.1.3</a> to express the positive braid shown using the generators \(s_1,s_2,\) and/or \(s_3\text{.}\)</p>
-<p id="p-136">Then, adapt the Sage code in the above cell to generate a visualization of this positive braid.</p></article></section></div></main>
+<p id="p-136">Then, adapt the Sage code in the above cell to generate a visualization of this positive braid.</p></article><p id="p-137">Since we used braid-a-grams to understand permutations as algebraic objects, can we use diagrams of positive braids as a way to understand their algebra as well?</p>
+<p id="p-138"><article class="definition definition-like" id="def_braidops"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span>
+</h6>
+<p id="p-139">If \(b_1,b_2\) are two braids on \(n\) strands, we construct the <dfn class="terminology">composition</dfn> \(b_1b_2\) by placing \(b_2\) directly beneath, and as a continuation of, \(b_1\) in the braid diagram.</p>
+<p id="p-140">The <dfn class="terminology">trivial braid</dfn> \(e\) consists of a braid diagram with no crossings.</p>
+<figure class="figure figure-like" id="fig_braidops"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/gif_braidops.gif" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.6<span class="period">.</span></span><span class="space"> </span>Composition of braids \(b_1,b_2\text{,}\) and identity braid \(e\text{.}\)</figcaption></figure></article></p>
+<article class="activity project-like" id="act_braid2"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
+</h6>
+<p id="p-141">Return to your work in <a class="xref" data-knowl="./knowl/act_cox1.html" title="Activity 1.2.6">Activity 1.2.6</a>, <a class="xref" data-knowl="./knowl/act_cox2.html" title="Activity 1.2.7">Activity 1.2.7</a>, and <a class="xref" data-knowl="./knowl/act_cox3.html" title="Activity 1.2.8">Activity 1.2.8</a>.</p>
+<p id="p-142">Transform each of the braid-a-grams you sketched in these activities into a <em class="emphasis">positive braid</em> diagram instead.</p>
+<p id="p-143">Which of the equations you found involving \(\sigma_1,\ldots,\sigma_4,\epsilon\) for the generators of the permutation group <em class="emphasis">remain true</em> equations involving \(s_1,\ldots,s_4,e\) for braids? For those that do not, why not?</p></article><article class="activity project-like" id="act_braidnoinv"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
+</h6>
+<p id="p-144">Describe how you might be able to use the set \(\mathcal{P}_2\) of positive braids on <em class="emphasis">two</em> strands, and the composition operation \((b_1,b_2)\stackrel\cdot\mapsto b_1b_2\text{,}\) to teach 1st-grade students how to add natural numbers.</p>
+<p id="p-145">Using this analogy, how many positive braids are there in \(\mathcal{P}_2\text{?}\) How is your answer similar to / different from the permutation group on two symbols \(S_2\text{?}\)</p></article><article class="activity project-like" id="act_braidstructure"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
+</h6>
+<p id="p-146">What kind of <a class="xref" data-knowl="./knowl/def_namedmagmas.html" title="Definition 1.1.10">algebraic structure</a> is \((\mathcal{P}_2,\cdot)\text{,}\) either according to your answers to <a class="xref" data-knowl="./knowl/act_braid2.html" title="Activity 2.1.2">Activity 2.1.2</a> or to the analogy you made above? Why?</p>
+<ol class="decimal">
+<li id="li-47"><p id="p-147">A quasi-group.</p></li>
+<li id="li-48"><p id="p-148">A monoid.</p></li>
+<li id="li-49"><p id="p-149">A group.</p></li>
+<li id="li-50"><p id="p-150">An abelian group.</p></li>
+</ol></article><p id="p-151">While <a class="xref" data-knowl="./knowl/act_braid2.html" title="Activity 2.1.2">Activity 2.1.2</a> highlights just how small a change is necessary to transform the algebraic structure of permutations (braid-a-grams) into positive braids, <a class="xref" data-knowl="./knowl/act_braidnoinv.html" title="Activity 2.1.3">Activity 2.1.3</a> and <a class="xref" data-knowl="./knowl/act_braidstructure.html" title="Activity 2.1.4">Activity 2.1.4</a> point out that this small change has far-reaching consequences. Clearly braids are significantly different animals than permutations, so let's explore how to work in those differences.</p>
+<p id="p-152">First, to put braids and permutations on an even footing, algebraic-structure-wise, we'll need to remedy the deficiency you discovered in <a class="xref" data-knowl="./knowl/act_braid2.html" title="Activity 2.1.2">Activity 2.1.2</a> so we can promote braids to the structure of a <em class="emphasis">group</em>.</p>
+<article class="definition definition-like" id="def_braidgroup"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span>
+</h6>
+<p id="p-153">For \(n\geq 2\text{,}\) the (Artin) <dfn class="terminology">braid group</dfn> on \(n\) strands is the set of compositions of the generators</p>
+<div class="displaymath">
+\begin{equation*}
+s_1,s_2,\ldots,s_{n-1}
+\end{equation*}
+</div>
+<p data-braille="continuation">and their inverses</p>
+<div class="displaymath">
+\begin{equation*}
+s_1^{-1}, s_2^{-1}, \ldots, s_{n-1}^{-1}
+\end{equation*}
+</div>
+<p data-braille="continuation">which are simplified by the <dfn class="terminology">braid relations</dfn>:</p>
+<div class="displaymath">
+\begin{align}
+s_is_j \amp= s_js_i \amp\amp\text{whenever }|i-j|\geq 2\label{eq_braidcommute}\tag{2.1.1}\\
+s_is_{i+1}s_i \amp= s_{i+1}s_is_{i+1} \amp\amp\text{for all }1 \leq i \leq n-2.\label{eq_skeinrelation}\tag{2.1.2}
+\end{align}
+</div>
+<p data-braille="continuation">We denote the braid group on \(n\) strands by \(B_n\text{.}\)</p></article><p id="p-154">As you might expect, the inverse generators represent <a class="xref" data-knowl="./knowl/fig_braidcrossings.html" title="Figure 2.1.2">negative crossings</a> in a braid.</p>
+<article class="activity project-like" id="act_braidalg1"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span>
+</h6>
+<p id="p-155">The <em class="emphasis">Sage</em> cell below instantiates the positive braids in \(B_4\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+u = s_2s_1s_3s_2 \quad  v = s_1s_3 \quad w = s_1^{-1}s_3^{-1}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Use it to do the following.</p>
+<ol class="decimal">
+<li id="li-51"><p id="p-156">Generate a diagram of the braid \(vw = s_1s_3s_1^{-1}s_3^{-1}\text{.}\)</p></li>
+<li id="li-52"><p id="p-157">Ask Sage to test whether \(vw = e\) using the command<pre class="code-block tex2jax_ignore">v*w == e
+</pre>(note the double-equal sign.</p></li>
+<li id="li-53"><p id="p-158">How do you reconcile the answers to parts (a) and (b)?</p></li>
+<li id="li-54"><p id="p-159">Determine an inverse for the braid \(u\text{,}\) and compare your result to your answers above.</p></li>
+</ol>
+<div class="sagecell-sage" id="sage-2"><script type="text/x-sage">B.<s1,s2,s3> = BraidGroup(4);
+u = s2*s1*s3*s2; v = s1*s3; w = s1^(-1)*s3^(-1); e = B([]);
+z = v*w;
+z.plot( orientation='top-bottom', thickness=2 )
+</script></div></article><p id="p-160">So now, we can simplify a braid using algebra (i.e., the simplification rules <a class="xref" data-knowl="./knowl/eq_braidcommute.html" title="Equation 2.1.1">(2.1.1)</a> and <a class="xref" data-knowl="./knowl/eq_skeinrelation.html" title="Equation 2.1.2">(2.1.2)</a>). What's more, this simplification also has a meaning in geometric space that we'll make precise here.</p>
+<article class="definition definition-like" id="def_isotopy"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.8</span><span class="period">.</span>
+</h6>
+<p id="p-161">Let \(b_1,b_2\) be two braids on \(n\) strands. We say that \(b_1\) and \(b_2\) are <dfn class="terminology">isotopic</dfn>, and write \(b_1 \simeq b_2\text{,}\) if one of them can be smoothly deformed into the other without detaching or breaking any strands.</p></article><p id="p-162">Two braids are isotopic, in other words, if we could rearrange a physical model of one of them to produce the other, without cutting or detaching any strands in the process. This should feel “right” to our mathematical sensibilities, since if we are to study braids we should try to see past <em class="emphasis">superficial</em> differences (such as how we push the strands around in physical space) and see the <em class="emphasis">intrinsic</em> structure (i.e., how the strands are “really” tangled up with one another).</p>
+<article class="activity project-like" id="act_isotopy"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span>
+</h6>
+<p id="p-163">With a set of four long strings, form the trivial braid \(e\in B_4\text{.}\) Let's find three different ways of performing an isotopy on your braid that change the number of crossings in your diagram.</p>
+<ol class="decimal">
+<li id="li-55"><p id="p-164">Find (with your fingers!) an isotopy of your braid that <em class="emphasis">adds exactly two crossings</em> to your diagram. Then, write an equation using the generators \(s_1,s_2,s_3,\) and/or the trivial braid \(e\) to describe what you just accomplished.</p></li>
+<li id="li-56"><p id="p-165">Find an isotopy of your braid that <em class="emphasis">adds exactly one crossing</em> to your diagram. (This may be trickier than the previous question.) Why is it impossible to express this finding using algebra?</p></li>
+<li id="li-57">
+<p id="p-166">Before continuing, form the braid \(b = s_1s_2s_1^{-1}\) with your strands. (Use the <em class="emphasis">Sage</em> plot below to ensure you have it correct.)</p>
+<p id="p-167">Then, find an isotopy of \(b\) that transforms it into \(c = s_2^{-1}s_1s_2\text{.}\) Describe what you've done to perform this isotopy.</p>
+</li>
+</ol>
+<div class="sagecell-sage" id="sage-3"><script type="text/x-sage">B.<s1,s2,s3> = BraidGroup(4);
+b = s1*s2*s1^(-1); c = s2^(-1)*s1*s2;
+b.plot( orientation='top-bottom', thickness=4 )
+</script></div></article></section></div></main>
 </div>
 </body>
 </html>

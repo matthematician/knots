@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-07-14T16:31:21-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span>
+</h6>
+<p>The <em xmlns:svg="http://www.w3.org/2000/svg" class="emphasis">Sage</em> cell below instantiates the positive braids in \(B_4\text{,}\)</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+u = s_2s_1s_3s_2 \quad  v = s_1s_3 \quad w = s_1^{-1}s_3^{-1}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Use it to do the following.</p>
+<ol class="decimal">
+<li><p xmlns:svg="http://www.w3.org/2000/svg">Generate a diagram of the braid \(vw = s_1s_3s_1^{-1}s_3^{-1}\text{.}\)</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">Ask Sage to test whether \(vw = e\) using the command<pre class="code-block tex2jax_ignore">v*w == e
+</pre>(note the double-equal sign.</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">How do you reconcile the answers to parts (a) and (b)?</p></li>
+<li><p xmlns:svg="http://www.w3.org/2000/svg">Determine an inverse for the braid \(u\text{,}\) and compare your result to your answers above.</p></li>
+</ol>
+<div class="sagecell-sage" id="sage-2"><script type="text/x-sage">B.<s1,s2,s3> = BraidGroup(4);
+u = s2*s1*s3*s2; v = s1*s3; w = s1^(-1)*s3^(-1); e = B([]);
+z = v*w;
+z.plot( orientation='top-bottom', thickness=2 )
+</script></div></article><span class="incontext"><a href="braids.html#act_braidalg1">in-context</a></span>
+</body>
+</html>

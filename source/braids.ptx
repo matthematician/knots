@@ -57,6 +57,130 @@ b.plot( orientation='top-bottom', thickness=2 )
 		</p>
 	</statement>
 </activity>
+<p>Since we used braid-a-grams to understand permutations as algebraic objects, can we use diagrams of positive braids as a way to understand their algebra as well?</p>
+<p>
+	<definition xml:id="def_braidops">
+		<statement>
+			<p>If <m>b_1,b_2</m> are two braids on <m>n</m> strands, we construct the <term>composition</term> <m>b_1b_2</m> by placing <m>b_2</m> directly beneath, and as a continuation of, <m>b_1</m> in the braid diagram.</p>
+			<p>The <term>trivial braid</term> <m>e</m> consists of a braid diagram with no crossings.</p>
+			<figure xml:id="fig_braidops">
+				<caption>Composition of braids <m>b_1,b_2</m>, and identity braid <m>e</m>.</caption>
+				<image source="images/gif_braidops.gif" width="75%"/>
+			</figure>
+		</statement>
+	</definition>
+</p>
+<activity xml:id="act_braid2">
+	<statement>
+		<p>Return to your work in <xref ref="act_cox1"/>, <xref ref="act_cox2"/>, and <xref ref="act_cox3"/>. </p>
+		<p>Transform each of the braid-a-grams you sketched in these activities into a <em>positive braid</em> diagram instead.</p>
+		<p>Which of the equations you found involving <m>\sigma_1,\ldots,\sigma_4,\epsilon</m> for the generators of the permutation group <em>remain true</em> equations involving <m>s_1,\ldots,s_4,e</m> for braids? For those that do not, why not?</p>
+	</statement>
+</activity>
+
+<activity xml:id="act_braidnoinv">
+	<statement>
+		<p>Describe how you might be able to use the set <m>\mathcal{P}_2</m> of positive braids on <em>two</em> strands, and the composition operation <m>(b_1,b_2)\stackrel\cdot\mapsto b_1b_2</m>, to teach 1st-grade students how to add natural numbers.
+		</p>
+		<p>Using this analogy, how many positive braids are there in <m>\mathcal{P}_2</m>? How is your answer similar to / different from the permutation group on two symbols <m>S_2</m>?</p>
+	</statement>
+</activity>
+
+<activity xml:id="act_braidstructure">
+	<statement>
+		<p>
+			What kind of <xref ref="def_namedmagmas" text="custom">algebraic structure</xref> is <m>(\mathcal{P}_2,\cdot)</m>, either according to your answers to <xref ref="act_braid2"/> or to the analogy you made above? Why?
+			<ol>
+				<li><p>A quasi-group.</p></li>
+				<li><p>A monoid.</p></li>
+				<li><p>A group.</p></li>
+				<li><p>An abelian group.</p></li>
+			</ol>
+		</p>
+	</statement>
+</activity>
+
+<p>While <xref ref="act_braid2"/> highlights just how small a change is necessary to transform the algebraic structure of permutations (braid-a-grams) into positive braids, <xref ref="act_braidnoinv"/> and <xref ref="act_braidstructure"/> point out that this small change has far-reaching consequences. Clearly braids are significantly different animals than permutations, so let's explore how to work in those differences.</p>
+
+<p>First, to put braids and permutations on an even footing, algebraic-structure-wise, we'll need to remedy the deficiency you discovered in <xref ref="act_braid2"/> so we can promote braids to the structure of a <em>group</em>.</p>
+
+<definition xml:id="def_braidgroup">
+	<statement>
+		<p>
+			For <m>n\geq 2</m>, the (Artin) <term>braid group</term> on <m>n</m> strands is the set of compositions of the generators <me>s_1,s_2,\ldots,s_{n-1}</me>
+			and their inverses <me>s_1^{-1}, s_2^{-1}, \ldots, s_{n-1}^{-1}</me>
+			which are simplified by the <term>braid relations</term>:
+			<mdn>
+				<mrow xml:id="eq_braidcommute">s_is_j \amp= s_js_i \amp\amp\text{whenever }|i-j|\geq 2</mrow>
+				<mrow xml:id="eq_skeinrelation">s_is_{i+1}s_i \amp= s_{i+1}s_is_{i+1} \amp\amp\text{for all }1 \leq i \leq n-2.</mrow>
+			</mdn>
+			We denote the braid group on <m>n</m> strands by <m>B_n</m>.
+		</p>
+	</statement>
+</definition>
+
+<p>As you might expect, the inverse generators represent <xref ref="fig_braidcrossings" text="custom">negative crossings</xref> in a braid.</p>
+
+ <activity xml:id="act_braidalg1">
+	<statement>
+		<p>The <em>Sage</em> cell below instantiates the positive braids in <m>B_4</m>, <me>u = s_2s_1s_3s_2 \quad  v = s_1s_3 \quad w = s_1^{-1}s_3^{-1}.</me>
+		Use it to do the following.
+		</p>
+		<ol>
+			<li><p>Generate a diagram of the braid <m>vw = s_1s_3s_1^{-1}s_3^{-1}</m>.</p></li>
+			<li><p>Ask Sage to test whether <m>vw = e</m> using the command <pre>v*w == e</pre> (note the double-equal sign.</p></li>
+			<li><p>How do you reconcile the answers to parts (a) and (b)?</p></li>
+			<li><p>Determine an inverse for the braid <m>u</m>, and compare your result to your answers above.</p></li>
+		</ol>
+		<sage>
+		<input>
+B.&lt;s1,s2,s3&gt; = BraidGroup(4);
+u = s2*s1*s3*s2; v = s1*s3; w = s1^(-1)*s3^(-1); e = B([]);
+z = v*w;
+z.plot( orientation='top-bottom', thickness=2 )
+</input>
+		</sage>
+	</statement>
+</activity>
+
+<p>So now, we can simplify a braid using algebra (i.e., the simplification rules <xref ref="eq_braidcommute"/> and <xref ref="eq_skeinrelation"/>). What's more, this simplification also has a meaning in geometric space that we'll make precise here.</p>
+
+<definition xml:id="def_isotopy">
+	<statement>
+		<p>Let <m>b_1,b_2</m> be two braids on <m>n</m> strands. We say that <m>b_1</m> and <m>b_2</m> are <term>isotopic</term>, and write <m>b_1 \simeq b_2</m>, if one of them can be smoothly deformed into the other without detaching or breaking any strands.
+		</p>
+	</statement>
+</definition>
+
+<p>Two braids are isotopic, in other words, if we could rearrange a physical model of one of them to produce the other, without cutting or detaching any strands in the process. This should feel <q>right</q> to our mathematical sensibilities, since if we are to study braids we should try to see past <em>superficial</em> differences (such as how we push the strands around in physical space) and see the <em>intrinsic</em> structure (i.e., how the strands are <q>really</q> tangled up with one another).</p>
+
+
+<activity xml:id="act_isotopy">
+	<statement>
+		<p>With a set of four long strings, form the trivial braid <m>e\in B_4</m>. Let's find three different ways of performing an isotopy on your braid that change the number of crossings in your diagram.</p>
+		<ol>
+			<li>
+			<p>Find (with your fingers!) an isotopy of your braid that <em>adds exactly two crossings</em> to your diagram. Then, write an equation using the generators <m>s_1,s_2,s_3,</m> and/or the trivial braid <m>e</m> to describe what you just accomplished.</p></li>
+			<li>
+			<p>Find an isotopy of your braid that <em>adds exactly one crossing</em> to your diagram. (This may be trickier than the previous question.) Why is it impossible to express this finding using algebra?</p></li>
+			<li>
+				<p>
+					Before continuing, form the braid <m>b = s_1s_2s_1^{-1}</m> with your strands. (Use the <em>Sage</em> plot below to ensure you have it correct.) 
+				</p>
+				<p>
+					Then, find an isotopy of <m>b</m> that transforms it into <m>c = s_2^{-1}s_1s_2</m>. Describe what you've done to perform this isotopy.
+				</p>
+			</li>
+		</ol>
+		<sage>
+		<input>
+B.&lt;s1,s2,s3&gt; = BraidGroup(4);
+b = s1*s2*s1^(-1); c = s2^(-1)*s1*s2;
+b.plot( orientation='top-bottom', thickness=4 )
+</input>
+		</sage>
+	</statement>
+</activity> 
 
 <!-- Goals here: (1) Contrast to Coxeter, (2) Use Sage to perform braid computations, (3) Pure braid stuff as ker of hom Bn -> Sn -->
 
