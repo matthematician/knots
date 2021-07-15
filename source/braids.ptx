@@ -165,17 +165,17 @@ z.plot( orientation='top-bottom', thickness=2 )
 			<p>Find an isotopy of your braid that <em>adds exactly one crossing</em> to your diagram. (This may be trickier than the previous question.) Why is it impossible to express this finding using algebra?</p></li>
 			<li>
 				<p>
-					Before continuing, form the braid <m>b = s_1s_2s_1^{-1}</m> with your strands. (Use the <em>Sage</em> plot below to ensure you have it correct.) 
+					Before continuing, form the braid <m>b = s_1s_2s_1</m> with your strands. (Use the <em>Sage</em> plot below to ensure you have it correct.) 
 				</p>
 				<p>
-					Then, find an isotopy of <m>b</m> that transforms it into <m>c = s_2^{-1}s_1s_2</m>. Describe what you've done to perform this isotopy.
+					Then, find an isotopy of <m>b</m> that transforms it into <m>c = s_2s_1s_2</m>. Describe what you've done to perform this isotopy.
 				</p>
 			</li>
 		</ol>
 		<sage>
 		<input>
 B.&lt;s1,s2,s3&gt; = BraidGroup(4);
-b = s1*s2*s1^(-1); c = s2^(-1)*s1*s2;
+b = s1*s2*s1; c = s2*s1*s2;
 b.plot( orientation='top-bottom', thickness=4 )
 </input>
 		</sage>

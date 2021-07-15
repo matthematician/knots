@@ -2,7 +2,7 @@
 <html lang="en-US">
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-14T16:58:31-04:00       *-->
+<!--*       on 2021-07-15T09:32:28-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -31,12 +31,12 @@
 <li><p xmlns:svg="http://www.w3.org/2000/svg">Find (with your fingers!) an isotopy of your braid that <em class="emphasis">adds exactly two crossings</em> to your diagram. Then, write an equation using the generators \(s_1,s_2,s_3,\) and/or the trivial braid \(e\) to describe what you just accomplished.</p></li>
 <li><p xmlns:svg="http://www.w3.org/2000/svg">Find an isotopy of your braid that <em class="emphasis">adds exactly one crossing</em> to your diagram. (This may be trickier than the previous question.) Why is it impossible to express this finding using algebra?</p></li>
 <li>
-<p xmlns:svg="http://www.w3.org/2000/svg">Before continuing, form the braid \(b = s_1s_2s_1^{-1}\) with your strands. (Use the <em class="emphasis">Sage</em> plot below to ensure you have it correct.)</p>
-<p xmlns:svg="http://www.w3.org/2000/svg">Then, find an isotopy of \(b\) that transforms it into \(c = s_2^{-1}s_1s_2\text{.}\) Describe what you've done to perform this isotopy.</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Before continuing, form the braid \(b = s_1s_2s_1\) with your strands. (Use the <em class="emphasis">Sage</em> plot below to ensure you have it correct.)</p>
+<p xmlns:svg="http://www.w3.org/2000/svg">Then, find an isotopy of \(b\) that transforms it into \(c = s_2s_1s_2\text{.}\) Describe what you've done to perform this isotopy.</p>
 </li>
 </ol>
 <div class="sagecell-sage" id="sage-3"><script type="text/x-sage">B.<s1,s2,s3> = BraidGroup(4);
-b = s1*s2*s1^(-1); c = s2^(-1)*s1*s2;
+b = s1*s2*s1; c = s2*s1*s2;
 b.plot( orientation='top-bottom', thickness=4 )
 </script></div></article><span class="incontext"><a href="braids.html#act_isotopy">in-context</a></span>
 </body>

@@ -421,7 +421,7 @@
    <exercise>
     <statement>
       <p>The <term>order</term> of an element <m>\sigma \in S_n</m> is the smallest positive integer <m>k</m> for which <me>\sigma^k := \underbrace{\sigma \circ \sigma \circ \cdots \circ \sigma}_k = \epsilon.</me>
-      For example, the transposition <m>(13)</m> has order 2 since <m>(35)\circ(35) = \epsilon</m>, as the braid-a-gram below shows.
+      For example, the transposition <m>(13)</m> has order 2 since <m>(13)\circ(13) = \epsilon</m>, as the braid-a-gram below shows.
       </p>
       <figure xml:id="fig_order2">
         <caption>A braid-a-gram demonstrating that <m>(13)</m> has order 2.</caption>
