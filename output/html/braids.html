@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-15T09:32:27-04:00       *-->
+<!--*       on 2021-07-16T10:23:01-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -231,13 +231,159 @@ z.plot( orientation='top-bottom', thickness=2 )
 <li id="li-56"><p id="p-165">Find an isotopy of your braid that <em class="emphasis">adds exactly one crossing</em> to your diagram. (This may be trickier than the previous question.) Why is it impossible to express this finding using algebra?</p></li>
 <li id="li-57">
 <p id="p-166">Before continuing, form the braid \(b = s_1s_2s_1\) with your strands. (Use the <em class="emphasis">Sage</em> plot below to ensure you have it correct.)</p>
-<p id="p-167">Then, find an isotopy of \(b\) that transforms it into \(c = s_2s_1s_2\text{.}\) Describe what you've done to perform this isotopy.</p>
+<p id="p-167">Then, find an isotopy of \(b\) that transforms it into \(c = s_2s_1s_2\text{.}\) Describe what you've done to perform this isotopy. How has the number of crossings changed?</p>
 </li>
 </ol>
 <div class="sagecell-sage" id="sage-3"><script type="text/x-sage">B.<s1,s2,s3> = BraidGroup(4);
 b = s1*s2*s1; c = s2*s1*s2;
 b.plot( orientation='top-bottom', thickness=4 )
-</script></div></article></section></div></main>
+</script></div></article><p id="p-168">We conclude by making more precise the idea of comparing braids to permutations, as follows.</p>
+<article class="definition definition-like" id="def_homomorphism"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.9</span><span class="period">.</span>
+</h6>
+<p id="p-169">Let \((G,\circ)\) and \((H,*)\) be two groups, and let \(f\colon G \to H\) be a function.</p>
+<p id="p-170">We call \(f\) a (group) <dfn class="terminology">homomorphism</dfn> if, for all elements \(x,y\in G\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+f\bigl( x\circ y \bigr) = f(x) * f(y) . 
+\end{equation*}
+</div></article><p id="p-171">One way of thinking of a group homomorphism is that it gives us a choice: given two elements in \(G\text{,}\) I can either perform the operation of \(G\) on them first, before applying the function, i.e., calculate \(f(\, x\circ y \,)\text{,}\) or I can apply the function to each element first and then perform the operation of \(H\) on the result, i.e., \(f(x) * f(y)\text{.}\) The two results always agree.</p>
+<figure class="figure figure-like" id="fig_homomorphism"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/gif_homomorphism.gif" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.10<span class="period">.</span></span><span class="space"> </span>A homomorphism means we can interchange the order of function application with group operation. This kind of figure is called a <em class="emphasis">commutative diagram</em>.</figcaption></figure><article class="example example-like" id="ex_homomorphism"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_homomorphism"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Some examples of group homomorphisms.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_homomorphism"><article class="example example-like"><p id="p-172">For the (abelian) group of integers under addition, \((\mathbb{Z},+)\) the function \(f\colon \mathbb{Z} \to \mathbb{Z}\) defined by \(f(x) = 5x\) is a homomorphism. This is because, for all integers \(x,y\text{,}\) we have</p>
+<div class="displaymath">
+\begin{align*}
+f(x+y) \amp= 5(x+y)\\
+\amp=5x + 5y\\
+\amp=f(x) + f(y).
+\end{align*}
+</div>
+<p id="p-173">If \(G = (\mathbb{Z},+)\) is the group of integers with the operation of addition and \(H = (\mathbb{Q}^+,\cdot)\) is the group of positive rational numbers with the operation of multiplication, then</p>
+<div class="displaymath">
+\begin{equation*}
+f\colon \mathbb{Z} \to \mathbb{Q}^+, \text{ defined } f(n) = 2^n,
+\end{equation*}
+</div>
+<p data-braille="continuation">is a group homomorphism. To see why, observe where the operations in each group show up in the following verification:</p>
+<div class="displaymath">
+\begin{align*}
+f\bigl( x + y \bigr) \amp= 2^{x+y} \amp\amp \text{definition of }f\\
+\amp= 2^x2^y \amp\amp \text{properties of exponents}\\
+\amp= 2^x\cdot 2^y \amp\amp\text{multiplication is our operation in }\mathbb{Q}^+\\
+\amp= f(x) \cdot f(y).
+\end{align*}
+</div>
+<p id="p-174">For the permutation group on \(n\) symbols \(G = (S_n,\circ)\) we can define a homomorphism \(f \colon G \to G\) by \(f(\sigma) = (12)\circ \sigma \circ (12)\text{.}\) For example, we can check -- using braid-a-grams, for example -- that \(f\bigl( (235) \bigr) = (12)\circ (235) \circ (12) = (135)\text{.}\) This is a homomorphism since, for any two permutations \(\sigma,\tau\in S_n\text{,}\) we have</p>
+<div class="displaymath">
+\begin{align*}
+f(\sigma) \circ f(\tau) \amp= (12)\circ \sigma\circ \overbrace{(12)\, \circ \, (12)}^\epsilon \circ \tau \circ (12) \\
+\amp= (12)\circ \sigma \circ \epsilon \circ \tau \circ (12)\\
+\amp= (12) \circ \sigma\circ\tau \circ (12)\\
+\amp= f\bigl( \sigma\circ \tau \bigr).
+\end{align*}
+</div></article></div>
+<p id="p-175">Morally speaking, a homomorphism is a way of comparing two groups. When a homomorphism from \(G\) to \(H\) exists, we might say “some of the algebraic structure in \(H\) resembles the algebraic structure of \(G\text{.}\)” Just how much of the structure in \(H\) resembles \(G\) depends on the <em class="emphasis">range</em> of the function, as well as its ability to tell different elements of its domain apart.</p>
+<article class="definition definition-like" id="def_homomorphismtypes"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.12</span><span class="period">.</span>
+</h6>
+<p id="p-176">Let \(G,H\) be two groups and \(f \colon G \to H\) be a homomorphism.</p>
+<p id="p-177">We say that \(f\) is a <em class="emphasis">trivial homomorphism</em> if, for all \(x\in G\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+f(x) = e, \text{ where }e\text{ is the identity of }H.
+\end{equation*}
+</div>
+<p id="p-178">We say that \(f\) is <dfn class="terminology">one-to-one</dfn> if, for all \(x,y\in G\text{,}\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\text{If }x\neq y\text{ then } f(x)\neq f(y).
+\end{equation*}
+</div>
+<p id="p-179">We say that \(f\) is <dfn class="terminology">onto</dfn> if, for all \(h \in H\text{,}\)</p>
+<div class="displaymath">
+\begin{equation*}
+\text{there exists }g \in G\text{ such that }h = f(g).
+\end{equation*}
+</div>
+<p id="p-180">If \(f \colon G \to H\) is <em class="emphasis">both</em> one-to-one and onto, we say \(f\) is an <dfn class="terminology">isomorphism</dfn>.</p></article><p id="p-181">When \(f \colon G \to H\) is an isomorphism, we can say that the algebraic structure of \(H\) <em class="emphasis">completely</em> mirrors the algebraic structure of \(G\text{:}\)</p>
+<ol class="decimal">
+<li id="li-58"><p id="p-182">Because \(f\) is one-to-one, each pair of different elements in \(G\) corresponds to a pair of different elements in \(H\text{.}\) (The function \(f\) does not “erase” any differences between elements.)</p></li>
+<li id="li-59"><p id="p-183">Because \(f\) is onto, every element in \(H\) is associated with some element of \(G\text{.}\) (The group \(H\) is not “larger” than \(G\text{.}\))</p></li>
+</ol>
+<p id="p-184">Can we use a homomorphism to compare the structure of braid groups to permutation groups? If we do, what properties can we expect that homomorphism to have?</p>
+<article class="definition definition-like" id="def_bnsn"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.13</span><span class="period">.</span>
+</h6>
+<p id="p-185">Let \(b \in B_n\) be a braid on \(n\) strands. We say that the <dfn class="terminology">permutation induced by</dfn> \(b\) is the permutation \(F(b) \in S_n\) describing how the top endpoints in the braid \(b\) are permuted into the bottom endpoints.</p></article><p id="p-186">This definition formalizes our relationship between braids and braid-a-grams discussed earlier in this section. For example, consider the braid \(b = s_2s_1s_3^2s_1 \in B_4\text{.}\) As shown below, the permutation induced by this braid is \(F(b) = (23) \in S_4\text{.}\)</p>
+<figure class="figure figure-like" id="fig_forget"><div class="image-box" style="width: 55%; margin-left: 22.5%; margin-right: 22.5%;"><img src="images/gif_forget.gif" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.14<span class="period">.</span></span><span class="space"> </span>The permutation induced by a braid describes how the top endpoints are permuted by the braid into the bottom endpoints.</figcaption></figure><article class="activity project-like" id="act_forgetprops"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span>
+</h6>
+<ol class="decimal">
+<li id="li-60"><p id="p-187">Sketch two braids \(b_1,b_2 \in B_4\) of your choosing. Use a diagram to explain why \(F(b_1b_2) = F(b_1) \circ F(b_2)\text{.}\)</p></li>
+<li id="li-61"><p id="p-188">For the anagram \(\sigma \colon SHALE \mapsto LEASH\) as a permutation in \(S_5\text{,}\) use a braid-a-gram to determine a braid \(b \in B_5\) for which \(F(b) = \sigma\text{.}\) Which property in <a class="xref" data-knowl="./knowl/def_homomorphismtypes.html" title="Definition 2.1.12">Definition 2.1.12</a> does your reasoning seem to verify or disprove?</p></li>
+<li id="li-62"><p id="p-189">Sketch two <em class="emphasis">different</em> braids \(b_1,b_2 \in B_3\) for which \(F(b_1) = \epsilon \in S_3\) and \(F(b_2) = \epsilon \in S_3\text{.}\) Which property in <a class="xref" data-knowl="./knowl/def_homomorphismtypes.html" title="Definition 2.1.12">Definition 2.1.12</a> does your reasoning seem to verify or disprove?</p></li>
+</ol></article><article class="definition definition-like" id="def_purebraid"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.15</span><span class="period">.</span>
+</h6>
+<p id="p-190">A braid \(b \in B_n\) is called a <dfn class="terminology">pure braid</dfn> if its induced permutation \(F(b) = \epsilon \in S_n\) is the trivial permutation.</p></article><p id="p-191">In other words, a pure braid is one in which each top endpoint ultimately returns to its original position at the bottom endpoint.</p>
+<article class="activity project-like" id="act_purebraid"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.8</span><span class="period">.</span>
+</h6>
+<p id="p-192">Verify that both of the following braids in \(B_3\) are pure braids:</p>
+<div class="displaymath">
+\begin{equation*}
+b = s_1^2s_2s_1^2s_2 \text{ and } c = s_1^{-1}s_2^2s_1.
+\end{equation*}
+</div>
+<p data-braille="continuation">It may help to visualize using either physical strings or the <em class="emphasis">Sage</em> cell below.</p>
+<div class="sagecell-sage" id="sage-4"><script type="text/x-sage">B.<s1,s2> = BraidGroup(3);
+b = s1^2*s2*s1^2*s2;  c =s1^(-1)*s2^2*s1 ;
+b.plot( orientation='top-bottom', thickness=4 )
+</script></div></article><article class="activity project-like" id="act_purehom"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.9</span><span class="period">.</span>
+</h6>
+<p id="p-193">Sketch a diagram and explain why, if \(b,c\in B_4\) are both <em class="emphasis">pure</em> braids, then \(bc\) is also a <em class="emphasis">pure</em> braid.</p></article><section class="exercises" id="ex_braids"><h3 class="heading hide-type">
+<span class="type">Exercises</span> <span class="codenumber">2.1.1</span> <span class="title">Exercises</span>
+</h3>
+<article class="exercise exercise-like" id="exercise-7"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
+<p id="p-194">Use the braid generators \(s_1,s_2\) to write notation for the traditional <a class="external" href="https://www.everydayhairinspiration.com/2019/08/31/basic-3-strand-braid/" target="_blank">three-strand French braid</a> hairstyle, as an element of the braid group \(B_3\text{.}\)</p>
+<p id="p-195">Then, use the generators \(s_1,\ldots,s_5\) to write notation for this <a class="external" href="https://artisanbreadinfive.com/2012/08/29/how-to-six-strand-braided-challah/" target="_blank">six-strand braided challah</a> bread, as an element of \(B_6\text{.}\)</p>
+<p id="p-196">Explain why each of these examples could be called a <dfn class="terminology">periodic</dfn> braid.</p></article><article class="exercise exercise-like" id="exercise-8"><h6 class="heading"><span class="codenumber">2<span class="period">.</span></span></h6>
+<p id="p-197">Consider the \(2\times 2\) matrix</p>
+<div class="displaymath">
+\begin{equation*}
+X_t = \left[\begin{array}{cc} 1-t\amp t\\ 1\amp 0\end{array}\right].
+\end{equation*}
+</div>
+<ol class="lower-alpha">
+<li id="li-63"><p id="p-198">Form the matrix \(X_0\) by substituting \(0\) for \(t\text{.}\) Then use <a class="external" href="https://www.mathsisfun.com/algebra/matrix-multiplying.html" target="_blank">matrix multiplication</a> to show that \(X_0\cdot X_0 = \left[\begin{array}{rr}1\amp 0\\0\amp 1\end{array}\right]\text{,}\) which is the \(2\times 2\) identity matrix.</p></li>
+<li id="li-64"><p id="p-199">Compute the matrix product \(X_t\cdot X_t\text{.}\) Is this an identity matrix? What's different?</p></li>
+<li id="li-65">
+<p id="p-200">If we place the matrix \(X_t\) into the upper and lower blocks of a \(3\times 3\) matrix, we obtain</p>
+<div class="displaymath">
+\begin{equation*}
+M = \left[\begin{array}{ccc} 1-t\amp t\amp \color{gray}{0}\\ 1\amp 0 \amp \color{gray}{0}\\ \color{gray}{0}\amp \color{gray}{0}\amp \color{gray}{1} \end{array}\right]\text{ and } N =  \left[\begin{array}{ccc} \color{gray}{1}\amp \color{gray}{0}\amp \color{gray}{0}\\ \color{gray}{0}\amp 1-t\amp t\\ \color{gray}{0}\amp 1 \amp 0\end{array}\right].
+\end{equation*}
+</div>
+<p data-braille="continuation">Use <em class="emphasis">Sage</em> to compute both the matrix products \(M\cdot N \cdot M\) and \(N\cdot M \cdot N\text{.}\) What do you notice? <div class="sagecell-sage" id="sage-5"><script type="text/x-sage">R.<t> = PolynomialRing(QQ);
+M = matrix(R,[[1-t,t,0],[1,0,0],[0,0,1]]);
+N = matrix(R,[[1,0,0],[0,1-t,t],[0,1,0]]);
+
+pretty_print( M*N*M )
+</script></div></p>
+</li>
+<li id="li-66">
+<p id="p-201">Show how we can use the matrices \(M\) and \(N\) to represent the braid</p>
+<div class="displaymath">
+\begin{equation*}
+b = s_1^2s_2s_1^3s_2
+\end{equation*}
+</div>
+<p data-braille="continuation">and then use that matrix to determine the induced permutation \(F(b)\text{.}\)</p>
+</li>
+</ol></article></section></section></div></main>
 </div>
 </body>
 </html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-07-16T10:23:02-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body>
+<article class="example example-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Some examples of group homomorphisms.</span>
+</h6>
+<p>For the (abelian) group of integers under addition, \((\mathbb{Z},+)\) the function \(f\colon \mathbb{Z} \to \mathbb{Z}\) defined by \(f(x) = 5x\) is a homomorphism. This is because, for all integers \(x,y\text{,}\) we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f(x+y) \amp= 5(x+y)\\
+\amp=5x + 5y\\
+\amp=f(x) + f(y).
+\end{align*}
+</div>
+<p>If \(G = (\mathbb{Z},+)\) is the group of integers with the operation of addition and \(H = (\mathbb{Q}^+,\cdot)\) is the group of positive rational numbers with the operation of multiplication, then</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{equation*}
+f\colon \mathbb{Z} \to \mathbb{Q}^+, \text{ defined } f(n) = 2^n,
+\end{equation*}
+</div>
+<p data-braille="continuation">is a group homomorphism. To see why, observe where the operations in each group show up in the following verification:</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f\bigl( x + y \bigr) \amp= 2^{x+y} \amp\amp \text{definition of }f\\
+\amp= 2^x2^y \amp\amp \text{properties of exponents}\\
+\amp= 2^x\cdot 2^y \amp\amp\text{multiplication is our operation in }\mathbb{Q}^+\\
+\amp= f(x) \cdot f(y).
+\end{align*}
+</div>
+<p>For the permutation group on \(n\) symbols \(G = (S_n,\circ)\) we can define a homomorphism \(f \colon G \to G\) by \(f(\sigma) = (12)\circ \sigma \circ (12)\text{.}\) For example, we can check -- using braid-a-grams, for example -- that \(f\bigl( (235) \bigr) = (12)\circ (235) \circ (12) = (135)\text{.}\) This is a homomorphism since, for any two permutations \(\sigma,\tau\in S_n\text{,}\) we have</p>
+<div xmlns:svg="http://www.w3.org/2000/svg" class="displaymath">
+\begin{align*}
+f(\sigma) \circ f(\tau) \amp= (12)\circ \sigma\circ \overbrace{(12)\, \circ \, (12)}^\epsilon \circ \tau \circ (12) \\
+\amp= (12)\circ \sigma \circ \epsilon \circ \tau \circ (12)\\
+\amp= (12) \circ \sigma\circ\tau \circ (12)\\
+\amp= f\bigl( \sigma\circ \tau \bigr).
+\end{align*}
+</div></article><span class="incontext"><a href="braids.html#ex_homomorphism">in-context</a></span>
+</body>
+</html>
