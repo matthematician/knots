@@ -27,7 +27,7 @@ whether two given diagrams represent the same knot.</p>
         </figure>
 
         <figure xml:id="fig_linkdef">
-            <image source="http://www.eprisner.de/MAT107/Topology/knots/Link4.gif" width="50%"/>
+            <image source="images/Link4.gif" width="50%"/>
             <caption>An example of a two-component link. Source: <url href="http://www.eprisner.de/MAT107/Topology/Knots.html"/></caption>
         </figure>
 
