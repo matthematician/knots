@@ -13,8 +13,11 @@ whether two given diagrams represent the same knot.</p>
  <definition xml:id="def_knotlink">
             <statement>
                 <p>A (smooth) <term>knot</term> <m>K</m> is the image of a smooth, simple, closed curve <m>{\bf r} \colon {\mathbb R} \to {\mathbb R}^3</m> in space.</p>
+                <p>A <m>n</m>-component <term>link</term> is the image of <m>n</m> disjoint knots.</p>
             </statement>
-        </definition>
+</definition>
+
+<p>Informally, a knot is anything that can be constructed by tying the ends of a single rope together. A link is anything that can be constructed by doing so with two or more ropes.</p>
 
         <figure xml:id="fig_knotdef">
             <image source="images/knotdef.png" width="80%"/>
@@ -22,6 +25,13 @@ whether two given diagrams represent the same knot.</p>
             <caption>A knot is the image (set of points in space) traced by a smooth, simple, closed parametric curve <m>{\bf r}</m>.</caption>
 
         </figure>
+
+        <figure xml:id="fig_linkdef">
+            <image source="http://www.eprisner.de/MAT107/Topology/knots/Link4.gif" width="50%"/>
+            <caption>An example of a two-component link. Source: <url href="http://www.eprisner.de/MAT107/Topology/Knots.html"/></caption>
+        </figure>
+
+
 
         <example xml:id="ex_knotdef">
             <title>What do those words mean?</title>
@@ -147,14 +157,67 @@ whether two given diagrams represent the same knot.</p>
     <p>We close this section by drawing connections between knots and the knot-like objects we studied in <xref ref="braidstangles"/>.</p>
 
     <definition xml:id="def_braidclosure">
-
+        <statement>
+            <p>The <term>braid closure</term> of a braid <m>b\in B_n</m> is a knot or link resulting from joining each of the braid's top endpoints to the bottom endpoint of the same position (first to first, second to second, etc.).</p>
+        </statement>
     </definition>
+
+    <activity xml:id="act_braidclosure1">
+        <statement>
+            <p>Verify that the braid closure of <m>b = s_1 \in B_2</m>, shown in the Sage plot below, is an unknot.</p>
+
+            <p>Is the same true of <m>c = s_1^2 \in B_2</m>? Why or why not?</p>
+
+            <sage><input>
+B.&lt;s1&gt; = BraidGroup(2);
+b = s1;
+b.plot( orientation='top-bottom', thickness=4 )</input>
+            </sage>
+        </statement>
+    </activity>
+
+    <activity xml:id="act_braidclosure2">
+        <statement>
+            <p>Construct a physical copy of the trefoil knot <m>K=K(3,2)</m> from <xref ref="fig_trefoil_ggb"/>.</p>
+            <p>By manipulating your knot (via <xref ref="def_isotopy" text="custom">isotopy</xref>), find a braid <m>b \in B_2</m> whose braid closure is <m>K</m>.</p>
+            <p>What braid would represent the <term>reverse</term> knot <m>-K</m>, whose diagram is obtained by reversing every over-crossing to an under-crossing and vice versa?</p>
+        </statement>
+    </activity>
+
+    <activity xml:id="act_braidclosure3">
+        <statement>
+            <p>The braid <m>b = \bigl(s_1s_2^{-1}\bigr)^2 \in B_3</m> is shown in the Sage plot below.</p>
+            <p>Construct a physical copy of its braid closure. (This knot is called the <em>figure-eight knot</em>.) Sketch its diagram.</p>
+            <p>Using your physical copy, can you manipulate this knot via <xref ref="def_isotopy" text="custom">isotopy</xref> so that its new diagram has all of its crossings reversed?</p>
+            <p>Is it true that in the braid group <m>B_3</m> we have <me>\bigl( s_1s_2^{-1} \bigr)^2 = \bigl( s_1^{-1}s_2 \bigr)^2 \quad ?</me></p>           
+            <sage><input>
+B.&lt;s1,s2&gt; = BraidGroup(3);
+b = s1*s2^(-1)*s1*s2^(-1);
+b.plot( orientation='top-bottom', thickness=4 )</input>
+            </sage>            
+            </statement>
+    </activity>
 
     <definition xml:id="def_tangleclosure">
-
+        <statement>
+            <p>The <term>numerator closure</term> <m>N(G)</m> of a rational tangle <m>G</m> is a knot or link that results from joining together the two <q>north</q> endpoints, and joining together the two <q>south</q> endpoints.</p>
+            <p>The <term>denominator closure</term> <m>D(G)</m> of a rational tangle <m>G</m> is a knot or link that results from joining together the two <q>west</q> endpoints, and joining together the two <q>east</q> endpoints.</p>
+        </statement>
     </definition>
 
+    <activity xml:id="act_tangleclosure1">
+        <statement>
+            <p>Review your work from <xref ref="act_braidclosure2"/>. For what rational tangle <m>G</m> is the trefoil <m>K = K(3,2)</m> a closure? Is it a numerator or a denominator closure?</p>
+        </statement>    
+    </activity>
 
+    <activity xml:id="act_tangleclosure2">
+        <statement>
+            <p>Let <m>G</m> be an arbitrary rational tangle. Explain why one of <m>N(G)</m> and <m>D(G)</m> is guaranteed to be a knot, and the other is guaranteed to be a two-component link.</p>
+        </statement>
+    </activity>
 
+<!--
+-->
 
 </section>
