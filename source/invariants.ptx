@@ -1,4 +1,28 @@
 <section xml:id="invariants">
 <title>Knot Invariants</title>
 
+<objectives>
+    <ol>
+        <li>
+            <p>Demonstrate whether a given property of interest is, or is not, a knot invariant.</p>
+        </li>
+    </ol>
+</objectives>
+
+    <p>We saw in <xref ref="knots"/> that the same knot can have (infinitely!) many different diagrams. Yet we <em>want</em> to be able to study the properties of knots, which reside in three dimensions, using diagrams which can obscure knots' three-dimensional reality. <xref ref="def_moves"/> showed exactly how <xref ref="def_isotopy" text="custom">isotopy</xref> of a knot, which leaves the <em>knot</em> unchanged, can nevertheless change its <em>diagrams</em> in very specific ways.</p>
+    
+    <p>So to study the properties of knots, how can we be certain that we're seeing a property that <em>transcends</em> diagrams and actually tells us something about the knot itself, regardless which diagram we've chosen to represent it? </p>
+
+    <p>How can we be sure not to judge a knot by its cover? By studying its <q>invariant</q> properties, according to this definition.</p>
+
+    <definition xml:id="def_invariant">
+        <statement>
+            <p>Let <m>K</m> be a knot. A logical property <m>P</m> is called a <term>knot invariant</term> if, for all pairs of diagrams <m>D,D'</m> of <m>K</m>, we have <me>P(D) \quad \Leftrightarrow \quad P(D').</me>
+            In other words, property <m>P</m> is a knot invariant if it is either true for every possible diagram of <m>K</m>, or false for every possible diagram of <m>K</m>.</p>
+        </statement>
+    </definition>
+
+<p>Every knot invariant has the power of <term>discrimination</term>: Given two diagrams <m>D_1,D_2</m> and a knot invariant <m>P</m>, if <m>P</m> is true for one diagram and false for the other, then we know for certain that those diagrams represent <em>different</em> knots. However, most knot invariants do not have the power of <term>confirmation</term>: We cannot always say that if <m>P</m> is true for <em>both</em> diagrams, then those diagrams represent the <em>same</em> knot. An invariant that does that, if one exists, is called a complete invariant. Those are the <q>holy grail</q> of knot theory, since they would completely classify all types of knots -- in the same way that the fraction of a rational tangle classified all rational tangles (<xref ref="thm_fraction"/>).</p>
+
+
 </section>

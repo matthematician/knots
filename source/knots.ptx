@@ -1,4 +1,160 @@
 <section xml:id="knots">
 <title>Knots and Diagrams</title>
 
+<objectives>
+    <ol>
+        <li>
+            <p>Identify several distinct diagrams for a given knot, and determine (in some elementary cases)
+whether two given diagrams represent the same knot.</p>
+        </li>
+    </ol>
+</objectives>
+
+ <definition xml:id="def_knotlink">
+            <statement>
+                <p>A (smooth) <term>knot</term> <m>K</m> is the image of a smooth, simple, closed curve <m>{\bf r} \colon {\mathbb R} \to {\mathbb R}^3</m> in space.</p>
+            </statement>
+        </definition>
+
+        <figure xml:id="fig_knotdef">
+            <image source="images/knotdef.png" width="80%"/>
+
+            <caption>A knot is the image (set of points in space) traced by a smooth, simple, closed parametric curve <m>{\bf r}</m>.</caption>
+
+        </figure>
+
+        <example xml:id="ex_knotdef">
+            <title>What do those words mean?</title>
+            <p>We ultimately want to think of a knot as simply a particular type of subset of points living in space. The four words -- image, smooth, simple, and closed -- ensure that we get the kinds of subsets that <q>look like</q> knots as we intuitively and physically understand them.</p>
+            <ol>
+                <li>
+                    <p>
+                        <term>Image</term>: The image of a function is the set of all its <q>outputs</q>. This is also known as <q>range</q> in most high-school algebra contexts. We use the word image here so that we can forget about (most of) the details of the function <m>{\bf r}</m> that parameterizes the knot as a curve, and think instead only of the points in space that the function traces out.
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        <term>Smooth</term>: A function is smooth if it is infinitely many times differentiable at all its points. In the case of a curve, this means that there is a well-defined tangent vector to our curve at each of its points, that those tangent vectors also vary continuously from point to point, that their variations also vary continuously from point to point, and so on. This is the condition that rules out <url href="https://wildandnoncompactknots.wordpress.com/2013/04/30/what-is-knot-theory-anyway/">so-called <term>wild</term> knots</url>.
+                    </p>
+                </li>
+                  <li>
+                    <p>
+                        <term>Closed</term>: A curve is closed if the function <m>{\bf r}\colon \mathbb{R}\to\mathbb{R}^3</m> is <em>periodic</em>, that is, if there exists a positive real number <m>T</m> for which, <me>\text{for all }t\in \mathbb{R}, \qquad \text{we have } {\bf r}\bigl(t+T\bigr) = {\bf r}(t).</me> The smallest such <m>T</m> is called the <em>period</em> of the function <m>{\bf r}</m>, and we think of a closed curve as one whose <q>starting point</q> and <q>ending point</q> are the same, <m>{\bf r}(0) = {\bf r}(T).</m>
+                    </p>
+                </li>
+                  <li>
+                    <p>
+                        <term>Simple</term>: A closed curve is simple if it does not intersect itself <em>except</em> at its starting/ending point. In other words, we cannot have <m>{\bf r}(t_1) = {\bf r}(t_2)</m> unless <m>t_1-t_2</m> is a multiple of the period <m>T</m>. Another way to say this is to require that the function <m>{\bf r}:[0,T) \to \mathbb{R}^3</m> to be <em>one-to-one</em>, i.e., require that every pair of different <q>times</q> <m>0 \leq t_1 \lt t_2 \lt T</m> find the curve at different points, <m>{\bf r}(t_1) \neq {\bf r}(t_2).</m>
+                    </p>
+                </li>
+            </ol>
+        </example>
+
+        <p>
+            The main feature that you'll notice differentiates mathematical knots from everyday knots in the physical world is that mathematical knots are <q>closed</q>: to model one using a physical string, we ultimately will need to connect the string's two ends together to close the curve.
+        </p>
+
+        <definition xml:id="def_diagram">
+            <statement>
+                <p>A <term>diagram</term> <m>D</m> of a knot <m>K</m>, also called a <term>projection</term>, is a two-dimensional visualization of <m>K</m>, consisting of a set of unbroken curves called <term>arcs</term> of which exactly two meet at each <term>crossing</term>. Each crossing indicates which arc crosses <em>over</em> the other.</p>
+            </statement>
+        </definition>
+
+        <p>
+                <figure xml:id="fig_trefoil_ggb">
+                    <caption>A simple example of a knot, called <m>K(3,2)</m>. <em>Click and drag to change perspective.</em></caption>
+                    <interactive xml:id="geogebra-knotdef" platform="geogebra" width="100%" aspect="4:3" scrolling="no">
+                        <slate xml:id="knotdef" surface="geogebra" source="images/596-torusknots.ggb" width="99%" aspect="4:3"/>
+                    </interactive> 
+                </figure>
+        </p>
+
+        <activity xml:id="act_k32">
+            <statement>
+                <p>Either physically construct the knot <m>K=K(3,2)</m> shown in <xref ref="fig_trefoil_ggb"/>, or use the applet above to do the following.</p>
+                <p>Sketch a diagram of <m>K</m> having exactly three crossings.</p>
+                <p>Then, change your perspective (perform an <xref ref="def_isotopy" text="custom">isotopy</xref> to your knot) so as to discover and sketch another diagram of <m>K</m> having <em>more</em> than three crossings.</p>
+            </statement> 
+        </activity>
+
+        <definition xml:id="def_unknot">
+            <statement>
+                <p>We call a knot <m>U</m> an <term>unknot</term> (or <q>unknotted</q>) if there exists a diagram of <m>U</m> having zero crossings.</p>
+            </statement>  
+        </definition>
+
+        <p>An unknot is in a sense the <q>simplest</q> knot possible, with a minimal amount of self-tangling.</p>
+
+        <activity xml:id="act_unknot">
+            <statement>
+                <p>Physically construct an unknot <m>U</m> using rope or string.</p>
+                <p>Then, review your work from <xref ref="act_braid2"/> and/or <xref ref="act_isotopy"/> to inspire the following.</p>
+                <ol>
+                    <li>
+                        <p>Perform an <xref ref="def_isotopy" text="custom">isotopy</xref> on your knot to discover and sketch a diagram of <m>U</m> having <em>exactly one crossing</em>.</p>
+                    </li>
+                    <li>
+                        <p>Perform an <xref ref="def_isotopy" text="custom">isotopy</xref> on your knot to discover and sketch a diagram of <m>U</m> having <em>exactly two crossings</em>.
+                        </p>
+                    </li>
+                    <li>
+                        <p>How would you describe the isotopy that established the braid relation <xref ref="eq_skeinrelation"/> in <xref ref="act_braid2"/>? Demonstrate how this might work with your unknot, by first creating a diagram of <m>U</m> having at least three crossings.
+                        </p>
+                    </li>
+                </ol>
+            </statement>
+        </activity>
+
+    <p>Ultimately our goal is to study <q>knots up to isotopy</q>. In other words, we want to say that two knots <m>K,K^\prime</m> are <em>different</em> only if we need to untie one in order to re-tie it into the other. If we can turn <m>K</m> into <m>K^\prime</m> only by smoothly moving its physical strands in space, in other words, if <m>K</m> and <m>K^\prime</m> are isotopic, then we want to say those two knots are really <q>the same knot</q>.</p>
+
+    <definition xml:id="def_moves"><title>Reidemeister moves</title>
+        <statement>
+            <p>Given a knot <m>K</m> and a diagram <m>D</m> of <m>K</m>, each of the following ways of modifying <m>D</m> corresponds to an isotopy of <m>K</m>.</p>
+            <ol>
+                <li>
+                    <p>The <term>type-I move</term> adds or subtracts one crossing.</p> 
+                </li>
+                <li>
+                    <p>The <term>type-II move</term> adds or subtracts two crossings.</p> 
+                </li>
+                <li>
+                    <p>The <term>type-III move</term> preserves the number of crossings.</p> 
+                </li>
+            </ol>
+            <p>These moves are collectively called <term>Reidemeister moves</term> and are depicted below.</p>
+            <figure xml:id="fig_reid">
+                <caption>The type-I, type-II, and type-III Reidemeister moves. Source: <url href="https://mathemalchemy.org/2021/03/04/knots-trivial-and-otherwise/"/></caption>
+                <image source="https://i1.wp.com/mathemalchemy.org/wp-content/uploads/2021/02/reidemeisters.gif?resize=900%2C292%26ssl=1" width="100%"/>
+            </figure>
+        </statement>
+    </definition>
+
+    <p>The <xref ref="def_moves" text="title"/> are named for Kurt Reidemeister, who in 1927 published one of two independent proofs that, in fact, these three moves are the <em>only</em> ways to change a knot's diagram without changing the <q>knottedness</q> of the knot (i.e., the only ways that an isotopy of the knot may change the knot's diagram).</p>
+
+    <p>This is good news, for reasons we'll appreciate in the next section! The bad news is that there is no efficient algorithm that tells us how to use Reidemeister moves to <em>know</em> for certain that two diagrams do, or do not, represent the same knot. Even detecting whether a diagram depicts the unknot is a challenging matter. <url href="https://arxiv.org/abs/1302.0180">Marc Lackenby</url> showed a few years ago that if a diagram of the unknot has <m>n</m> crossings, it might take as many as <m>(236n)^{11}</m> Reidemeister moves to eliminate them all!</p>
+
+    <activity xml:id="act_unknot2">
+        <statement>
+            <p>Use a physical model of the unknot <m>U</m> to discover a diagram of <m>U</m> having five crossings. Sketch this diagram.</p>
+            <p>Then, find a sequence of Reidemeister moves that eliminate all its crossings. Sketch each intermediate step, listing the move you used.</p>
+            <p>You probably accomplished this in only a few steps, meaning that you're far more efficient than the best known computer algorithm for unknot detection! For a computer, how many moves <em>might</em> this have required, according to Lackenby's worst-case scenario?
+            </p>
+        </statement>
+    </activity>
+
+    <p>Knot diagrams will be our primary tool both for representing knots, <em>and</em> for doing computations and algebra with knots. Our desire to do both leads us directly to a challenge: when we use a diagram of a knot to attempt to understand one of the knot's properties, how do we know that that property is actually seeing <em>the knot</em>, and not seeing <em>the diagram</em>? We'll explore that question in <xref ref="invariants"/>.</p>
+
+    <p>We close this section by drawing connections between knots and the knot-like objects we studied in <xref ref="braidstangles"/>.</p>
+
+    <definition xml:id="def_braidclosure">
+
+    </definition>
+
+    <definition xml:id="def_tangleclosure">
+
+    </definition>
+
+
+
+
 </section>
