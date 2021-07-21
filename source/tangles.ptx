@@ -240,6 +240,15 @@ Rational tangles' physical, geometrical construction lends itself well to hands-
 <activity xml:id="act_fraction2">
     <statement>
         <p>Use the applet in <xref ref="fig_tanglefunctions"/> to discover a rational tangle <m>G</m> having the fraction <m>F(G) = -\frac79</m>.</p>
+        <p>Can you describe a general strategy for finding such a rational tangle, given its fraction invariant?</p>
+    </statement>
+</activity>
+
+<activity xml:id="act_tangledance">
+    <statement>
+        <p>Return to <xref ref="act_tangleinverse3"/>. Form the tangle <m>G = T^4</m> in the applet in <xref ref="fig_tanglefunctions"/>, and then spell out the remaining letters of its inverse.
+        </p>
+        <p>Can you describe a general strategy for finding the inverse of a rational tangle, using its fraction invariant?</p>
     </statement>
 </activity>
 
