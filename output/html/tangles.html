@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-16T10:23:01-04:00       *-->
+<!--*       on 2021-07-21T00:23:57-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -113,7 +113,182 @@ MathJax.Hub.Config({
 </div></div>
 <main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="tangles"><h2 class="heading hide-type">
 <span class="type">Section</span> <span class="codenumber">2.2</span> <span class="title">Rational Tangles</span>
-</h2></section></div></main>
+</h2>
+<article class="objectives goal-like" id="objectives-4"><h6 class="heading"><span class="type">Objectives</span></h6>
+<ol class="decimal"><li id="li-67"><p id="p-202"></p></li></ol></article><p id="p-203"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-2" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/jPMxf2cK6BM?&amp;modestbranding=1&amp;rel=0"></iframe></div></p>
+<article class="definition definition-like" id="def_tangle"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
+</h6>
+<p id="p-204">A <dfn class="terminology">rational tangle</dfn> is any arrangement of two strands, whose endpoints are fixed at neighboring, disjoint vertices of a square, and which can be created through the processes listed below.</p>
+<ol class="decimal">
+<li id="li-68">
+<p id="p-205">Each rational tangle begins as an <dfn class="terminology">empty tangle</dfn>, denoted \(E\text{,}\) in which the strands are horizontal, untwisted, and parallel.</p>
+<div class="image-box" style="width: 10%; margin-left: 45%; margin-right: 45%;"><img src="images/emptytangle.JPG" style="width: 100%; height: auto;" alt=""></div>
+</li>
+<li id="li-69">
+<p id="p-206">A <dfn class="terminology">twist</dfn>, denoted \(T\) may be added to any rational tangle by detaching and swapping the northeastern and southeastern vertices, passing the former over the latter.</p>
+<div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="images/twist.JPG" style="width: 100%; height: auto;" alt=""></div>
+</li>
+<li id="li-70">
+<p id="p-207">A <dfn class="terminology">rotation</dfn>, denoted \(R\text{,}\) may be performed on a rational tangle by rotating the entire tangle one-quarter turn clockwise.</p>
+<div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="images/rotate.JPG" style="width: 100%; height: auto;" alt=""></div>
+</li>
+</ol></article><p id="p-208"><figure class="figure figure-like" id="fig_tangleexample"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="http://www.ams.org/images/fcarc-august2017-tangle.3r4r2.jpg" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.2<span class="period">.</span></span><span class="space"> </span>A sketch of the rational tangle represented by the word \(G = T^3\, R\, T^4\, R\, T^2\text{.}\) Source: David Austin, <a class="external" href="http://www.ams.org/publicoutreach/feature-column/fc-2017-08" target="_blank"><code class="code-inline tex2jax_ignore">http://www.ams.org/publicoutreach/feature-column/fc-2017-08</code></a>. Note, this article uses a counterclockwise rotation convention for \(R\text{.}\)</figcaption></figure></p>
+<p id="p-209">In a way, rational tangles are similar to the braids we studied in <a href="braids.html" class="internal" title="Section 2.1: Braids">Section 2.1</a>, except that the number of strands is only two (which makes them far simpler) and we permit a rotation so that “horizontal” twists can be mixed with “vertical” twists (which makes them more complex again).</p>
+<p id="p-210">Rational tangles' physical, geometrical construction lends itself well to hands-on activities. The activities in this section are typically done with four willing volunteers in a classroom, holding the ends of long ropes, but a desktop-scale kit of wires or laces can be a substitute.</p>
+<article class="activity project-like" id="act_tangle1"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.1</span><span class="period">.</span>
+</h6>
+<p id="p-211">Sketch the rational tangle \(G= T^3RT^2RT\text{.}\) (You may want to build a physical model of it first.)</p></article><p id="p-212">To discover algebraic structure for rational tangles, we would like to know how the twist \(T\) and the rotation \(R\) interact with one another. For example, while <a class="xref" data-knowl="./knowl/def_tangle.html" title="Definition 2.2.1">Definition 2.2.1</a> makes it clear that the set of all rational tangle words, together with the operation of concatenation (sticking words together), is a <a class="xref" data-knowl="./knowl/def_binaries.html" title="Definition 1.1.4">magma</a>. You may also be able to convince yourself that concatenation is an associative operation, and that the empty tangle corresponds to an identity element - so that the rational tangles form a <a class="xref" data-knowl="./knowl/def_namedmagmas.html" title="Definition 1.1.10">monoid</a>.</p>
+<p id="p-213">The stickiest question, then, appears to be about invertibility. Given a rational tangle word written using the alphabet of \(T\)'s and \(R\)'s, is there always another word that can be used to <em class="emphasis">untangle</em> the tangle? As the next activities show, the question of undoing the rotation \(R\) is considerably more straightforward than the question of undoing a twist \(T\text{.}\)</p>
+<article class="activity project-like" id="act_tangle_r_inv"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.2</span><span class="period">.</span>
+</h6>
+<p id="p-214"><dfn class="terminology">(a)</dfn> Beginning with an empty tangle \(E\text{,}\) what is the least number of consecutive rotations \(R\) that will return your tangle back to empty?</p>
+<p id="p-215"><dfn class="terminology">(b)</dfn> Form the tangle \(T^3\text{.}\) Then sketch diagrams of the tangles \(T^3, T^3R, T^3R^2, T^3R^3,\) and \(T^3R^4\text{.}\) How does this support your answer to part (a)?</p>
+<p id="p-216"><dfn class="terminology">(c)</dfn> Form the tangle \(T^2\, R\, T\) and sketch a diagram of it. Then rotate it twice to form \(T^2\, R\, T\, R^2\text{.}\) Is your answer to parts (a)-(b) still supported by this result? (Try moving strings around in your tangle, without undoing any ends, i.e., try performing an <a class="xref" data-knowl="./knowl/def_isotopy.html" title="Definition 2.1.8">isotopy</a> on this tangle to find out.)</p></article><article class="activity project-like" id="act_tangle_t_inv"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
+</h6>
+<p id="p-217">For this exercise, form any tangle you wish, then thread its four ends through the corners of an envelope, as shown, and seal the envelope shut. Write the letter \(G\) on the front of the envelope, and on the back write \(G\) backward. Leave enough length in the strands outside the envelope to permit further twists and rotations.</p>
+<figure class="figure figure-like" id="fig_generictangle"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/envelope.png" style="width: 100%; height: auto;" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.3<span class="period">.</span></span><span class="space"> </span>Your “generic” rational tangle \(G\text{,}\) trapped inside an envelope.</figcaption></figure><p id="p-218">Then, add a twist to your tangle to form the new tangle \(G\,T\text{.}\) We wish to figure out how to “cancel” that twist and return to \(G\) itself, using only the very same twist maneuver \(T\) and/or rotations \(R\text{.}\)</p>
+<p id="p-219"><dfn class="terminology">(a)</dfn> If our goal is to “cancel” this twist, explain whether the next step ought to be a twist step (\(T\)) or a rotation step (\(R\)), and why you think your choice gets you closer to the desired goal.</p>
+<p id="p-220"><dfn class="terminology">(b)</dfn> If, at any point in our quest, we perform a rotation \(R\text{,}\) explain whether the next step ought to be a twist step (\(T\)) or a rotation step (\(R\)), and why you think your choice gets you closer to the desired goal. The result of <a class="xref" data-knowl="./knowl/act_tangle_r_inv.html" title="Activity 2.2.2">Activity 2.2.2</a> may be helpful.</p>
+<p id="p-221"><dfn class="terminology">(c)</dfn> Use your answers to (a)-(b) to carry out a strategy to untwist that twist, and use your envelope model to determine what sequence of rational tangle steps completes this equation:</p>
+<div class="displaymath">
+\begin{equation*}
+G\, T\, \underbrace{\hspace{1in}}_? = G.
+\end{equation*}
+</div>
+<p id="p-222"><dfn class="terminology">(d)</dfn> What, according to your answer to (c), is the <a class="xref" data-knowl="./knowl/prop_inverse.html" title="Equation 1.1.11">inverse</a> of the twist \(T\text{?}\)</p></article><p id="p-223">Armed with the results of <a class="xref" data-knowl="./knowl/act_tangle_r_inv.html" title="Activity 2.2.2">Activity 2.2.2</a> and <a class="xref" data-knowl="./knowl/act_tangle_t_inv.html" title="Activity 2.2.3">Activity 2.2.3</a>, we can convince ourselves that the set of rational tangle words, together with the concatenation operation, form a group.</p>
+<article class="definition definition-like" id="def_tanglegroup"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span><span class="space"> </span><span class="title">Rational Tangle Group.</span>
+</h6>
+<p id="p-224">The <dfn class="terminology">rational tangle group</dfn> \(\mathcal{C}\) is defined by the following presentation:</p>
+<div class="displaymath">
+\begin{equation}
+\mathcal{C} = \bigl\langle T,R \; \mid \; R^2 = (TR)^3 = E \bigr\rangle.\label{eq_tanglegroup}\tag{2.2.1}
+\end{equation}
+</div>
+<p id="p-225">That is, elements of the group consist of words in the alphabet of generators \(T\) and \(R\text{,}\) with the cancellation rules \(R^2 = E\) and \((TR)^3 = E\text{.}\)</p></article><p id="p-226">Since we know how to invert each of the generators of \(\mathcal{C}\text{,}\) we can have a recipe to invert any rational tangle. The only ingredient we need is the following theorem that holds in any group.</p>
+<article class="theorem theorem-like" id="thm_shoes"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span><span class="space"> </span><span class="title">Shoes-and-Socks.</span>
+</h6>
+<p id="p-227">Let \(G=(X,\cdot)\) be a group, and \(g,h\in X\) be two elements.</p>
+<p id="p-228">The inverse of the element \((g\cdot h)\) is the composition of the inverses of \(g\) and \(h\text{,}\) in the opposite order:</p>
+<div class="displaymath">
+\begin{equation*}
+\bigl( g\cdot h)^{-1} = h^{-1} \cdot g^{-1}.
+\end{equation*}
+</div></article><article class="hiddenproof" id="proof-2"><a data-knowl="" class="id-ref proof-knowl original" data-refid="hk-proof-2"><h6 class="heading"><span class="title">Video proof.</span></h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-proof-2"><article class="hiddenproof"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-3" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/-3gUH-wtf_A?&amp;modestbranding=1&amp;rel=0&amp;start=539"></iframe></div></article></div>
+<article class="activity project-like" id="act_tangleinverse1"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.4</span><span class="period">.</span>
+</h6>
+<p id="p-229">Form the rational tangle \(G = T^3\, R\, T\, R\text{.}\) Then, use <a class="xref" data-knowl="./knowl/thm_shoes.html" title="Theorem 2.2.5: Shoes-and-Socks">Shoes-and-Socks</a> to predict what sequence of \(T\) and \(R\) can restore this tangle to the identity, i.e., what fills in the blank in</p>
+<div class="displaymath">
+\begin{equation*}
+T^3\, R\, T\, R \underbrace{\hspace{1in}}_? = E.
+\end{equation*}
+</div>
+<p id="p-230">Check your answer by performing this sequence of maneuvers on your tangle.</p></article><article class="activity project-like" id="act_tangleinverse2"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.5</span><span class="period">.</span>
+</h6>
+<p id="p-231">How many steps (that is, how long of a rational tangle word) would you predict are necessary to untangle the rational tangle \(G=T^4\) ? Why?</p></article><p id="p-232">The surprising thing about rational tangles is that the strategy of <a class="xref" data-knowl="./knowl/act_tangleinverse1.html" title="Activity 2.2.4">Activity 2.2.4</a> is <em class="emphasis">not</em> the <em class="emphasis">only</em> way to write the inverse of a tangle. There may be a shorter way!</p>
+<article class="activity project-like" id="act_tangleinverse3"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="period">.</span>
+</h6>
+<p id="p-233">Form the tangle \(G = T^4\text{.}\) Then use your physical model to show that</p>
+<div class="displaymath">
+\begin{equation*}
+T^4 \underbrace{\, R\, T\, R\, T^2\, R\, T^2\, R\, T^2} = E.
+\end{equation*}
+</div>
+<p data-braille="continuation">How might you explain the difference between this result and your prediction from <a class="xref" data-knowl="./knowl/act_tangleinverse2.html" title="Activity 2.2.5">Activity 2.2.5</a>?</p></article><p id="p-234">To resolve the mystery of the previous result, we'll discover one more algebraic structure related to rational tangles, that gives rational tangles their name. It comes in the form of a <a class="xref" data-knowl="./knowl/def_homomorphism.html" title="Definition 2.1.9">homomorphism</a> from the group of rational tangles into the group of <em class="emphasis">rational functions</em> of a single variable.</p>
+<div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-4" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/1hMVxjP3i4s?&amp;modestbranding=1&amp;rel=0"></iframe></div>
+<article class="definition definition-like" id="def_tanglerep"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="period">.</span>
+</h6>
+<p id="p-235">Let \(t \colon \mathbb{Q}\to\mathbb{Q}\) and \(r \colon \mathbb{Q} \to \mathbb{Q}\) be the rational functions</p>
+<div class="displaymath">
+\begin{align}
+t(x) \amp= x + 1\label{eq_tfunction}\tag{2.2.2}\\
+r(x) \amp= -\frac1x\label{eq_rfunction}\tag{2.2.3}
+\end{align}
+</div>
+<p data-braille="continuation">We call these the generators of the <dfn class="terminology">tangling functions group</dfn>, denoted \(\mathscr{F}\text{,}\) with the operation of function composition \((f,g) \mapsto f\circ g\text{.}\)</p></article><figure class="figure figure-like" id="fig_tanglefunctions"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/tfunction.png" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/rfunction.png" style="width: 100%; height: auto;" alt=""></div>
+</div></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.7<span class="period">.</span></span><span class="space"> </span>Graphs of the “add-one” function \(t(x)=x+1\) and the “opposite-reciprocal” function \(r(x) = -1/x\text{.}\)</figcaption></figure><p id="p-236">That these functions, whose graphs you likely learned in high school algebra, have anything at all to do with rational tangles is quite remarkable, as we will see shortly.</p>
+<p id="p-237">The <em class="emphasis">Geogebra</em> applet embedded below lets you form the compositions of the \(t\) and \(r\) functions using the buttons (suggestively) labeled \(T\) and \(R\text{,}\) beginning with the identity function \(e(x) = x\text{.}\) For example, clicking the sequence \(TTRTRRT\) forms the function composition</p>
+<div class="displaymath">
+\begin{equation*}
+t\bigl( r\bigl( r\bigl( t( r( t( t( x ))))\bigl)\bigl)\bigl) = -\frac{1}{-\frac{1}{-\frac{1}{x+2}+1}}+1 = \frac{2x+3}{x+2}.
+\end{equation*}
+</div>
+<p data-braille="continuation">Note that the order of function composition is written <em class="emphasis">backward</em> to the order in which the buttons are clicked.</p>
+<figure class="figure figure-like" id="fig_tanglefunctions"><iframe id="manip_tanglefunctions" width="600" height="450" src="manip_tanglefunctions-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.8<span class="period">.</span></span><span class="space"> </span>Functions which are elements of the tangle function group \(\mathscr{F}\text{.}\) Click on the \(T\) and \(R\) buttons to compose with the generators <a class="xref" data-knowl="./knowl/eq_tfunction.html" title="Equation 2.2.2">(2.2.2)</a> and <a class="xref" data-knowl="./knowl/eq_rfunction.html" title="Equation 2.2.3">(2.2.3)</a>. You can also find this interactive at <a class="external" href="https://www.geogebra.org/m/h2zwxzp4" target="_blank"><code class="code-inline tex2jax_ignore">https://www.geogebra.org/m/h2zwxzp4</code></a>.</figcaption></figure><article class="activity project-like" id="act_rfunction"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="period">.</span>
+</h6>
+<p id="p-238">Verify directly (using its <a class="xref" data-knowl="./knowl/eq_rfunction.html" title="Equation 2.2.3">formula</a>) that \(r\bigl( r(x) \bigr) = x\text{.}\)</p>
+<p id="p-239">Then, use the applet in <a class="xref" data-knowl="./knowl/fig_tanglefunctions.html" title="Figure 2.2.7">Figure 2.2.7</a> to verify your conclusion. Explain what steps you took, and why they confirm your answer.</p></article><article class="activity project-like" id="act_tfunction"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.8</span><span class="period">.</span>
+</h6>
+<p id="p-240">Simplify an expression for the tangling function \(r\circ t\text{.}\)</p>
+<p id="p-241">If you call this function \(f(x)\text{,}\) then simplify expressions for \(f\circ f\) and \(f\circ f\circ f\text{.}\)</p>
+<p id="p-242">What do you conclude about the behavior of the functions \(t\) and \(r\text{,}\) in light of how the rational tangle alphabet behaves (<a class="xref" data-knowl="./knowl/def_tanglegroup.html" title="Definition 2.2.4: Rational Tangle Group">Definition 2.2.4</a>)?</p></article><p id="p-243">The result of <a class="xref" data-knowl="./knowl/act_rfunction.html" title="Activity 2.2.7">Activity 2.2.7</a> and <a class="xref" data-knowl="./knowl/act_tfunction.html" title="Activity 2.2.8">Activity 2.2.8</a> is the following.</p>
+<article class="theorem theorem-like" id="thm_tanglefunctions"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.2.9</span><span class="period">.</span>
+</h6>
+<p id="p-244">The function \(\varphi \colon \mathcal{C} \to \mathscr{F}\) defined by</p>
+<div class="displaymath">
+\begin{equation*}
+\varphi(T) = t \quad \text{ and } \quad \varphi(R) = r
+\end{equation*}
+</div>
+<p data-braille="continuation">is a homomorphism onto its image.</p></article><p id="p-245">In other words, because the functions \(t(x)\) and \(r(x)\) behave under function composition <em class="emphasis">exactly</em> as the rational tangle alphabet \(T\) and \(R\) behave under concatenation, we can represent the structure of the rational tangle group using these functions instead. That's a remarkable feat of mimicry!</p>
+<p id="p-246">The only (slight) catch is that these functions encode <em class="emphasis">slightly</em> more structure than the tangles do, as the following activity shows.</p>
+<article class="activity project-like" id="act_trt"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.9</span><span class="period">.</span>
+</h6>
+<p id="p-247">Find a formula for the composition \(t\bigl( r(\, t(x)\, ) \bigr)\text{,}\) using algebra and/or the applet in <a class="xref" data-knowl="./knowl/fig_tanglefunctions.html" title="Figure 2.2.7">Figure 2.2.7</a>.</p>
+<p id="p-248">Then, form the rational tangle \(TRT\text{.}\) Explain why <dfn class="terminology">(a)</dfn> we would have expected these results to tell the same story as one another, but <dfn class="terminology">(b)</dfn> they do not, in fact, agree.</p></article><p id="p-249">The disagreement that the previous activity surfaces can be resolved, as it turns out, by focusing not on the entire functions in \(\mathscr{F}\) but only on their <em class="emphasis">y-intercepts</em>.</p>
+<article class="definition definition-like" id="def_fraction"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.10</span><span class="period">.</span>
+</h6>
+<p id="p-250">The <dfn class="terminology">fraction</dfn> of a tangle function \(f\in \mathscr{F}\) is its \(y\)-intercept, the rational number \(f(0)\text{.}\)</p>
+<p id="p-251">The <dfn class="terminology">fraction invariant</dfn> of a rational tangle \(G \in \mathcal{C}\) is the fraction of its associated tangle function, \(F(G) = \bigl( \varphi(G) \bigr)(0)\text{.}\)</p></article><p id="p-252">For example, you can check that for the empty tangle \(E\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\varphi(E)(x) = x \quad \text{ and }\quad  F(E) = \varphi(E)(0) = 0.
+\end{equation*}
+</div>
+<p data-braille="continuation">Likewise, for the single twist \(T\) we have</p>
+<div class="displaymath">
+\begin{equation*}
+\varphi(T)(x) = x + 1\quad \text{ and }\quad F(T) = \varphi(T)(0) = 1.
+\end{equation*}
+</div>
+<p data-braille="continuation">Lastly, if we were to rotate a double twist to form \(T^2R\) we would have</p>
+<div class="displaymath">
+\begin{equation*}
+\varphi(T^2R)(x) = r(t(t(x))) = -\frac{1}{x+2}\quad\text{ and }\quad F(TR^2) = r(t(t(0))) = -\frac12.
+\end{equation*}
+</div>
+<p data-braille="continuation">You'll notice that the values of the fraction, labeled as the \(y\)-intercept in <a class="xref" data-knowl="./knowl/fig_tanglefunctions.html" title="Figure 2.2.7">Figure 2.2.7</a>, increase by 1 with each twist \(T\) that is added, and are opposite-reciprocated with each rotation \(R\text{.}\)</p>
+<article class="theorem theorem-like" id="thm_fraction"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.2.11</span><span class="period">.</span>
+</h6>
+<p id="p-253">There is a one-to-one correspondence between rational tangles \(G \in \mathcal{C}\) and rational numbers \(F(G) \in \mathbb{Q}\text{.}\)</p></article><p id="p-254">In other words, every rational tangle is associated to one and only one rational number via the operation of finding its tangle invariant, and every rational number is associated to one and only one rational tangle!</p>
+<article class="activity project-like" id="act_fraction1"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.10</span><span class="period">.</span>
+</h6>
+<p id="p-255">Use either algebra or the applet in <a class="xref" data-knowl="./knowl/fig_tanglefunctions.html" title="Figure 2.2.7">Figure 2.2.7</a> to compute the tangle invariants \(F\bigl( T^2 R T^3 R T \bigr)\) and \(F\bigl( TRT^3RT^3RT \bigr)\text{.}\)</p>
+<p id="p-256">What can you conclude about the two rational tangles \(G_1 = T^2RT^3RT\) and \(G_2 = TRT^3RT^3RT\) ? Why?</p></article><article class="activity project-like" id="act_fraction2"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.11</span><span class="period">.</span>
+</h6>
+<p id="p-257">Use the applet in <a class="xref" data-knowl="./knowl/fig_tanglefunctions.html" title="Figure 2.2.7">Figure 2.2.7</a> to discover a rational tangle \(G\) having the fraction \(F(G) = -\frac79\text{.}\)</p></article></section></div></main>
 </div>
 </body>
 </html>
