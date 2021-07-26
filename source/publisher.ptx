@@ -3,6 +3,7 @@
 
     <!-- HTML-Specific Options -->
     <html>
+        <favicon/>
         <css style="oscarlevin"/>
         <css style="default" colors="blue_red"/>
     </html>

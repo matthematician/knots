@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-21T16:22:55-04:00       *-->
+<!--*       on 2021-07-26T11:14:46-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -123,21 +123,21 @@ MathJax.Hub.Config({
 <span class="type">Section</span> <span class="codenumber">3.1</span> <span class="title">Knots and Diagrams</span>
 </h2>
 <article class="objectives goal-like" id="objectives-5"><h6 class="heading"><span class="type">Objectives</span></h6>
-<ol class="decimal"><li id="li-71"><p id="p-261">Identify several distinct diagrams for a given knot, and determine (in some elementary cases) whether two given diagrams represent the same knot.</p></li></ol></article><article class="definition definition-like" id="def_knotlink"><h6 class="heading">
+<ol class="decimal"><li id="li-71"><p id="p-265">Identify several distinct diagrams for a given knot, and determine (in some elementary cases) whether two given diagrams represent the same knot.</p></li></ol></article><article class="definition definition-like" id="def_knotlink"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
 </h6>
-<p id="p-262">A (smooth) <dfn class="terminology">knot</dfn> \(K\) is the image of a smooth, simple, closed curve \({\bf r} \colon {\mathbb R} \to {\mathbb R}^3\) in space.</p>
-<p id="p-263">A \(n\)-component <dfn class="terminology">link</dfn> is the image of \(n\) disjoint knots.</p></article><p id="p-264">Informally, a knot is anything that can be constructed by tying the ends of a single rope together. A link is anything that can be constructed by doing so with two or more ropes.</p>
+<p id="p-266">A (smooth) <dfn class="terminology">knot</dfn> \(K\) is the image of a smooth, simple, closed curve \({\bf r} \colon {\mathbb R} \to {\mathbb R}^3\) in space.</p>
+<p id="p-267">A \(n\)-component <dfn class="terminology">link</dfn> is the image of \(n\) disjoint knots.</p></article><p id="p-268">Informally, a knot is anything that can be constructed by tying the ends of a single rope together. A link is anything that can be constructed by doing so with two or more ropes.</p>
 <figure class="figure figure-like" id="fig_knotdef"><div class="image-box" style="width: 80%; margin-left: 10%; margin-right: 10%;"><img src="images/knotdef.png" style="width: 100%; height: auto;" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.2<span class="period">.</span></span><span class="space"> </span>A knot is the image (set of points in space) traced by a smooth, simple, closed parametric curve \({\bf r}\text{.}\)</figcaption></figure><figure class="figure figure-like" id="fig_linkdef"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="images/Link4.gif" style="width: 100%; height: auto;" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.3<span class="period">.</span></span><span class="space"> </span>An example of a two-component link. Source: <a class="external" href="http://www.eprisner.de/MAT107/Topology/Knots.html" target="_blank"><code class="code-inline tex2jax_ignore">http://www.eprisner.de/MAT107/Topology/Knots.html</code></a></figcaption></figure><article class="example example-like" id="ex_knotdef"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_knotdef"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">What do those words mean?</span>
-</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_knotdef"><article class="example example-like"><p id="p-265">We ultimately want to think of a knot as simply a particular type of subset of points living in space. The four words -- image, smooth, simple, and closed -- ensure that we get the kinds of subsets that “look like” knots as we intuitively and physically understand them.</p>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_knotdef"><article class="example example-like"><p id="p-269">We ultimately want to think of a knot as simply a particular type of subset of points living in space. The four words -- image, smooth, simple, and closed -- ensure that we get the kinds of subsets that “look like” knots as we intuitively and physically understand them.</p>
 <ol class="decimal">
-<li id="li-72"><p id="p-266"><dfn class="terminology">Image</dfn>: The image of a function is the set of all its “outputs”. This is also known as “range” in most high-school algebra contexts. We use the word image here so that we can forget about (most of) the details of the function \({\bf r}\) that parameterizes the knot as a curve, and think instead only of the points in space that the function traces out.</p></li>
-<li id="li-73"><p id="p-267"><dfn class="terminology">Smooth</dfn>: A function is smooth if it is infinitely many times differentiable at all its points. In the case of a curve, this means that there is a well-defined tangent vector to our curve at each of its points, that those tangent vectors also vary continuously from point to point, that their variations also vary continuously from point to point, and so on. This is the condition that rules out <a class="external" href="https://wildandnoncompactknots.wordpress.com/2013/04/30/what-is-knot-theory-anyway/" target="_blank">so-called <dfn class="terminology">wild</dfn> knots</a>.</p></li>
+<li id="li-72"><p id="p-270"><dfn class="terminology">Image</dfn>: The image of a function is the set of all its “outputs”. This is also known as “range” in most high-school algebra contexts. We use the word image here so that we can forget about (most of) the details of the function \({\bf r}\) that parameterizes the knot as a curve, and think instead only of the points in space that the function traces out.</p></li>
+<li id="li-73"><p id="p-271"><dfn class="terminology">Smooth</dfn>: A function is smooth if it is infinitely many times differentiable at all its points. In the case of a curve, this means that there is a well-defined tangent vector to our curve at each of its points, that those tangent vectors also vary continuously from point to point, that their variations also vary continuously from point to point, and so on. This is the condition that rules out <a class="external" href="https://wildandnoncompactknots.wordpress.com/2013/04/30/what-is-knot-theory-anyway/" target="_blank">so-called <dfn class="terminology">wild</dfn> knots</a>.</p></li>
 <li id="li-74">
-<p id="p-268"><dfn class="terminology">Closed</dfn>: A curve is closed if the function \({\bf r}\colon \mathbb{R}\to\mathbb{R}^3\) is <em class="emphasis">periodic</em>, that is, if there exists a positive real number \(T\) for which,</p>
+<p id="p-272"><dfn class="terminology">Closed</dfn>: A curve is closed if the function \({\bf r}\colon \mathbb{R}\to\mathbb{R}^3\) is <em class="emphasis">periodic</em>, that is, if there exists a positive real number \(T\) for which,</p>
 <div class="displaymath">
 \begin{equation*}
 \text{for all }t\in \mathbb{R}, \qquad \text{we have } {\bf r}\bigl(t+T\bigr) = {\bf r}(t).
@@ -145,75 +145,75 @@ MathJax.Hub.Config({
 </div>
 <p data-braille="continuation">The smallest such \(T\) is called the <em class="emphasis">period</em> of the function \({\bf r}\text{,}\) and we think of a closed curve as one whose “starting point” and “ending point” are the same, \({\bf r}(0) = {\bf r}(T).\)</p>
 </li>
-<li id="li-75"><p id="p-269"><dfn class="terminology">Simple</dfn>: A closed curve is simple if it does not intersect itself <em class="emphasis">except</em> at its starting/ending point. In other words, we cannot have \({\bf r}(t_1) = {\bf r}(t_2)\) unless \(t_1-t_2\) is a multiple of the period \(T\text{.}\) Another way to say this is to require that the function \({\bf r}:[0,T) \to \mathbb{R}^3\) to be <em class="emphasis">one-to-one</em>, i.e., require that every pair of different “times” \(0 \leq t_1 \lt t_2 \lt T\) find the curve at different points, \({\bf r}(t_1) \neq {\bf r}(t_2).\)</p></li>
+<li id="li-75"><p id="p-273"><dfn class="terminology">Simple</dfn>: A closed curve is simple if it does not intersect itself <em class="emphasis">except</em> at its starting/ending point. In other words, we cannot have \({\bf r}(t_1) = {\bf r}(t_2)\) unless \(t_1-t_2\) is a multiple of the period \(T\text{.}\) Another way to say this is to require that the function \({\bf r}:[0,T) \to \mathbb{R}^3\) to be <em class="emphasis">one-to-one</em>, i.e., require that every pair of different “times” \(0 \leq t_1 \lt t_2 \lt T\) find the curve at different points, \({\bf r}(t_1) \neq {\bf r}(t_2).\)</p></li>
 </ol></article></div>
-<p id="p-270">The main feature that you'll notice differentiates mathematical knots from everyday knots in the physical world is that mathematical knots are “closed”: to model one using a physical string, we ultimately will need to connect the string's two ends together to close the curve.</p>
+<p id="p-274">The main feature that you'll notice differentiates mathematical knots from everyday knots in the physical world is that mathematical knots are “closed”: to model one using a physical string, we ultimately will need to connect the string's two ends together to close the curve.</p>
 <article class="definition definition-like" id="def_diagram"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
 </h6>
-<p id="p-271">A <dfn class="terminology">diagram</dfn> \(D\) of a knot \(K\text{,}\) also called a <dfn class="terminology">projection</dfn>, is a two-dimensional visualization of \(K\text{,}\) consisting of a set of unbroken curves called <dfn class="terminology">arcs</dfn> of which exactly two meet at each <dfn class="terminology">crossing</dfn>. Each crossing indicates which arc crosses <em class="emphasis">over</em> the other.</p></article><p id="p-272"><figure class="figure figure-like" id="fig_trefoil_ggb"><iframe id="geogebra-knotdef" width="600" height="450" src="geogebra-knotdef-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.6<span class="period">.</span></span><span class="space"> </span>A simple example of a knot, called \(K(3,2)\text{.}\) <em class="emphasis">Click and drag to change perspective.</em></figcaption></figure></p>
+<p id="p-275">A <dfn class="terminology">diagram</dfn> \(D\) of a knot \(K\text{,}\) also called a <dfn class="terminology">projection</dfn>, is a two-dimensional visualization of \(K\text{,}\) consisting of a set of unbroken curves called <dfn class="terminology">arcs</dfn> of which exactly two meet at each <dfn class="terminology">crossing</dfn>. Each crossing indicates which arc crosses <em class="emphasis">over</em> the other.</p></article><p id="p-276"><figure class="figure figure-like" id="fig_trefoil_ggb"><iframe id="geogebra-knotdef" width="600" height="450" src="geogebra-knotdef-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.6<span class="period">.</span></span><span class="space"> </span>A simple example of a knot, called \(K(3,2)\text{.}\) <em class="emphasis">Click and drag to change perspective.</em></figcaption></figure></p>
 <article class="activity project-like" id="act_k32"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
 </h6>
-<p id="p-273">Either physically construct the knot \(K=K(3,2)\) shown in <a class="xref" data-knowl="./knowl/fig_trefoil_ggb.html" title="Figure 3.1.6">Figure 3.1.6</a>, or use the applet above to do the following.</p>
-<p id="p-274">Sketch a diagram of \(K\) having exactly three crossings.</p>
-<p id="p-275">Then, change your perspective (perform an <a class="xref" data-knowl="./knowl/def_isotopy.html" title="Definition 2.1.8">isotopy</a> to your knot) so as to discover and sketch another diagram of \(K\) having <em class="emphasis">more</em> than three crossings.</p></article><article class="definition definition-like" id="def_unknot"><h6 class="heading">
+<p id="p-277">Either physically construct the knot \(K=K(3,2)\) shown in <a class="xref" data-knowl="./knowl/fig_trefoil_ggb.html" title="Figure 3.1.6">Figure 3.1.6</a>, or use the applet above to do the following.</p>
+<p id="p-278">Sketch a diagram of \(K\) having exactly three crossings.</p>
+<p id="p-279">Then, change your perspective (perform an <a class="xref" data-knowl="./knowl/def_isotopy.html" title="Definition 2.1.8">isotopy</a> to your knot) so as to discover and sketch another diagram of \(K\) having <em class="emphasis">more</em> than three crossings.</p></article><article class="definition definition-like" id="def_unknot"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.7</span><span class="period">.</span>
 </h6>
-<p id="p-276">We call a knot \(U\) an <dfn class="terminology">unknot</dfn> (or “unknotted”) if there exists a diagram of \(U\) having zero crossings.</p></article><p id="p-277">An unknot is in a sense the “simplest” knot possible, with a minimal amount of self-tangling.</p>
+<p id="p-280">We call a knot \(U\) an <dfn class="terminology">unknot</dfn> (or “unknotted”) if there exists a diagram of \(U\) having zero crossings.</p></article><p id="p-281">An unknot is in a sense the “simplest” knot possible, with a minimal amount of self-tangling.</p>
 <article class="activity project-like" id="act_unknot"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
 </h6>
-<p id="p-278">Physically construct an unknot \(U\) using rope or string.</p>
-<p id="p-279">Then, review your work from <a class="xref" data-knowl="./knowl/act_braid2.html" title="Activity 2.1.2">Activity 2.1.2</a> and/or <a class="xref" data-knowl="./knowl/act_isotopy.html" title="Activity 2.1.6">Activity 2.1.6</a> to inspire the following.</p>
+<p id="p-282">Physically construct an unknot \(U\) using rope or string.</p>
+<p id="p-283">Then, review your work from <a class="xref" data-knowl="./knowl/act_braid2.html" title="Activity 2.1.2">Activity 2.1.2</a> and/or <a class="xref" data-knowl="./knowl/act_isotopy.html" title="Activity 2.1.6">Activity 2.1.6</a> to inspire the following.</p>
 <ol class="decimal">
-<li id="li-76"><p id="p-280">Perform an <a class="xref" data-knowl="./knowl/def_isotopy.html" title="Definition 2.1.8">isotopy</a> on your knot to discover and sketch a diagram of \(U\) having <em class="emphasis">exactly one crossing</em>.</p></li>
-<li id="li-77"><p id="p-281">Perform an <a class="xref" data-knowl="./knowl/def_isotopy.html" title="Definition 2.1.8">isotopy</a> on your knot to discover and sketch a diagram of \(U\) having <em class="emphasis">exactly two crossings</em>.</p></li>
-<li id="li-78"><p id="p-282">How would you describe the isotopy that established the braid relation <a class="xref" data-knowl="./knowl/eq_skeinrelation.html" title="Equation 2.1.2">(2.1.2)</a> in <a class="xref" data-knowl="./knowl/act_braid2.html" title="Activity 2.1.2">Activity 2.1.2</a>? Demonstrate how this might work with your unknot, by first creating a diagram of \(U\) having at least three crossings.</p></li>
-</ol></article><p id="p-283">Ultimately our goal is to study “knots up to isotopy”. In other words, we want to say that two knots \(K,K^\prime\) are <em class="emphasis">different</em> only if we need to untie one in order to re-tie it into the other. If we can turn \(K\) into \(K^\prime\) only by smoothly moving its physical strands in space, in other words, if \(K\) and \(K^\prime\) are isotopic, then we want to say those two knots are really “the same knot”.</p>
+<li id="li-76"><p id="p-284">Perform an <a class="xref" data-knowl="./knowl/def_isotopy.html" title="Definition 2.1.8">isotopy</a> on your knot to discover and sketch a diagram of \(U\) having <em class="emphasis">exactly one crossing</em>.</p></li>
+<li id="li-77"><p id="p-285">Perform an <a class="xref" data-knowl="./knowl/def_isotopy.html" title="Definition 2.1.8">isotopy</a> on your knot to discover and sketch a diagram of \(U\) having <em class="emphasis">exactly two crossings</em>.</p></li>
+<li id="li-78"><p id="p-286">How would you describe the isotopy that established the braid relation <a class="xref" data-knowl="./knowl/eq_skeinrelation.html" title="Equation 2.1.2">(2.1.2)</a> in <a class="xref" data-knowl="./knowl/act_braid2.html" title="Activity 2.1.2">Activity 2.1.2</a>? Demonstrate how this might work with your unknot, by first creating a diagram of \(U\) having at least three crossings.</p></li>
+</ol></article><p id="p-287">Ultimately our goal is to study “knots up to isotopy”. In other words, we want to say that two knots \(K,K^\prime\) are <em class="emphasis">different</em> only if we need to untie one in order to re-tie it into the other. If we can turn \(K\) into \(K^\prime\) only by smoothly moving its physical strands in space, in other words, if \(K\) and \(K^\prime\) are isotopic, then we want to say those two knots are really “the same knot”.</p>
 <article class="definition definition-like" id="def_moves"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Reidemeister moves.</span>
 </h6>
-<p id="p-284">Given a knot \(K\) and a diagram \(D\) of \(K\text{,}\) each of the following ways of modifying \(D\) corresponds to an isotopy of \(K\text{.}\)</p>
+<p id="p-288">Given a knot \(K\) and a diagram \(D\) of \(K\text{,}\) each of the following ways of modifying \(D\) corresponds to an isotopy of \(K\text{.}\)</p>
 <ol class="decimal">
-<li id="li-79"><p id="p-285">The <dfn class="terminology">type-I move</dfn> adds or subtracts one crossing.</p></li>
-<li id="li-80"><p id="p-286">The <dfn class="terminology">type-II move</dfn> adds or subtracts two crossings.</p></li>
-<li id="li-81"><p id="p-287">The <dfn class="terminology">type-III move</dfn> preserves the number of crossings.</p></li>
+<li id="li-79"><p id="p-289">The <dfn class="terminology">type-I move</dfn> adds or subtracts one crossing.</p></li>
+<li id="li-80"><p id="p-290">The <dfn class="terminology">type-II move</dfn> adds or subtracts two crossings.</p></li>
+<li id="li-81"><p id="p-291">The <dfn class="terminology">type-III move</dfn> preserves the number of crossings.</p></li>
 </ol>
-<p id="p-288">These moves are collectively called <dfn class="terminology">Reidemeister moves</dfn> and are depicted below.</p>
+<p id="p-292">These moves are collectively called <dfn class="terminology">Reidemeister moves</dfn> and are depicted below.</p>
 <figure class="figure figure-like" id="fig_reid"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="https://i1.wp.com/mathemalchemy.org/wp-content/uploads/2021/02/reidemeisters.gif?resize=900%2C292%26ssl=1" style="width: 100%; height: auto;" alt=""></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.9<span class="period">.</span></span><span class="space"> </span>The type-I, type-II, and type-III Reidemeister moves. Source: <a class="external" href="https://mathemalchemy.org/2021/03/04/knots-trivial-and-otherwise/" target="_blank"><code class="code-inline tex2jax_ignore">https://mathemalchemy.org/2021/03/04/knots-trivial-and-otherwise/</code></a></figcaption></figure></article><p id="p-289">The <a class="xref" data-knowl="./knowl/def_moves.html" title="Definition 3.1.8: Reidemeister moves">Reidemeister moves</a> are named for Kurt Reidemeister, who in 1927 published one of two independent proofs that, in fact, these three moves are the <em class="emphasis">only</em> ways to change a knot's diagram without changing the “knottedness” of the knot (i.e., the only ways that an isotopy of the knot may change the knot's diagram).</p>
-<p id="p-290">This is good news, for reasons we'll appreciate in the next section! The bad news is that there is no efficient algorithm that tells us how to use Reidemeister moves to <em class="emphasis">know</em> for certain that two diagrams do, or do not, represent the same knot. Even detecting whether a diagram depicts the unknot is a challenging matter. <a class="external" href="https://arxiv.org/abs/1302.0180" target="_blank">Marc Lackenby</a> showed a few years ago that if a diagram of the unknot has \(n\) crossings, it might take as many as \((236n)^{11}\) Reidemeister moves to eliminate them all!</p>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">3.1.9<span class="period">.</span></span><span class="space"> </span>The type-I, type-II, and type-III Reidemeister moves. Source: <a class="external" href="https://mathemalchemy.org/2021/03/04/knots-trivial-and-otherwise/" target="_blank"><code class="code-inline tex2jax_ignore">https://mathemalchemy.org/2021/03/04/knots-trivial-and-otherwise/</code></a></figcaption></figure></article><p id="p-293">The <a class="xref" data-knowl="./knowl/def_moves.html" title="Definition 3.1.8: Reidemeister moves">Reidemeister moves</a> are named for Kurt Reidemeister, who in 1927 published one of two independent proofs that, in fact, these three moves are the <em class="emphasis">only</em> ways to change a knot's diagram without changing the “knottedness” of the knot (i.e., the only ways that an isotopy of the knot may change the knot's diagram).</p>
+<p id="p-294">This is good news, for reasons we'll appreciate in the next section! The bad news is that there is no efficient algorithm that tells us how to use Reidemeister moves to <em class="emphasis">know</em> for certain that two diagrams do, or do not, represent the same knot. Even detecting whether a diagram depicts the unknot is a challenging matter. <a class="external" href="https://arxiv.org/abs/1302.0180" target="_blank">Marc Lackenby</a> showed a few years ago that if a diagram of the unknot has \(n\) crossings, it might take as many as \((236n)^{11}\) Reidemeister moves to eliminate them all!</p>
 <article class="activity project-like" id="act_unknot2"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
 </h6>
-<p id="p-291">Use a physical model of the unknot \(U\) to discover a diagram of \(U\) having five crossings. Sketch this diagram.</p>
-<p id="p-292">Then, find a sequence of Reidemeister moves that eliminate all its crossings. Sketch each intermediate step, listing the move you used.</p>
-<p id="p-293">You probably accomplished this in only a few steps, meaning that you're far more efficient than the best known computer algorithm for unknot detection! For a computer, how many moves <em class="emphasis">might</em> this have required, according to Lackenby's worst-case scenario?</p></article><p id="p-294">Knot diagrams will be our primary tool both for representing knots, <em class="emphasis">and</em> for doing computations and algebra with knots. Our desire to do both leads us directly to a challenge: when we use a diagram of a knot to attempt to understand one of the knot's properties, how do we know that that property is actually seeing <em class="emphasis">the knot</em>, and not seeing <em class="emphasis">the diagram</em>? We'll explore that question in <a href="invariants.html" class="internal" title="Section 3.2: Knot Invariants">Section 3.2</a>.</p>
-<p id="p-295">We close this section by drawing connections between knots and the knot-like objects we studied in <a href="braidstangles.html" class="internal" title="Chapter 2: Braids and Rational Tangles">Chapter 2</a>.</p>
+<p id="p-295">Use a physical model of the unknot \(U\) to discover a diagram of \(U\) having five crossings. Sketch this diagram.</p>
+<p id="p-296">Then, find a sequence of Reidemeister moves that eliminate all its crossings. Sketch each intermediate step, listing the move you used.</p>
+<p id="p-297">You probably accomplished this in only a few steps, meaning that you're far more efficient than the best known computer algorithm for unknot detection! For a computer, how many moves <em class="emphasis">might</em> this have required, according to Lackenby's worst-case scenario?</p></article><p id="p-298">Knot diagrams will be our primary tool both for representing knots, <em class="emphasis">and</em> for doing computations and algebra with knots. Our desire to do both leads us directly to a challenge: when we use a diagram of a knot to attempt to understand one of the knot's properties, how do we know that that property is actually seeing <em class="emphasis">the knot</em>, and not seeing <em class="emphasis">the diagram</em>? We'll explore that question in <a href="invariants.html" class="internal" title="Section 3.2: Knot Invariants">Section 3.2</a>.</p>
+<p id="p-299">We close this section by drawing connections between knots and the knot-like objects we studied in <a href="braidstangles.html" class="internal" title="Chapter 2: Braids and Rational Tangles">Chapter 2</a>.</p>
 <article class="definition definition-like" id="def_braidclosure"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.10</span><span class="period">.</span>
 </h6>
-<p id="p-296">The <dfn class="terminology">braid closure</dfn> of a braid \(b\in B_n\) is a knot or link resulting from joining each of the braid's top endpoints to the bottom endpoint of the same position (first to first, second to second, etc.).</p></article><article class="activity project-like" id="act_braidclosure1"><h6 class="heading">
+<p id="p-300">The <dfn class="terminology">braid closure</dfn> of a braid \(b\in B_n\) is a knot or link resulting from joining each of the braid's top endpoints to the bottom endpoint of the same position (first to first, second to second, etc.).</p></article><article class="activity project-like" id="act_braidclosure1"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span>
 </h6>
-<p id="p-297">Verify that the braid closure of \(b = s_1 \in B_2\text{,}\) shown in the Sage plot below, is an unknot.</p>
-<p id="p-298">Is the same true of \(c = s_1^2 \in B_2\text{?}\) Why or why not?</p>
+<p id="p-301">Verify that the braid closure of \(b = s_1 \in B_2\text{,}\) shown in the Sage plot below, is an unknot.</p>
+<p id="p-302">Is the same true of \(c = s_1^2 \in B_2\text{?}\) Why or why not?</p>
 <div class="sagecell-sage" id="sage-6"><script type="text/x-sage">B.<s1> = BraidGroup(2);
 b = s1;
 b.plot( orientation='top-bottom', thickness=4 )
 </script></div></article><article class="activity project-like" id="act_braidclosure2"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span>
 </h6>
-<p id="p-299">Construct a physical copy of the trefoil knot \(K=K(3,2)\) from <a class="xref" data-knowl="./knowl/fig_trefoil_ggb.html" title="Figure 3.1.6">Figure 3.1.6</a>.</p>
-<p id="p-300">By manipulating your knot (via <a class="xref" data-knowl="./knowl/def_isotopy.html" title="Definition 2.1.8">isotopy</a>), find a braid \(b \in B_2\) whose braid closure is \(K\text{.}\)</p>
-<p id="p-301">What braid would represent the <dfn class="terminology">reverse</dfn> knot \(-K\text{,}\) whose diagram is obtained by reversing every over-crossing to an under-crossing and vice versa?</p></article><article class="activity project-like" id="act_braidclosure3"><h6 class="heading">
+<p id="p-303">Construct a physical copy of the trefoil knot \(K=K(3,2)\) from <a class="xref" data-knowl="./knowl/fig_trefoil_ggb.html" title="Figure 3.1.6">Figure 3.1.6</a>.</p>
+<p id="p-304">By manipulating your knot (via <a class="xref" data-knowl="./knowl/def_isotopy.html" title="Definition 2.1.8">isotopy</a>), find a braid \(b \in B_2\) whose braid closure is \(K\text{.}\)</p>
+<p id="p-305">What braid would represent the <dfn class="terminology">reverse</dfn> knot \(-K\text{,}\) whose diagram is obtained by reversing every over-crossing to an under-crossing and vice versa?</p></article><article class="activity project-like" id="act_braidclosure3"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span>
 </h6>
-<p id="p-302">The braid \(b = \bigl(s_1s_2^{-1}\bigr)^2 \in B_3\) is shown in the Sage plot below.</p>
-<p id="p-303">Construct a physical copy of its braid closure. (This knot is called the <em class="emphasis">figure-eight knot</em>.) Sketch its diagram.</p>
-<p id="p-304">Using your physical copy, can you manipulate this knot via <a class="xref" data-knowl="./knowl/def_isotopy.html" title="Definition 2.1.8">isotopy</a> so that its new diagram has all of its crossings reversed?</p>
-<p id="p-305">Is it true that in the braid group \(B_3\) we have</p>
+<p id="p-306">The braid \(b = \bigl(s_1s_2^{-1}\bigr)^2 \in B_3\) is shown in the Sage plot below.</p>
+<p id="p-307">Construct a physical copy of its braid closure. (This knot is called the <em class="emphasis">figure-eight knot</em>.) Sketch its diagram.</p>
+<p id="p-308">Using your physical copy, can you manipulate this knot via <a class="xref" data-knowl="./knowl/def_isotopy.html" title="Definition 2.1.8">isotopy</a> so that its new diagram has all of its crossings reversed?</p>
+<p id="p-309">Is it true that in the braid group \(B_3\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 \bigl( s_1s_2^{-1} \bigr)^2 = \bigl( s_1^{-1}s_2 \bigr)^2 \quad ?
@@ -225,14 +225,14 @@ b.plot( orientation='top-bottom', thickness=4 )
 </script></div></article><article class="definition definition-like" id="def_tangleclosure"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.11</span><span class="period">.</span>
 </h6>
-<p id="p-306">The <dfn class="terminology">numerator closure</dfn> \(N(G)\) of a rational tangle \(G\) is a knot or link that results from joining together the two “north” endpoints, and joining together the two “south” endpoints.</p>
-<p id="p-307">The <dfn class="terminology">denominator closure</dfn> \(D(G)\) of a rational tangle \(G\) is a knot or link that results from joining together the two “west” endpoints, and joining together the two “east” endpoints.</p></article><article class="activity project-like" id="act_tangleclosure1"><h6 class="heading">
+<p id="p-310">The <dfn class="terminology">numerator closure</dfn> \(N(G)\) of a rational tangle \(G\) is a knot or link that results from joining together the two “north” endpoints, and joining together the two “south” endpoints.</p>
+<p id="p-311">The <dfn class="terminology">denominator closure</dfn> \(D(G)\) of a rational tangle \(G\) is a knot or link that results from joining together the two “west” endpoints, and joining together the two “east” endpoints.</p></article><article class="activity project-like" id="act_tangleclosure1"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.7</span><span class="period">.</span>
 </h6>
-<p id="p-308">Review your work from <a class="xref" data-knowl="./knowl/act_braidclosure2.html" title="Activity 3.1.5">Activity 3.1.5</a>. For what rational tangle \(G\) is the trefoil \(K = K(3,2)\) a closure? Is it a numerator or a denominator closure?</p></article><article class="activity project-like" id="act_tangleclosure2"><h6 class="heading">
+<p id="p-312">Review your work from <a class="xref" data-knowl="./knowl/act_braidclosure2.html" title="Activity 3.1.5">Activity 3.1.5</a>. For what rational tangle \(G\) is the trefoil \(K = K(3,2)\) a closure? Is it a numerator or a denominator closure?</p></article><article class="activity project-like" id="act_tangleclosure2"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span>
 </h6>
-<p id="p-309">Let \(G\) be an arbitrary rational tangle. Explain why one of \(N(G)\) and \(D(G)\) is guaranteed to be a knot, and the other is guaranteed to be a two-component link.</p></article></section></div></main>
+<p id="p-313">Let \(G\) be an arbitrary rational tangle. Explain why one of \(N(G)\) and \(D(G)\) is guaranteed to be a knot, and the other is guaranteed to be a two-component link.</p></article></section></div></main>
 </div>
 </body>
 </html>

@@ -252,4 +252,26 @@ Rational tangles' physical, geometrical construction lends itself well to hands-
     </statement>
 </activity>
 
+<exercises xml:id="ex_tangles">
+
+    <exercise>
+        <statement>
+            <p>Find a rational tangle <m>G</m> whose fraction is <m>F(G) = -4</m>, and sketch it. What relationship does this tangle have to the tangle whose fraction is <m>+4</m>?</p>
+            <p>Does that same relationship hold for all tangles whose fractions are <m>\pm</m> opposites? Test and prove/disprove your hypothesis.
+            </p>
+        </statement>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>Your co-teacher Giannis is preparing to do the <q>rational tangle dance</q> activity with his 8th-grade students. However, in his lesson plan you notice that he's misremembered the tangle function generators as <me>t(x) = x+1 \quad \text{ and }\quad r(x) = \frac{1}{x}.</me>
+            </p>
+            <p>Give one reason why his <m>r</m> function <em>does</em> behave appropriately for the tangle function group. Then, demonstrate using algebra that Giannis' <m>t</m> and <m>r</m> <em>do not</em>, in fact, mimic the behavior of the rational tangle group as per <xref ref="def_tanglegroup"/>.
+            </p>
+        </statement>
+    </exercise>
+
+
+</exercises>
+
 </section>
