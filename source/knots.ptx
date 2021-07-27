@@ -217,7 +217,48 @@ b.plot( orientation='top-bottom', thickness=4 )</input>
         </statement>
     </activity>
 
-<!--
--->
+
+<exercises xml:id="ex_knots">
+
+    <exercise>
+        <statement>
+            <p>The University of Indiana's <em>KnotInfo</em> database at <url href="https://knotinfo.math.indiana.edu/"/> contains a wealth of information about prime knots.
+            </p>
+            <p>Use the database to view the list of 3- to 6-crossing knots together with their <em>Braid Notation</em> and <em>Conway Notation</em>. You can then click on any knot's name to view a diagram of that knot.</p>
+            <p>Using any of the 5-crossing knots of your choice, describe how its <term>(a)</term> braid notation, and then its <term>(b)</term> Conway notation can be used to construct it. (How do you read these notations, and how do they describe a step-by-step recipe for making your knot?) Include diagrams with your explanation as appropriate.
+            </p>
+        </statement>
+    </exercise>
+
+    
+    <exercise>
+        <statement>
+            <p>Prove, using the <xref ref="def_moves" text="custom">Reidemeister moves</xref>, that any knot diagram having exactly <em>two</em> crossings must be a diagram of the unknot.
+            </p>
+        </statement>
+        <hint>
+            <p>How many different two-crossing diagrams are there? Treat each one separately.</p>
+        </hint>
+    </exercise>
+    
+
+    <exercise>
+        <statement>
+            <p>The video shown below went viral several years ago. It depicts how a cord, looped around the bottom of a table, can be freed without lifting the leg of the table.
+            </p>
+            <figure xml:id="fig_viral">
+                <caption>Freeing a cord without lifting the table. Source: <url href="https://twitter.com/DrGBuckingham/status/1272791594765344768?s=20"/></caption>
+                <image source="images/gif_viral.gif" width="75%"/>
+            </figure>
+            <p>Give a step-by-step explanation of how this <q>trick</q> works, using one or more Reidemeister moves as appropriate. Include figures with your steps, and be sure you address <term>(a)</term> what is the knot-theory role played by the table leg? and <term>(b)</term> how do we account for the fact that the cord is not plugged into the other end of the wire (i.e., that the cord does not form a <em>knot</em> in the mathematical sense)?</p>
+            
+        </statement>
+    </exercise>
+
+    
+
+</exercises>
+
+
 
 </section>
