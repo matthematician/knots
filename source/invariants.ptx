@@ -24,5 +24,80 @@
 
 <p>Every knot invariant has the power of <term>discrimination</term>: Given two diagrams <m>D_1,D_2</m> and a knot invariant <m>P</m>, if <m>P</m> is true for one diagram and false for the other, then we know for certain that those diagrams represent <em>different</em> knots. However, most knot invariants do not have the power of <term>confirmation</term>: We cannot always say that if <m>P</m> is true for <em>both</em> diagrams, then those diagrams represent the <em>same</em> knot. An invariant that does that, if one exists, is called a complete invariant. Those are the <q>holy grail</q> of knot theory, since they would completely classify all types of knots -- in the same way that the fraction of a rational tangle classified all rational tangles (<xref ref="thm_fraction"/>).</p>
 
+<activity xml:id="act_notinvariant">
+    <statement>
+        <p>All three of the diagrams below depict the unknot <m>U</m>.
+        </p>
+        <figure xml:id="fig_unknots">
+            <caption>Three diagrams of the unknot.</caption>
+            <image source="images/threeunknots.png" width="85%"/>
+        </figure>
+        <p>Which of the following four properties is/are the <em>same</em> for <em>all three</em> diagrams? Can you tell whether any of these properties is or is not a knot invariant? Explain.</p>
+        <ol type="alpha">
 
+            <li>
+                <p>
+                    The total number of crossings in the diagram.
+                </p>
+            </li>
+            <li>
+                <p>
+                    The difference between the number of <q>over</q> and the number of <q>under</q> crossings in a complete trip around the diagram.
+                </p>
+            </li>
+            <li>
+                <p>
+                    The total number of arcs in the diagram.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Whether the total number of arcs is an even or odd number.
+                </p>
+            </li>
+        </ol>   
+    </statement>
+</activity>
+
+<p>Since the <xref ref="def_moves" text="custom">Reidemeister moves</xref> give a <em>complete</em> list of diagram equivalencies for knots, they also are a complete set of tests for whether a diagram property is a knot invariant.</p>
+
+<theorem xml:id="thm_invariant">
+    <statement>
+        <p>A diagram property <m>P</m> is a knot invariant if, and only if, it is preserved by all three Reidemeister moves.</p>
+    </statement>
+</theorem>
+
+<p>In other words, to check whether a diagram property is a knot invariant -- that is, to know whether the property will either hold or not hold for <em>all</em> possible diagrams of a given knot -- we only need to check that each Reidemeister move preserves the truth value of the property.</p>
+
+<example xml:id="ex_invariant">
+    <title>One invariant and one non-invariant</title>
+    <statement>
+        <p>If <m>P</m> is the property <q>total number of arcs in a diagram</q>, then we can check <m>P</m> is <em>not</em> a knot invariant. All we need is to find a single Reidemeister move which <em>alters</em> the value of this property for a diagram.</p>
+        <p>Let <m>K</m> be a knot and <m>D</m> be any diagram for <m>K</m>. Suppose <m>D</m> has a total of <m>n</m> arcs. How many arcs will <m>D</m> have after we apply each of the Reidemeister moves to a portion of it?</p>
+        <figure xml:id="fig_invariantex">
+                <caption>Arc number is <em>unchanged</em> by the Type-I and Type-III moves; however, the Type-II move results in <em>one more or one fewer</em> arc. 
+                Source: <url href="https://mathemalchemy.org/2021/03/04/knots-trivial-and-otherwise/"/></caption>
+                <image source="https://i1.wp.com/mathemalchemy.org/wp-content/uploads/2021/02/reidemeisters.gif?resize=900%2C292%26ssl=1" width="100%"/>
+            </figure>
+        <p>As the figure above shows, the total arc number is <term>not a knot invariant</term>, because one of the Reidemeister moves (namely, the Type-II move) <em>changes</em> the value of this property by either adding or subtracting an arc <em>without</em> changing the underlying knot.</p>
+
+        <p>If <m>Q</m> is the property <q>the fewest number of toothpicks necessary to make a diagram</q> (called the <url href="https://en.wikipedia.org/wiki/Stick_number">stick number</url>), then <m>Q</m> is a knot invariant.</p>
+        <p>To see why, notice that the Reidemeister moves can always be used to <em>decrease</em> the number of crossings in a diagram, and each decrease can reduce the number of toothpicks needed to make the diagram. So the <em>minimal</em> number of toothpicks needed to make a diagram will be unchanged by the Reidemeister moves, even if the <em>actual</em> number might vary as we <q>twist</q> or <q>poke</q> the arcs in a diagram.
+        </p>
+    </statement>
+</example>
+
+
+<p>The <em>KnotInfo</em> database has a long list of knot invariants for you to browse. Each has a considerable body of literature and research behind it, and none but the most die-hard knot theorists in the world have familiarity with all of them!</p>
+<figure xml:id="fig_invs">
+    <caption>A sample of different invariants in the KnotInfo database.</caption>
+
+    <image source="images/invs.png" width="90%"/>
+</figure>
+<activity xml:id="act_invs2">
+    <statement>
+        <p>Use the <em>KnotInfo</em> database to look up the Alexander polynomial of the seven-crossing knot named <m>7_4</m>. What interesting property do you notice that's common to the Alexander polynomials of all knots?</p>
+        <p>By consulting this database, can you predict a formula for the Alexander polynomials of all knots of the form <m>3_1, 4_1, 5_1, 6_1, 7_1, \ldots</m> ? What pattern(s) do you see?</p>
+    </statement>
+</activity>
 </section>
