@@ -249,6 +249,7 @@ print(A); print('\n'); A.echelon_form();</input>
 
 <activity xml:id="act_trefoilkei">
     <p>If the arcs of the diagram of the trefoil <m>3_1</m> below are labeled <m>x,y,z</m>, determine three relations their fundamental kei operation <m>\triangleright</m> must satisfy as a result of this diagram's three crossings.</p>
+    <image source="images/trefoilkei.png" width="75%"/>
     <p>Then, determine a complete operation table for the fundamental kei <m>\mathcal{K}(3_1)</m>.</p>
 </activity>
 
