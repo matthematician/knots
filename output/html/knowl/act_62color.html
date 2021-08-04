@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*       on 2021-08-04T16:37:34-04:00       *-->
+<!--*   A recent stable commit (2020-08-09):   *-->
+<!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+<script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script>
+</head>
+<body>
+<article class="activity project-like"><h6 xmlns:svg="http://www.w3.org/2000/svg" class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span>
+</h6>
+<p>The knot \(6_2\) is shown below, along with its rational tangle and its braid representations.</p>
+<figure class="figure figure-like"><div xmlns:svg="http://www.w3.org/2000/svg" class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/6-2knot.png" class="contained" alt=""></div>
+<figcaption xmlns:svg="http://www.w3.org/2000/svg"><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.4<span class="period">.</span></span><span class="space"> </span>A (reduced, alternating) diagram of the knot \(K=6_2\) as well as a rational tangle and a braid of which it is the closure.</figcaption></figure><p>Use linear algebra to determine whether this knot is \(k\)-colorable for <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">(a)</dfn> \(k=3\text{,}\) and <dfn xmlns:svg="http://www.w3.org/2000/svg" class="terminology">(b)</dfn> \(k=4\text{.}\)</p>
+<p>The Sage cell below can assist you with this calculation, once you've filled in the entries of the \(6\times 6\) matrix.</p>
+<div class="sagecell-sage" id="sage-8"><script type="text/x-sage">M = MatrixSpace(IntegerModRing(3),6,6);
+A = M([ , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ]);
+print(A); print('\n'); A.echelon_form();
+</script></div>
+<div class="solutions"><a class="hint-knowl original" data-knowl="./knowl/hint-8-hidden.html" title="Hint 4.1.4.1"><span xmlns:svg="http://www.w3.org/2000/svg" class="type">Hint.</span> </a></div></article><span class="incontext"><a href="keisquandles.html#act_62color">in-context</a></span>
+</body>
+</html>

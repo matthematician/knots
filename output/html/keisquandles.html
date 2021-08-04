@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-08-04T15:12:48-04:00       *-->
+<!--*       on 2021-08-04T16:37:31-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -49,7 +49,15 @@
     paths: {pretext: "https://pretextbook.org/js/lib"},
   },
 };
-</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
+    // Make *any* div with class 'sagecell-sage' an executable Sage cell
+    // Their results will be linked, only within language type
+    sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
+                           linked: true,
+                           languages: ['sage'],
+                           evalButtonText: 'Evaluate (Sage)'});
+});
+</script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -76,10 +84,10 @@
 </div></div>
 <nav xmlns:svg="http://www.w3.org/2000/svg" id="primary-navbar" class="navbar"><div class="container">
 <div class="navbar-top-buttons">
-<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="invariants.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="oak.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="keis.html" title="Next">Next</a></span></div>
+<button class="sidebar-left-toggle-button button active" aria-label="Show or hide table of contents sidebar">Contents</button><div class="tree-nav toolbar toolbar-divisor-3"><span class="threebuttons"><a id="previousbutton" class="previous-button toolbar-item button" href="alginvariants.html" title="Previous">Prev</a><a id="upbutton" class="up-button button toolbar-item" href="alginvariants.html" title="Up">Up</a><a id="nextbutton" class="next-button button toolbar-item" href="groups.html" title="Next">Next</a></span></div>
 </div>
 <div class="navbar-bottom-buttons toolbar toolbar-divisor-4">
-<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="invariants.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="oak.html" title="Up">Up</a><a class="next-button button toolbar-item" href="keis.html" title="Next">Next</a>
+<button class="sidebar-left-toggle-button button toolbar-item active">Contents</button><a class="previous-button toolbar-item button" href="alginvariants.html" title="Previous">Prev</a><a class="up-button button toolbar-item" href="alginvariants.html" title="Up">Up</a><a class="next-button button toolbar-item" href="groups.html" title="Next">Next</a>
 </div>
 </div></nav></header><div class="page">
 <div xmlns:svg="http://www.w3.org/2000/svg" id="sidebar-left" class="sidebar" role="navigation"><div class="sidebar-content">
@@ -103,27 +111,200 @@
 <li><a href="invariants.html" data-scroll="invariants">Knot Invariants</a></li>
 </ul>
 </li>
-<li class="link active">
-<a href="keisquandles.html" data-scroll="keisquandles"><span class="codenumber">4</span> <span class="title">Keis and Quandles</span></a><ul>
-<li><a href="keis.html" data-scroll="keis">Keis and Knots</a></li>
-<li><a href="quandles.html" data-scroll="quandles">Quandles and Knots</a></li>
-</ul>
-</li>
 <li class="link">
-<a href="knotgroup.html" data-scroll="knotgroup"><span class="codenumber">5</span> <span class="title">Knot Groups</span></a><ul>
-<li><a href="groups.html" data-scroll="groups">Quandles and Groups</a></li>
-<li><a href="knotgroups.html" data-scroll="knotgroups">The Group of a Knot</a></li>
+<a href="alginvariants.html" data-scroll="alginvariants"><span class="codenumber">4</span> <span class="title">Algebraic Invariants</span></a><ul>
+<li><a href="keisquandles.html" data-scroll="keisquandles" class="active">Keis and Quandles</a></li>
+<li><a href="groups.html" data-scroll="groups">The Group of a Knot</a></li>
 </ul>
 </li>
 </ul></nav><div class="extras"><nav><a class="mathbook-link" href="https://pretextbook.org">Authored in PreTeXt</a><a href="https://www.mathjax.org"><img title="Powered by MathJax" src="https://www.mathjax.org/badge/badge.gif" alt="Powered by MathJax"></a></nav></div>
 </div></div>
-<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="chapter" id="keisquandles"><h2 class="heading">
-<span class="type">Chapter</span> <span class="codenumber">4</span> <span class="title">Keis and Quandles</span>
+<main class="main"><div id="content" class="pretext-content"><section xmlns:svg="http://www.w3.org/2000/svg" class="section" id="keisquandles"><h2 class="heading hide-type">
+<span class="type">Section</span> <span class="codenumber">4.1</span> <span class="title">Keis and Quandles</span>
 </h2>
-<nav class="summary-links"><ul>
-<li><a href="keis.html"><span class="codenumber">4.1</span> <span class="title">Keis and Knots</span></a></li>
-<li><a href="quandles.html"><span class="codenumber">4.2</span> <span class="title">Quandles and Knots</span></a></li>
-</ul></nav></section></div></main>
+<article class="objectives goal-like" id="objectives-7"><h6 class="heading"><span class="type">Objectives</span></h6>
+<ol class="decimal"><li id="li-91"><p id="p-375">Perform algebraic computations using axioms of keis and quandles, and use diagrams of knots to motivate these algebraic properties and compute the fundamental kei and fundamental quandle of a knot.</p></li></ol></article><section class="introduction" id="introduction-2"><p id="p-376">We now turn to the question: how can we construct examples of knot invariants which are, themselves, algebraic structures? How can we encode the language of knot diagrams and diagram equivalence into the language of sets and binary operations (that is, magmas)?</p>
+<p id="p-377">We'll begin with something we already know to be an example of a knot invariant: colorability. If we can encode the colorability “rules” from <a class="xref" data-knowl="./knowl/def_kcolorable.html" title="Definition 3.2.11">Definition 3.2.11</a> into the properties of an algebraic operation, perhaps we will be on the path to algebraic invariants.</p>
+<article class="activity project-like" id="act_step1"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-378">Suppose three arcs of a knot diagram meet at a crossing, and the colors of these arcs are represented by three numbers \(x,y,z\text{.}\)</p>
+<p id="p-379"><dfn class="terminology">(a)</dfn> Which of the following equations is definitely true when \(x=y=z\text{?}\)</p>
+<p id="p-380"><dfn class="terminology">(b)</dfn> Which of the following equations is definitely false when \(x=y\) but \(z\) does not equal \(x\text{?}\)</p>
+<ol class="decimal">
+<li id="li-92"><p id="p-381">\(\displaystyle (x-y)(x-z)(y-z)=0\)</p></li>
+<li id="li-93"><p id="p-382">\(\displaystyle x +y -2z = 0\)</p></li>
+<li id="li-94"><p id="p-383">\(\displaystyle x^2 + y^2 - 2z^2=0\)</p></li>
+</ol></article><p id="p-384">One of the most flexible ways to create an algebraic property that mimics the colorability “rules” (either all three variables must be equal, or all three must be distinct) is to make an <em class="emphasis">averaging</em> property. In any group of three numbers, if one is an “average” of the other two, typically this means that it somehow lies “between” (and distinct from) the two -- unless the first two are equal, in which case their average will again be equal.</p>
+<article class="activity project-like" id="act_step2"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span>
+</h6>
+<p id="p-385"><dfn class="terminology">(a)</dfn> Which of the equations in <a class="xref" data-knowl="./knowl/act_step1.html" title="Activity 4.1.1">Activity 4.1.1</a> best expresses the idea that, among the three quantities \(x,y,z\text{,}\) one of them is an <em class="emphasis">average</em> of the other two?</p>
+<p id="p-386"><dfn class="terminology">(b)</dfn> Most often, the colloquial word “average” means “arithmetic mean”, a number having an equal <em class="emphasis">amount difference</em> from each of the values of which it is an average. For example, \(9\) is the arithmetic mean of \(2\) and \(16\) because it is \(7\) units away from each of them.</p>
+<p id="p-387">The <em class="emphasis">geometric mean</em> of two numbers has an equal <em class="emphasis">percent difference</em> from each of their values. For example, \(8\) is the geometric mean of \(2\) and \(32\) because it is a <em class="emphasis">factor of</em> \(4\) away from each of them.</p>
+<p id="p-388">Write an algebraic equation that expresses the idea that, among three numbers \(x,y,z\text{,}\) one of them is the geometric mean of the other two.</p>
+<p id="p-389"><dfn class="terminology">(c)</dfn> (Bonus.) What algebraic operation, applied to both sides of your answer to (b), gives you an algebraic property that looks like your answer to (a)?</p></article><p id="p-390">This “averaging” idea motivates the following theorem.</p>
+<article class="theorem theorem-like" id="thm_integeraverage"><h6 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">4.1.1</span><span class="period">.</span>
+</h6>
+<p id="p-391">Let \(K\) be a knot, \(D\) be one of its diagrams, and</p>
+<div class="displaymath">
+\begin{equation*}
+f \colon \{ \text{arcs of }D \} \to \{0,1,2,\ldots,k-1 \}
+\end{equation*}
+</div>
+<p class="continuation">be a \(k\)-coloration of the diagram \(D\text{.}\)</p>
+<p id="p-392">Then \(f\) is a valid \(k\)-coloration if, and only if, at every crossing of arcs \(x_i,x_j,x_k\text{,}\) with \(x_k\) being the overcrossing strand, the following equation holds:</p>
+<div class="displaymath">
+\begin{align}
+f(x_i) + f(x_j) - 2f(x_k) &amp;=0.\label{eq_magicav}\tag{4.1.1}
+\end{align}
+</div>
+<p class="continuation">In other words, the color of the over-strand is the average of the colors of the two under-strands.</p>
+<p id="p-393">Furthermore, this conclusion remains true if equality only holds modulo \(k\text{:}\)</p>
+<div class="displaymath">
+\begin{align}
+f(x_i) + f(x_j) -2 f(x_k) &amp;\equiv 0 &amp; \text{(mod k)}.\label{eq_magicav_modk}\tag{4.1.2}
+\end{align}
+</div></article><article class="remark remark-like" id="rem_modk"><h6 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">4.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Arithmetic Modulo \(k\).</span>
+</h6>
+<p id="p-394">Arithmetic modulo \(k\) means arithmetic done using only the <em class="emphasis">remainders</em> when numbers are divided by \(k\text{.}\)</p>
+<p id="p-395">For example, reducing the following equation modulo 3 requires us to replace all numbers with their remainders when divided by 3:</p>
+<div class="displaymath">
+\begin{align*}
+17 - 4 \amp= 13 \amp\amp\text{becomes, modulo 3,}\\
+2 - 1 \amp\equiv 1
+\end{align*}
+</div>
+<p id="p-396">since \(17\div 3 = 5r\boxed{2}\text{,}\) \(4\div 3 = 1r\boxed{1}\text{,}\) and \(13\div 3 = 4r\boxed{1}.\)</p>
+<p id="p-397">It can be shown that any equation involving addition, subtraction, and/or multiplication of integers remains true if all integers are reduced modulo \(k\) in this way, for any \(k \geq 1\text{.}\)</p>
+<p id="p-398">The case \(k=12\) is often called “clock arithmetic”, since it encodes statements like “Five hours past eleven o'clock is four o'clock” into the modulo-12 reduction</p>
+<div class="displaymath">
+\begin{align*}
+11 + 5\amp= 16 \amp\amp\text{which, modulo 12, is}\\
+11 + 5 \amp\equiv 4.
+\end{align*}
+</div></article><p id="p-399">We'll find that using arithmetic modulo \(k\) is the best way to model and search for colorations of knot diagrams using \(k\) colors.</p>
+<article class="activity project-like" id="act_mod3"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span>
+</h6>
+<p id="p-400">Let \(x,y,z\) be three integers, and \(\bar{x},\bar{y},\bar{z}\) be their remainders when divided by 3.</p>
+<p id="p-401"><dfn class="terminology">(a)</dfn> Explain why, if \(\bar{x}=\bar{y}=\bar{z}\text{,}\) then</p>
+<div class="displaymath">
+\begin{equation*}
+\bar{x}+\bar{y}+\bar{z} \equiv 0 \pmod{3}.
+\end{equation*}
+</div>
+<p id="p-402"><dfn class="terminology">(b)</dfn> Explain why, if \(\bar{x},\bar{y},\bar{z}\) are all different, then</p>
+<div class="displaymath">
+\begin{equation*}
+\bar{x} + \bar{y}+\bar{z}=0 \pmod{3}.
+\end{equation*}
+</div>
+<p class="continuation">(Hint: how many different remainders can there be when an integer is divided by 3? What are they?)</p>
+<p id="p-403"><dfn class="terminology">(c)</dfn> Explain why, if \(\bar{x} = \bar{y}\text{,}\) then the <em class="emphasis">only</em> way to satisfy the equation</p>
+<div class="displaymath">
+\begin{equation*}
+\bar{x}+\bar{y}+\bar{z} \equiv 0 \pmod{3}
+\end{equation*}
+</div>
+<p class="continuation">is to have \(\bar{z}=\bar{x}=\bar{y}\text{.}\)</p></article><p id="p-404">Your work in <a class="xref" data-knowl="./knowl/act_mod3.html" title="Activity 4.1.3">Activity 4.1.3</a> shows that the equation</p>
+<div class="displaymath">
+\begin{gather}
+\bar{x}+\bar{y}+\bar{z} \equiv 0 \pmod{3}.\label{eq_fox}\tag{4.1.3}
+\end{gather}
+</div>
+<p class="continuation">perfectly captures the <a class="xref" data-knowl="./knowl/def_fox.html" title="Definition 3.2.7">Fox tricolorability</a> criteria for a knot diagram. This means that whether a knot is tricolorable can be determined by the solutions of a linear system of equations: one unknown for each arc color, and one equation of the form <a class="xref" data-knowl="./knowl/eq_fox.html" title="Equation 4.1.3">(4.1.3)</a> for each crossing.</p>
+<article class="example example-like" id="ex_tricolorability"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_tricolorability"><h6 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">4.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Tricolorability of a diagram using linear algebra.</span>
+</h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_tricolorability"><article class="example example-like"><div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-6" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/H41WW1t6XOM?&amp;modestbranding=1&amp;rel=0"></iframe></div></article></div>
+<article class="activity project-like" id="act_62color"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.4</span><span class="period">.</span>
+</h6>
+<p id="p-405">The knot \(6_2\) is shown below, along with its rational tangle and its braid representations.</p>
+<figure class="figure figure-like" id="fig_sixtwo"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/6-2knot.png" class="contained" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.4<span class="period">.</span></span><span class="space"> </span>A (reduced, alternating) diagram of the knot \(K=6_2\) as well as a rational tangle and a braid of which it is the closure.</figcaption></figure><p id="p-406">Use linear algebra to determine whether this knot is \(k\)-colorable for <dfn class="terminology">(a)</dfn> \(k=3\text{,}\) and <dfn class="terminology">(b)</dfn> \(k=4\text{.}\)</p>
+<p id="p-407">The Sage cell below can assist you with this calculation, once you've filled in the entries of the \(6\times 6\) matrix.</p>
+<div class="sagecell-sage" id="sage-8"><script type="text/x-sage">M = MatrixSpace(IntegerModRing(3),6,6);
+A = M([ , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ]);
+print(A); print('\n'); A.echelon_form();
+</script></div>
+<div class="solutions">
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-8" id="hint-8"><span class="type">Hint.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-hint-8"><div class="hint solution-like"><p id="p-408">For the \(4\)-coloration question, remember the averaging equation <a class="xref" data-knowl="./knowl/eq_magicav_modk.html" title="Equation 4.1.2">(4.1.2)</a> is not quite as simple as for three colors.</p></div></div>
+</div></article><p id="p-409">This process gives us a way to determine \(k\)-colorability for any <em class="emphasis">given</em> number of colors \(k\text{.}\) But if we want to construct an algebraic <em class="emphasis">structure</em> capable of carrying colorability information for <em class="emphasis">all</em> values of \(k\text{,}\) we want something more general. That is where we turn next.</p></section><section class="subsection" id="subsection-1"><h3 class="heading hide-type">
+<span class="type">Subsection</span> <span class="codenumber">4.1.1</span> <span class="title">The Kei of a Knot</span>
+</h3>
+<p id="p-410">We want to construct a magma \((S,\triangleright)\) in which the elements of \(S\) are the “colors” of the arcs of a diagram of a knot, and in which the operation \(\triangleright\) can tell us, given the colors of two arcs incident at a crossing, what must the color of the third arc be.</p>
+<p id="p-411">In other words, we want \(\triangleright\) to complete the picture shown below.</p>
+<figure class="figure figure-like" id="fig_keiop"><div class="image-box" style="width: 40%; margin-left: 30%; margin-right: 30%;"><img src="images/keiop.png" class="contained" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.5<span class="period">.</span></span><span class="space"> </span>The element \(x\triangleright y\) completes this diagram of arc colorations. Our convention will be that \(y\) represents the “over-crossing” arc in this trio.</figcaption></figure><article class="activity project-like" id="act_kei1"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.5</span><span class="period">.</span>
+</h6>
+<p id="p-412">Use a type-1 <a class="xref" data-knowl="./knowl/def_moves.html" title="Definition 3.1.8: Reidemeister moves">Reidemeister move</a> to create a crossing in the diagram below. If \(\triangleright\) encodes a knot invariant, what <a class="xref" data-knowl="./knowl/def_props.html" title="Definition 1.1.9">algebraic property</a> must \(\triangleright\) satisfy as a result?</p>
+<figure class="figure figure-like" id="kei1"><div class="image-box" style="width: 15%; margin-left: 42.5%; margin-right: 42.5%;"><img src="images/keiop1.png" class="contained" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.6<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="activity project-like" id="act_kei2"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.6</span><span class="period">.</span>
+</h6>
+<p id="p-413">Use a type-2 <a class="xref" data-knowl="./knowl/def_moves.html" title="Definition 3.1.8: Reidemeister moves">Reidemeister move</a> to create two new crossings in the diagram below. If \(\triangleright\) encodes a knot invariant, what <a class="xref" data-knowl="./knowl/def_props.html" title="Definition 1.1.9">algebraic property</a> must \(\triangleright\) satisfy as a result?</p>
+<figure class="figure figure-like" id="kei2"><div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="images/keiop2.png" class="contained" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.7<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="activity project-like" id="act_kei3"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.7</span><span class="period">.</span>
+</h6>
+<p id="p-414">If \(\triangleright\) encodes a knot invariant, what <a class="xref" data-knowl="./knowl/def_props.html" title="Definition 1.1.9">algebraic property</a> must \(\triangleright\) satisfy as a result of the diagram of a type-3 Reidemeister move shown below?</p>
+<figure class="figure figure-like" id="kei3"><div class="image-box" style="width: 90%; margin-left: 5%; margin-right: 5%;"><img src="images/keiop3.png" class="contained" alt=""></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">4.1.8<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article><article class="definition definition-like" id="def_kei"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.9</span><span class="period">.</span>
+</h6>
+<p id="p-415">A magma \((S,\triangleright)\) is called a <dfn class="terminology">kei</dfn> if it has the idempotent and right-distributive properties, and if for all \(x,y\in S\) we have \((x\triangleright y)\triangleright y = x.\)</p></article><article class="activity project-like" id="act_keiex"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.8</span><span class="period">.</span>
+</h6>
+<p id="p-416">Is the magma with operation table shown below a kei? How can you tell?</p>
+<figure class="table table-like" id="table-8"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">4.1.10<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
+<tr>
+<td class="l m b2 r2 l0 t0 lines"></td>
+<td class="l m b2 r0 l0 t0 lines">a</td>
+<td class="l m b2 r0 l0 t0 lines">b</td>
+<td class="l m b2 r0 l0 t0 lines">c</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">a</td>
+<td class="l m b0 r0 l0 t0 lines">a</td>
+<td class="l m b0 r0 l0 t0 lines">c</td>
+<td class="l m b0 r0 l0 t0 lines">b</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">b</td>
+<td class="l m b0 r0 l0 t0 lines">c</td>
+<td class="l m b0 r0 l0 t0 lines">b</td>
+<td class="l m b0 r0 l0 t0 lines">a</td>
+</tr>
+<tr>
+<td class="l m b0 r2 l0 t0 lines">c</td>
+<td class="l m b0 r0 l0 t0 lines">b</td>
+<td class="l m b0 r0 l0 t0 lines">a</td>
+<td class="l m b0 r0 l0 t0 lines">c</td>
+</tr>
+</table></div></figure></article><article class="activity project-like" id="act_exkei2"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.9</span><span class="period">.</span>
+</h6>
+<p id="p-417">Give at least one reason why the operation table in <a class="xref" data-knowl="./knowl/act_keiex.html" title="Activity 4.1.8">Activity 4.1.8</a> does <em class="emphasis">not</em> depict a <em class="emphasis">group</em>.</p></article></section><article class="activity project-like" id="act_takasaki"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.10</span><span class="period">.</span>
+</h6>
+<p id="p-418">Show that the operation on integers defined by</p>
+<div class="displaymath">
+\begin{equation*}
+x\triangleright y = 2y - x
+\end{equation*}
+</div>
+<p class="continuation">makes \((\mathbb{Z},\triangleright)\) into a kei.</p></article><article class="definition definition-like" id="def_fundkei"><h6 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">4.1.11</span><span class="period">.</span>
+</h6>
+<p id="p-419">Let \(K\) be a knot. Its <dfn class="terminology">fundamental kei</dfn> \(\mathcal{K}(K)\) is the magma whose elements are words using the alphabet of its diagram's arcs \(a_1,a_2,\ldots,a_n\text{,}\) and which have relations (“simplification rules”) given by the diagram's crossings.</p></article><article class="activity project-like" id="act_trefoilkei"><h6 class="heading">
+<span class="type">Activity</span><span class="space"> </span><span class="codenumber">4.1.11</span><span class="period">.</span>
+</h6>
+<p id="p-420">If the arcs of the diagram of the trefoil \(3_1\) below are labeled \(x,y,z\text{,}\) determine three relations their fundamental kei operation \(\triangleright\) must satisfy as a result of this diagram's three crossings.</p>
+<p id="p-421">Then, determine a complete operation table for the fundamental kei \(\mathcal{K}(3_1)\text{.}\)</p></article></section></div></main>
 </div>
 </body>
 </html>

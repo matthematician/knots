@@ -1,8 +1,8 @@
-<chapter xml:id="keisquandles" xmlns:xi="http://www.w3.org/2001/XInclude">
-    <title>Keis and Quandles</title>
+<chapter xml:id="alginvariants" xmlns:xi="http://www.w3.org/2001/XInclude">
+    <title>Algebraic Invariants</title>
 
     <xi:include href="keis.ptx"/>
-    <xi:include href="quandles.ptx"/>
+    <xi:include href="groups.ptx"/>
 
 
 </chapter>

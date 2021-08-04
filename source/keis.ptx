@@ -1,4 +1,255 @@
-<section xml:id="keis">
-<title>Keis and Knots</title>
+<section xml:id="keisquandles">
+<title>Keis and Quandles</title>
+
+<objectives>
+    <ol>
+        <li>
+            <p>Perform algebraic computations using axioms of keis and quandles, and use diagrams of knots to motivate these algebraic properties and compute the fundamental kei and fundamental quandle of a knot.
+            </p>
+        </li>
+    </ol>
+</objectives>
+<introduction>
+
+<p>We now turn to the question: how can we construct examples of knot invariants which are, themselves, algebraic structures? How can we encode the language of knot diagrams and diagram equivalence into the language of sets and binary operations (that is, magmas)?</p>
+
+<p>We'll begin with something we already know to be an example of a knot invariant: colorability. If we can encode the colorability <q>rules</q> from <xref ref="def_kcolorable"/> into the properties of an algebraic operation, perhaps we will be on the path to algebraic invariants.</p>
+
+<activity xml:id="act_step1">
+    <statement>
+        <p>Suppose three arcs of a knot diagram meet at a crossing, and the colors of these arcs are represented by three numbers <m>x,y,z</m>.</p>
+        <p><term>(a)</term> Which of the following equations is definitely true when <m>x=y=z</m>?</p>
+        <p><term>(b)</term> Which of the following equations is definitely false when <m>x=y</m> but <m>z</m> does not equal <m>x</m>?</p>
+        <ol>
+            <li>
+                <p><m>(x-y)(x-z)(y-z)=0</m></p></li>
+                <li><p><m>x +y -2z = 0</m></p></li>
+                <li><p><m>x^2 + y^2 - 2z^2=0</m></p> 
+            </li>
+        </ol>
+    </statement>
+</activity>
+
+<p>One of the most flexible ways to create an algebraic property that mimics the colorability <q>rules</q> (either all three variables must be equal, or all three must be distinct) is to make an <em>averaging</em> property. In any group of three numbers, if one is an <q>average</q> of the other two, typically this means that it somehow lies <q>between</q> (and distinct from) the two -- unless the first two are equal, in which case their average will again be equal.</p>
+
+<activity xml:id="act_step2">
+    <statement>
+        <p><term>(a)</term> Which of the equations in <xref ref="act_step1"/> best expresses the idea that, among the three quantities <m>x,y,z</m>, one of them is an <em>average</em> of the other two?</p>
+        <p><term>(b)</term> Most often, the colloquial word <q>average</q> means <q>arithmetic mean</q>, a number having an equal <em>amount difference</em> from each of the values of which it is an average. For example, <m>9</m> is the arithmetic mean of <m>2</m> and <m>16</m> because it is <m>7</m> units away from each of them.</p>
+        <p>The <em>geometric mean</em> of two numbers has an equal <em>percent difference</em> from each of their values. For example, <m>8</m> is the geometric mean of <m>2</m> and <m>32</m> because it is a <em>factor of</em> <m>4</m> away from each of them.</p>
+        <p>Write an algebraic equation that expresses the idea that, among three numbers <m>x,y,z</m>, one of them is the geometric mean of the other two.</p>
+        <p><term>(c)</term> (Bonus.) What algebraic operation, applied to both sides of your answer to (b), gives you an algebraic property that looks like your answer to (a)?</p>
+    </statement>
+</activity>
+
+<p>This <q>averaging</q> idea motivates the following theorem.</p>
+
+            <theorem xml:id="thm_integeraverage">
+                <statement>
+                    <p>
+                        Let <m>K</m> be a knot, <m>D</m> be one of its diagrams, and <me>f \colon \{ \text{arcs of }D \} \to \{0,1,2,\ldots,k-1 \}</me> be a <m>k</m>-coloration of the diagram <m>D</m>.
+                    </p>
+                    <p>
+                        Then <m>f</m> is a valid <m>k</m>-coloration if, and only if, at every crossing of arcs <m>x_i,x_j,x_k</m>, with <m>x_k</m> being the overcrossing strand, the following equation holds: <mdn><mrow xml:id="eq_magicav">f(x_i) + f(x_j) - 2f(x_k) &amp;=0.</mrow></mdn>
+                        In other words, the color of the over-strand is the average of the colors of the two under-strands.
+                    </p>
+                    <p>
+                        Furthermore, this conclusion remains true if equality only holds modulo <m>k</m>:
+                        <mdn><mrow xml:id="eq_magicav_modk">f(x_i) + f(x_j) -2 f(x_k) &amp;\equiv 0 &amp; \text{(mod k)}.</mrow></mdn>
+                    </p>
+                </statement>
+            </theorem>
+
+<remark xml:id="rem_modk">
+    <title>
+        Arithmetic Modulo <m>k</m>
+    </title>
+    <statement>
+        <p>Arithmetic modulo <m>k</m> means arithmetic done using only the <em>remainders</em> when numbers are divided by <m>k</m>.</p>
+        <p>For example, reducing the following equation modulo 3 requires us to replace all numbers with their remainders when divided by 3:</p>
+        <md><mrow>17 - 4 \amp= 13 \amp\amp\text{becomes, modulo 3,}</mrow><mrow>2 - 1 \amp\equiv 1</mrow></md>
+        <p>since <m>17\div 3 = 5r\boxed{2}</m>, <m>4\div 3 = 1r\boxed{1}</m>, and <m>13\div 3 = 4r\boxed{1}.</m></p>
+        <p>It can be shown that any equation involving addition, subtraction, and/or multiplication of integers remains true if all integers are reduced modulo <m>k</m> in this way, for any <m>k \geq 1</m>.</p>
+        <p>The case <m>k=12</m> is often called <q>clock arithmetic</q>, since it encodes statements like <q>Five hours past eleven o'clock is four o'clock</q> into the modulo-12 reduction 
+        </p>
+        <md><mrow>11 + 5\amp= 16 \amp\amp\text{which, modulo 12, is}</mrow><mrow>11 + 5 \amp\equiv 4.</mrow></md>
+    </statement>
+</remark>
+
+<p>We'll find that using arithmetic modulo <m>k</m> is the best way to model and search for colorations of knot diagrams using <m>k</m> colors.</p>
+
+<activity xml:id="act_mod3">
+    <statement>
+        <p>Let <m>x,y,z</m> be three integers, and <m>\bar{x},\bar{y},\bar{z}</m> be their remainders when divided by 3.</p>
+        <p><term>(a)</term> Explain why, if <m>\bar{x}=\bar{y}=\bar{z}</m>, then <me>\bar{x}+\bar{y}+\bar{z} \equiv 0 \pmod{3}.</me></p>
+        <p><term>(b)</term> Explain why, if <m>\bar{x},\bar{y},\bar{z}</m> are all different, then <me>\bar{x} + \bar{y}+\bar{z}=0 \pmod{3}.</me>(Hint: how many different remainders can there be when an integer is divided by 3? What are they?)</p>
+        <p><term>(c)</term> Explain why, if <m>\bar{x} = \bar{y}</m>, then the <em>only</em> way to satisfy the equation <me>\bar{x}+\bar{y}+\bar{z} \equiv 0 \pmod{3}</me> is to have <m>\bar{z}=\bar{x}=\bar{y}</m>.</p>
+    </statement>
+</activity>
+
+<p>Your work in <xref ref="act_mod3"/> shows that the equation <mdn><mrow xml:id="eq_fox">\bar{x}+\bar{y}+\bar{z} \equiv 0 \pmod{3}.</mrow></mdn> perfectly captures the <xref ref="def_fox" text="custom">Fox tricolorability</xref> criteria for a knot diagram. This means that whether a knot is tricolorable can be determined by the solutions of a linear system of equations: one unknown for each arc color, and one equation of the form <xref ref="eq_fox"/> for each crossing.</p>
+
+<example xml:id="ex_tricolorability">
+                <title>Tricolorability of a diagram using linear algebra</title>
+                <video youtube="H41WW1t6XOM"/>
+            </example>
+
+<activity xml:id="act_62color">
+    <statement>
+                        <p>The knot <m>6_2</m> is shown below, along with its rational tangle and its braid representations.</p>
+                        <figure xml:id="fig_sixtwo">
+                            <image source="images/6-2knot.png" width="90%"/>
+                            <caption>A (reduced, alternating) diagram of the knot <m>K=6_2</m> as well as a rational tangle and a braid of which it is the closure.</caption>
+                        </figure>
+                        <p>Use linear algebra to determine whether this knot is <m>k</m>-colorable for <term>(a)</term> <m>k=3</m>, and <term>(b)</term> <m>k=4</m>.</p>
+                        <p>The Sage cell below can assist you with this calculation, once you've filled in the entries of the <m>6\times 6</m> matrix.</p>
+                        <sage>
+                            <input>
+M = MatrixSpace(IntegerModRing(3),6,6);
+A = M([ , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , , ]);
+print(A); print('\n'); A.echelon_form();</input>
+                        </sage>
+                    </statement>
+                    <hint>
+                        <p>For the <m>4</m>-coloration question, remember the averaging equation <xref ref="eq_magicav_modk"/> is not quite as simple as for three colors.</p>
+                    </hint>
+</activity>
+
+<p>This process gives us a way to determine <m>k</m>-colorability for any <em>given</em> number of colors <m>k</m>. But if we want to construct an algebraic <em>structure</em> capable of carrying colorability information for <em>all</em> values of <m>k</m>, we want something more general. That is where we turn next.</p>
+</introduction>
+
+<subsection>
+    <title>The Kei of a Knot</title>
+
+<p>We want to construct a magma <m>(S,\triangleright)</m> in which the elements of <m>S</m> are the <q>colors</q> of the arcs of a diagram of a knot, and in which the operation <m>\triangleright</m> can tell us, given the colors of two arcs incident at a crossing, what must the color of the third arc be.</p>
+
+<p>In other words, we want <m>\triangleright</m> to complete the picture shown below.</p>
+
+<figure xml:id="fig_keiop">
+    <image source="images/keiop.png" width="40%"/>
+    <caption>The element <m>x\triangleright y</m> completes this diagram of arc colorations. Our convention will be that <m>y</m> represents the <q>over-crossing</q> arc in this trio.</caption>
+</figure>
+
+<activity xml:id="act_kei1">
+    <statement>
+        <p>Use a type-1 <xref ref="def_moves" text="custom">Reidemeister move</xref> to create a crossing in the diagram below. If <m>\triangleright</m> encodes a knot invariant, what <xref ref="def_props" text="custom">algebraic property</xref> must <m>\triangleright</m> satisfy as a result?</p>
+        <figure xml:id="kei1">
+            <image source="images/keiop1.png" width="15%"/>
+        </figure>
+    </statement>
+</activity>
+
+<activity xml:id="act_kei2">
+    <statement>
+        <p>Use a type-2 <xref ref="def_moves" text="custom">Reidemeister move</xref> to create two new crossings in the diagram below. If <m>\triangleright</m> encodes a knot invariant, what <xref ref="def_props" text="custom">algebraic property</xref> must <m>\triangleright</m> satisfy as a result?</p>
+        <figure xml:id="kei2">
+            <image source="images/keiop2.png" width="25%"/>
+        </figure>
+    </statement>
+</activity>
+
+<activity xml:id="act_kei3">
+    <statement>
+        <p>If <m>\triangleright</m> encodes a knot invariant, what <xref ref="def_props" text="custom">algebraic property</xref> must <m>\triangleright</m> satisfy as a result of the diagram of a type-3 Reidemeister move shown below?</p>
+        <figure xml:id="kei3">
+            <image source="images/keiop3.png" width="90%"/>
+        </figure>
+    </statement>
+</activity>
+
+<definition xml:id="def_kei">
+    <statement>
+        <p>A magma <m>(S,\triangleright)</m> is called a <term>kei</term> if it has the idempotent and right-distributive properties, and if for all <m>x,y\in S</m> we have <m>(x\triangleright y)\triangleright y = x.</m></p>
+    </statement>
+</definition>
+
+<activity xml:id="act_keiex">
+    <statement>
+        <p>Is the magma with operation table shown below a kei? How can you tell?</p>
+        <table>
+  <tabular>
+    <row bottom="medium">
+      <cell right="medium">
+      </cell>
+      <cell>
+        a
+      </cell>
+      <cell>
+        b
+      </cell>
+      <cell>
+        c
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        a
+      </cell>
+      <cell>
+        a
+      </cell>
+      <cell>
+        c
+      </cell>
+      <cell>
+        b
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        b
+      </cell>
+      <cell>
+        c
+      </cell>
+      <cell>
+        b
+      </cell>
+      <cell>
+        a
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        c
+      </cell>
+      <cell>
+        b
+      </cell>
+      <cell>
+        a
+      </cell>
+      <cell>
+        c
+      </cell>
+    </row>
+  </tabular>
+</table>
+    </statement>
+</activity>
+
+<activity xml:id="act_exkei2">
+    <statement>
+        <p>Give at least one reason why the operation table in <xref ref="act_keiex"/> does <em>not</em> depict a <em>group</em>.</p>
+    </statement>
+</activity> 
+</subsection>
+
+<activity xml:id="act_takasaki">
+    <statement>
+        <p>Show that the operation on integers defined by <me>x\triangleright y = 2y - x</me> makes <m>(\mathbb{Z},\triangleright)</m> into a kei.</p>
+    </statement>
+</activity>
+
+<definition xml:id="def_fundkei">
+    <statement>
+        <p>Let <m>K</m> be a knot. Its <term>fundamental kei</term> <m>\mathcal{K}(K)</m> is the magma whose elements are words using the alphabet of its diagram's arcs <m>a_1,a_2,\ldots,a_n</m>, and which have relations (<q>simplification rules</q>) given by the diagram's crossings.</p>
+    </statement>
+</definition>
+
+<activity xml:id="act_trefoilkei">
+    <p>If the arcs of the diagram of the trefoil <m>3_1</m> below are labeled <m>x,y,z</m>, determine three relations their fundamental kei operation <m>\triangleright</m> must satisfy as a result of this diagram's three crossings.</p>
+    <p>Then, determine a complete operation table for the fundamental kei <m>\mathcal{K}(3_1)</m>.</p>
+</activity>
 
 </section>

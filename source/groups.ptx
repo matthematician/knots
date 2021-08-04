@@ -1,4 +1,16 @@
 <section xml:id="groups">
-<title>Quandles and Groups</title>
+<title>The Group of a Knot</title>
+
+<objectives>
+    <ol>
+        <li>
+            <p>
+                Use its fundamental quandle to construct the knot group of a knot, simplifying its Wirtinger presentation where possible.
+            </p>
+        </li>
+    </ol>
+</objectives>
+
+
 
 </section>

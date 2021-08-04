@@ -159,6 +159,16 @@
 
         <p>An analogous argument to that for tricolorability shows that <m>k</m>-colorability is a knot invariant as well.</p>
 
+        <theorem xml:id="thm_kcolorable">
+                <title>k-Colorability is a Knot Invariant</title>
+                <statement>
+                    <p>Let <m>K</m> be a knot. For any two diagrams <m>D,D'</m> of <m>K</m>, either both are <m>k</m>-colorable, or neither are <m>k</m>-colorable.</p>
+                </statement>
+                <proof><title>Video Proof</title>
+                    <video youtube="y2xkVRRWE3Q"/>
+                </proof>
+            </theorem>
+
 <p>Finally, we close with an example of what happens when we build more complex knots out of simpler ones.</p>
 
         <definition xml:id="def_connectedsum">
