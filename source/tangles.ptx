@@ -159,7 +159,7 @@ Rational tangles' physical, geometrical construction lends itself well to hands-
     </statement>
 </definition>
 
-<figure xml:id="fig_tanglefunctions">
+<figure xml:id="fig_tanglefunctiongraphs">
     <caption>Graphs of the <q>add-one</q> function <m>t(x)=x+1</m> and the <q>opposite-reciprocal</q> function <m>r(x) = -1/x</m>.</caption>
     <sidebyside>
         <image source="images/tfunction.png" width="25%"/>

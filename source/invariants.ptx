@@ -100,4 +100,126 @@
         <p>By consulting this database, can you predict a formula for the Alexander polynomials of all knots of the form <m>3_1, 4_1, 5_1, 6_1, 7_1, \ldots</m> ? What pattern(s) do you see?</p>
     </statement>
 </activity>
+
+<p>One interesting -- and flexible, and enjoyable -- type of knot invariant has to do with colorations. How many different colors may be assigned to the arcs of a knot diagram, subject to certain coloration rules?</p>
+
+<definition xml:id="def_fox">
+            <statement>
+                <p>Let <m>K</m> be a knot, and <m>D</m> be one of its diagrams. A <term>3-coloring</term> of <m>D</m> is a function <me> f \colon \{ \text{arcs of }D \} \to \{\text{red},\text{green},\text{blue}\}</me>
+                which assigns one of the three colors red, green, or blue to each arc of the diagram.</p>
+                <p>A 3-coloring of <m>D</m> is called a <term>valid 3-coloring</term> if each crossing of <m>D</m> is one of the following: <ul><li><p>...a meeting of three arcs of the same color, or</p></li><li><p>...a meeting of three arcs of three different colors.</p></li></ul></p>
+                <p>A diagram <m>D</m> is called <term>(Fox) tricolorable</term> if there exists a valid 3-coloring of <m>D</m> <em>besides</em> the <q>trivial</q> example (all arcs the same color).</p>
+            </statement>
+ </definition>
+
+<activity xml:id="act_fox_trefoil1">
+            <statement>
+                <p>Shown below is a diagram of the knot <m>K(3,2)</m> with a valid coloration. However, as shown it does not prove that this diagram is tricolorable (why not?).
+                </p>
+                <p>By clicking on the arcs to recolor them, show that this diagram <em>is</em>, in fact, tricolorable.</p>
+
+                <figure xml:id="fig_trefoilcolor">
+                    <caption><em>Click the arcs</em> for this diagram of <m>K(3,2)</m> to recolor them.</caption>
+                    <interactive geogebra="n39kzhrb" aspect="2:1"/>
+                </figure>
+            </statement>
+</activity>
+
+<activity xml:id="act_fox_trefoil2">
+            <statement>
+                <p><em>True, False, or Cannot Decide:</em> Is the diagram shown below also a diagram of the knot <m>K(3,2)</m>? Justify your answer.
+                </p>
+                <figure xml:id="fig_diffcolor1">
+                    <caption><em>Click the arcs</em> of this diagram to recolor them. Is this diagram tricolorable?</caption>
+                    <interactive geogebra="zgavsnfp" aspect="2:1"/>
+                </figure>
+            </statement>
+</activity>
+
+        <activity xml:id="act_secondcolor">
+            <statement>
+                <p><em>True, False, or Cannot Decide:</em> Is the diagram shown below also a diagram of the knot <m>K(3,2)</m>? Justify your answer.
+                </p>
+                <figure xml:id="fig_diffcolor2">
+                    <caption><em>Click the arcs</em> of this diagram to recolor them. Is this diagram tricolorable?</caption>
+                    <interactive geogebra="wfa9kxaw" aspect="2:1"/>
+                </figure>
+            </statement>
+        </activity>  
+
+        <p>The concept of tricolorability can be extended to colorability by <m>k\geq 3</m> colors as well.</p>
+        <definition xml:id="def_kcolorable">
+            <statement>
+                <p>Let <m>K</m> be a knot, and <m>D</m> be one of its diagrams. A <term><m>k</m>-coloring</term> of <m>D</m> is a function <me> f \colon \{ \text{arcs of }D \} \to \{1, 2, \ldots, k\}</me>
+                which assigns one of a selection of <m>k</m> colors to each arc of the diagram.</p>
+                <p>A <m>k</m>-coloring of <m>D</m> is called a <term>valid k-coloring</term> if each crossing of <m>D</m> is one of the following: <ul><li><p>...a meeting of three arcs of the same color, or</p></li><li><p>...a meeting of three arcs of three different colors.</p></li></ul></p>
+                <p>A diagram <m>D</m> is called <term><m>k</m>-colorable</term> if there exists a valid <m>k</m>-coloring of <m>D</m> in which <em>all</em> <m>k</m> colors are used.</p>
+            </statement>
+        </definition>
+
+        <p>An analogous argument to that for tricolorability shows that <m>k</m>-colorability is a knot invariant as well.</p>
+
+<p>Finally, we close with an example of what happens when we build more complex knots out of simpler ones.</p>
+
+        <definition xml:id="def_connectedsum">
+            <statement>
+                <p>Let <m>K_1,K_2</m> be two knots. The <term>connected sum</term> of <m>K_1</m> and <m>K_2</m> is a knot formed by cutting one strand of each knot, away from its crossings, and attaching them to one another.</p>
+
+                <figure xml:id="fig_connectedsum">
+                <caption>Connected sum of knots <m>K_1</m> and <m>K_2</m>. <em>Source:</em> <url href="https://mathworld.wolfram.com/KnotSum.html"/></caption>
+                <image source="https://mathworld.wolfram.com/images/eps-gif/KnotSum_700.gif" width="100%"/>
+                </figure>
+            </statement>
+        </definition>
+
+        <activity xml:id="act_connectedsum">
+            <statement>
+                <p>
+                    Give a convincing justification (a proof, even) for the following theorem.
+
+                    <theorem xml:id="thm_tricolor_sum">
+                        <statement>
+                            <p>Let <m>K_1,K_2</m> be two knots. If <m>K_1</m> is tricolorable, then the connected sum <m>K_1 \# K_2</m> is tricolorable.</p>
+                        </statement>
+                    </theorem>
+                </p>
+            </statement>
+            <hint>
+                <p>See if your strategy for coloring the knot in <xref ref="act_secondcolor"/> gives you any clues. If not, try coloring it in a different way than before.</p> 
+            </hint>
+        </activity>
+
+    <exercises xml:id="ex_invariants">
+
+        <exercise>
+            <statement>
+                <p>Decide whether the following diagram property is a knot invariant. Provide a full explanation (or a proof, or a counterexample). <me>P = \text{whether the number of crossings is even or odd}</me>
+                </p>
+            </statement>
+        </exercise>
+
+        
+        <exercise>
+            <statement>
+                <p>Explain why a knot diagram having <m>k</m> arcs is guaranteed to be <m>k</m>-colorable.
+                </p>
+                <p>Explain why it would <em>not</em> make sense to define a notion of <m>2</m>-colorability for knot diagrams.</p>
+                <p>Finally, determine for which value(s) of <m>k</m> the <url href="https://knotinfo.math.indiana.edu/diagram_display.php?4_1"><q>figure-eight</q> knot</url> <m>K=4_1</m> is <m>k</m>-colorable. Justify your answers.</p>
+            </statement>
+        </exercise>
+
+        
+        <exercise>
+            <statement>
+                <p>The <term>Alexander polynomial</term> and the <term>Jones polynomial</term> of a knot are examples of knot invariants which take the form of polynomial expressions.</p>
+                
+                <p>Use the <url href="https://knotinfo.math.indiana.edu/index.php">KnotInfo database</url> to explore both the Alexander polynomials and the Jones polynomials of the prime knots of up to 6 crossings. What do you notice about how the two polynomials are different?</p>
+                <p>Now, make a physical copy of the <url href="https://knotinfo.math.indiana.edu/diagram_display.php?4_1"><q>figure-eight</q> knot</url> <m>K=4_1</m> and sketch its four-crossing diagram. Convince yourself that there is an <xref ref="def_isotopy" text="custom">isotopy</xref> of <m>K</m> that <em>reverses</em> all of the crossings in your diagram. Knots with this property are called <term>amphichiral</term>.</p>
+                <p>How do you think the Alexander and/or Jones polynomials for <m>4_1</m> might tell you that this knot is amphichiral? Do you think your prediction can be generalized to other knots as well? Explain.</p>
+            </statement>
+        </exercise>
+
+    </exercises>
+
+
 </section>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-28T18:29:31-04:00       *-->
+<!--*       on 2021-08-04T15:12:48-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>OAK Rational Tangles</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -57,7 +63,7 @@ MathJax.Hub.Config({
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\renewcommand\epsilon\varepsilon
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\renewcommand\epsilon\varepsilon
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -123,17 +129,17 @@ MathJax.Hub.Config({
 <ol class="decimal">
 <li id="li-68">
 <p id="p-205">Each rational tangle begins as an <dfn class="terminology">empty tangle</dfn>, denoted \(E\text{,}\) in which the strands are horizontal, untwisted, and parallel.</p>
-<div class="image-box" style="width: 10%; margin-left: 45%; margin-right: 45%;"><img src="images/emptytangle.JPG" style="width: 100%; height: auto;" alt=""></div>
+<div class="image-box" style="width: 10%; margin-left: 45%; margin-right: 45%;"><img src="images/emptytangle.JPG" class="contained" alt=""></div>
 </li>
 <li id="li-69">
 <p id="p-206">A <dfn class="terminology">twist</dfn>, denoted \(T\) may be added to any rational tangle by detaching and swapping the northeastern and southeastern vertices, passing the former over the latter.</p>
-<div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="images/twist.JPG" style="width: 100%; height: auto;" alt=""></div>
+<div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="images/twist.JPG" class="contained" alt=""></div>
 </li>
 <li id="li-70">
 <p id="p-207">A <dfn class="terminology">rotation</dfn>, denoted \(R\text{,}\) may be performed on a rational tangle by rotating the entire tangle one-quarter turn clockwise.</p>
-<div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="images/rotate.JPG" style="width: 100%; height: auto;" alt=""></div>
+<div class="image-box" style="width: 25%; margin-left: 37.5%; margin-right: 37.5%;"><img src="images/rotate.JPG" class="contained" alt=""></div>
 </li>
-</ol></article><p id="p-208"><figure class="figure figure-like" id="fig_tangleexample"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="http://www.ams.org/images/fcarc-august2017-tangle.3r4r2.jpg" style="width: 100%; height: auto;" alt=""></div>
+</ol></article><p id="p-208"><figure class="figure figure-like" id="fig_tangleexample"><div class="image-box" style="width: 50%; margin-left: 25%; margin-right: 25%;"><img src="http://www.ams.org/images/fcarc-august2017-tangle.3r4r2.jpg" class="contained" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.2<span class="period">.</span></span><span class="space"> </span>A sketch of the rational tangle represented by the word \(G = T^3\, R\, T^4\, R\, T^2\text{.}\) Source: David Austin, <a class="external" href="http://www.ams.org/publicoutreach/feature-column/fc-2017-08" target="_blank"><code class="code-inline tex2jax_ignore">http://www.ams.org/publicoutreach/feature-column/fc-2017-08</code></a>. Note, this article uses a counterclockwise rotation convention for \(R\text{.}\)</figcaption></figure></p>
 <p id="p-209">In a way, rational tangles are similar to the braids we studied in <a href="braids.html" class="internal" title="Section 2.1: Braids">Section 2.1</a>, except that the number of strands is only two (which makes them far simpler) and we permit a rotation so that “horizontal” twists can be mixed with “vertical” twists (which makes them more complex again).</p>
 <p id="p-210">Rational tangles' physical, geometrical construction lends itself well to hands-on activities. The activities in this section are typically done with four willing volunteers in a classroom, holding the ends of long ropes, but a desktop-scale kit of wires or laces can be a substitute.</p>
@@ -151,7 +157,7 @@ MathJax.Hub.Config({
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.3</span><span class="period">.</span>
 </h6>
 <p id="p-217">For this exercise, form any tangle you wish, then thread its four ends through the corners of an envelope, as shown, and seal the envelope shut. Write the letter \(G\) on the front of the envelope, and on the back write \(G\) backward. Leave enough length in the strands outside the envelope to permit further twists and rotations.</p>
-<figure class="figure figure-like" id="fig_generictangle"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/envelope.png" style="width: 100%; height: auto;" alt=""></div>
+<figure class="figure figure-like" id="fig_generictangle"><div class="image-box" style="width: 60%; margin-left: 20%; margin-right: 20%;"><img src="images/envelope.png" class="contained" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.3<span class="period">.</span></span><span class="space"> </span>Your “generic” rational tangle \(G\text{,}\) trapped inside an envelope.</figcaption></figure><p id="p-218">Then, add a twist to your tangle to form the new tangle \(G\,T\text{.}\) We wish to figure out how to “cancel” that twist and return to \(G\) itself, using only the very same twist maneuver \(T\) and/or rotations \(R\text{.}\)</p>
 <p id="p-219"><dfn class="terminology">(a)</dfn> If our goal is to “cancel” this twist, explain whether the next step ought to be a twist step (\(T\)) or a rotation step (\(R\)), and why you think your choice gets you closer to the desired goal.</p>
 <p id="p-220"><dfn class="terminology">(b)</dfn> If, at any point in our quest, we perform a rotation \(R\text{,}\) explain whether the next step ought to be a twist step (\(T\)) or a rotation step (\(R\)), and why you think your choice gets you closer to the desired goal. The result of <a class="xref" data-knowl="./knowl/act_tangle_r_inv.html" title="Activity 2.2.2">Activity 2.2.2</a> may be helpful.</p>
@@ -204,7 +210,7 @@ T^3\, R\, T\, R \underbrace{\hspace{1in}}_? = E.
 T^4 \underbrace{\, R\, T\, R\, T^2\, R\, T^2\, R\, T^2} = E.
 \end{equation*}
 </div>
-<p data-braille="continuation">How might you explain the difference between this result and your prediction from <a class="xref" data-knowl="./knowl/act_tangleinverse2.html" title="Activity 2.2.5">Activity 2.2.5</a>?</p></article><p id="p-234">To resolve the mystery of the previous result, we'll discover one more algebraic structure related to rational tangles, that gives rational tangles their name. It comes in the form of a <a class="xref" data-knowl="./knowl/def_homomorphism.html" title="Definition 2.1.9">homomorphism</a> from the group of rational tangles into the group of <em class="emphasis">rational functions</em> of a single variable.</p>
+<p class="continuation">How might you explain the difference between this result and your prediction from <a class="xref" data-knowl="./knowl/act_tangleinverse2.html" title="Activity 2.2.5">Activity 2.2.5</a>?</p></article><p id="p-234">To resolve the mystery of the previous result, we'll discover one more algebraic structure related to rational tangles, that gives rational tangles their name. It comes in the form of a <a class="xref" data-knowl="./knowl/def_homomorphism.html" title="Definition 2.1.9">homomorphism</a> from the group of rational tangles into the group of <em class="emphasis">rational functions</em> of a single variable.</p>
 <div class="video-box" style="width: 100%;padding-top: 56.25%; margin-left: 0%; margin-right: 0%;"><iframe id="video-4" class="video" allowfullscreen="" src="https://www.youtube-nocookie.com/embed/1hMVxjP3i4s?&amp;modestbranding=1&amp;rel=0"></iframe></div>
 <article class="definition definition-like" id="def_tanglerep"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.6</span><span class="period">.</span>
@@ -216,9 +222,9 @@ t(x) \amp= x + 1\label{eq_tfunction}\tag{2.2.2}\\
 r(x) \amp= -\frac1x\label{eq_rfunction}\tag{2.2.3}
 \end{align}
 </div>
-<p data-braille="continuation">We call these the generators of the <dfn class="terminology">tangling functions group</dfn>, denoted \(\mathscr{F}\text{,}\) with the operation of function composition \((f,g) \mapsto f\circ g\text{.}\)</p></article><figure class="figure figure-like" id="fig_tanglefunctions"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/tfunction.png" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:50%;justify-content:flex-start;"><img src="images/rfunction.png" style="width: 100%; height: auto;" alt=""></div>
+<p class="continuation">We call these the generators of the <dfn class="terminology">tangling functions group</dfn>, denoted \(\mathscr{F}\text{,}\) with the operation of function composition \((f,g) \mapsto f\circ g\text{.}\)</p></article><figure class="figure figure-like" id="fig_tanglefunctiongraphs"><div class="sidebyside"><div class="sbsrow" style="margin-left:0%;margin-right:0%;">
+<div class="sbspanel top" style="width:50%;"><img src="images/tfunction.png" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:50%;"><img src="images/rfunction.png" class="contained" alt=""></div>
 </div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.7<span class="period">.</span></span><span class="space"> </span>Graphs of the “add-one” function \(t(x)=x+1\) and the “opposite-reciprocal” function \(r(x) = -1/x\text{.}\)</figcaption></figure><p id="p-236">That these functions, whose graphs you likely learned in high school algebra, have anything at all to do with rational tangles is quite remarkable, as we will see shortly.</p>
 <p id="p-237">The <em class="emphasis">Geogebra</em> applet embedded below lets you form the compositions of the \(t\) and \(r\) functions using the buttons (suggestively) labeled \(T\) and \(R\text{,}\) beginning with the identity function \(e(x) = x\text{.}\) For example, clicking the sequence \(TTRTRRT\) forms the function composition</p>
@@ -227,12 +233,12 @@ r(x) \amp= -\frac1x\label{eq_rfunction}\tag{2.2.3}
 t\bigl( r\bigl( r\bigl( t( r( t( t( x ))))\bigl)\bigl)\bigl) = -\frac{1}{-\frac{1}{-\frac{1}{x+2}+1}}+1 = \frac{2x+3}{x+2}.
 \end{equation*}
 </div>
-<p data-braille="continuation">Note that the order of function composition is written <em class="emphasis">backward</em> to the order in which the buttons are clicked.</p>
+<p class="continuation">Note that the order of function composition is written <em class="emphasis">backward</em> to the order in which the buttons are clicked.</p>
 <figure class="figure figure-like" id="fig_tanglefunctions"><iframe id="manip_tanglefunctions" width="600" height="450" src="manip_tanglefunctions-if.html"></iframe><figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.2.8<span class="period">.</span></span><span class="space"> </span>Functions which are elements of the tangle function group \(\mathscr{F}\text{.}\) Click on the \(T\) and \(R\) buttons to compose with the generators <a class="xref" data-knowl="./knowl/eq_tfunction.html" title="Equation 2.2.2">(2.2.2)</a> and <a class="xref" data-knowl="./knowl/eq_rfunction.html" title="Equation 2.2.3">(2.2.3)</a>. You can also find this interactive at <a class="external" href="https://www.geogebra.org/m/h2zwxzp4" target="_blank"><code class="code-inline tex2jax_ignore">https://www.geogebra.org/m/h2zwxzp4</code></a>.</figcaption></figure><article class="activity project-like" id="act_rfunction"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.7</span><span class="period">.</span>
 </h6>
 <p id="p-238">Verify directly (using its <a class="xref" data-knowl="./knowl/eq_rfunction.html" title="Equation 2.2.3">formula</a>) that \(r\bigl( r(x) \bigr) = x\text{.}\)</p>
-<p id="p-239">Then, use the applet in <a class="xref" data-knowl="./knowl/fig_tanglefunctions.html" title="Figure 2.2.7">Figure 2.2.7</a> to verify your conclusion. Explain what steps you took, and why they confirm your answer.</p></article><article class="activity project-like" id="act_tfunction"><h6 class="heading">
+<p id="p-239">Then, use the applet in <a class="xref" data-knowl="./knowl/fig_tanglefunctions.html" title="Figure 2.2.8">Figure 2.2.8</a> to verify your conclusion. Explain what steps you took, and why they confirm your answer.</p></article><article class="activity project-like" id="act_tfunction"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.8</span><span class="period">.</span>
 </h6>
 <p id="p-240">Simplify an expression for the tangling function \(r\circ t\text{.}\)</p>
@@ -247,12 +253,12 @@ t\bigl( r\bigl( r\bigl( t( r( t( t( x ))))\bigl)\bigl)\bigl) = -\frac{1}{-\frac{
 \varphi(T) = t \quad \text{ and } \quad \varphi(R) = r
 \end{equation*}
 </div>
-<p data-braille="continuation">is a homomorphism onto its image.</p></article><p id="p-245">In other words, because the functions \(t(x)\) and \(r(x)\) behave under function composition <em class="emphasis">exactly</em> as the rational tangle alphabet \(T\) and \(R\) behave under concatenation, we can represent the structure of the rational tangle group using these functions instead. That's a remarkable feat of mimicry!</p>
+<p class="continuation">is a homomorphism onto its image.</p></article><p id="p-245">In other words, because the functions \(t(x)\) and \(r(x)\) behave under function composition <em class="emphasis">exactly</em> as the rational tangle alphabet \(T\) and \(R\) behave under concatenation, we can represent the structure of the rational tangle group using these functions instead. That's a remarkable feat of mimicry!</p>
 <p id="p-246">The only (slight) catch is that these functions encode <em class="emphasis">slightly</em> more structure than the tangles do, as the following activity shows.</p>
 <article class="activity project-like" id="act_trt"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.9</span><span class="period">.</span>
 </h6>
-<p id="p-247">Find a formula for the composition \(t\bigl( r(\, t(x)\, ) \bigr)\text{,}\) using algebra and/or the applet in <a class="xref" data-knowl="./knowl/fig_tanglefunctions.html" title="Figure 2.2.7">Figure 2.2.7</a>.</p>
+<p id="p-247">Find a formula for the composition \(t\bigl( r(\, t(x)\, ) \bigr)\text{,}\) using algebra and/or the applet in <a class="xref" data-knowl="./knowl/fig_tanglefunctions.html" title="Figure 2.2.8">Figure 2.2.8</a>.</p>
 <p id="p-248">Then, form the rational tangle \(TRT\text{.}\) Explain why <dfn class="terminology">(a)</dfn> we would have expected these results to tell the same story as one another, but <dfn class="terminology">(b)</dfn> they do not, in fact, agree.</p></article><p id="p-249">The disagreement that the previous activity surfaces can be resolved, as it turns out, by focusing not on the entire functions in \(\mathscr{F}\) but only on their <em class="emphasis">y-intercepts</em>.</p>
 <article class="definition definition-like" id="def_fraction"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.2.10</span><span class="period">.</span>
@@ -264,19 +270,19 @@ t\bigl( r\bigl( r\bigl( t( r( t( t( x ))))\bigl)\bigl)\bigl) = -\frac{1}{-\frac{
 \varphi(E)(x) = x \quad \text{ and }\quad  F(E) = \varphi(E)(0) = 0.
 \end{equation*}
 </div>
-<p data-braille="continuation">Likewise, for the single twist \(T\) we have</p>
+<p class="continuation">Likewise, for the single twist \(T\) we have</p>
 <div class="displaymath">
 \begin{equation*}
 \varphi(T)(x) = x + 1\quad \text{ and }\quad F(T) = \varphi(T)(0) = 1.
 \end{equation*}
 </div>
-<p data-braille="continuation">Lastly, if we were to rotate a double twist to form \(T^2R\) we would have</p>
+<p class="continuation">Lastly, if we were to rotate a double twist to form \(T^2R\) we would have</p>
 <div class="displaymath">
 \begin{equation*}
 \varphi(T^2R)(x) = r(t(t(x))) = -\frac{1}{x+2}\quad\text{ and }\quad F(TR^2) = r(t(t(0))) = -\frac12.
 \end{equation*}
 </div>
-<p data-braille="continuation">You'll notice that the values of the fraction, labeled as the \(y\)-intercept in <a class="xref" data-knowl="./knowl/fig_tanglefunctions.html" title="Figure 2.2.7">Figure 2.2.7</a>, increase by 1 with each twist \(T\) that is added, and are opposite-reciprocated with each rotation \(R\text{.}\)</p>
+<p class="continuation">You'll notice that the values of the fraction, labeled as the \(y\)-intercept in <a class="xref" data-knowl="./knowl/fig_tanglefunctions.html" title="Figure 2.2.8">Figure 2.2.8</a>, increase by 1 with each twist \(T\) that is added, and are opposite-reciprocated with each rotation \(R\text{.}\)</p>
 <article class="theorem theorem-like" id="thm_fraction"><h6 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.2.11</span><span class="period">.</span>
 </h6>
@@ -284,17 +290,17 @@ t\bigl( r\bigl( r\bigl( t( r( t( t( x ))))\bigl)\bigl)\bigl) = -\frac{1}{-\frac{
 <article class="activity project-like" id="act_fraction1"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.10</span><span class="period">.</span>
 </h6>
-<p id="p-255">Use either algebra or the applet in <a class="xref" data-knowl="./knowl/fig_tanglefunctions.html" title="Figure 2.2.7">Figure 2.2.7</a> to compute the tangle invariants \(F\bigl( T^2 R T^3 R T \bigr)\) and \(F\bigl( TRT^3RT^3RT \bigr)\text{.}\)</p>
+<p id="p-255">Use either algebra or the applet in <a class="xref" data-knowl="./knowl/fig_tanglefunctions.html" title="Figure 2.2.8">Figure 2.2.8</a> to compute the tangle invariants \(F\bigl( T^2 R T^3 R T \bigr)\) and \(F\bigl( TRT^3RT^3RT \bigr)\text{.}\)</p>
 <p id="p-256">What can you conclude about the two rational tangles \(G_1 = T^2RT^3RT\) and \(G_2 = TRT^3RT^3RT\) ? Why?</p></article><article class="activity project-like" id="act_fraction2"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.11</span><span class="period">.</span>
 </h6>
-<p id="p-257">Use the applet in <a class="xref" data-knowl="./knowl/fig_tanglefunctions.html" title="Figure 2.2.7">Figure 2.2.7</a> to discover a rational tangle \(G\) having the fraction \(F(G) = -\frac79\text{.}\)</p>
+<p id="p-257">Use the applet in <a class="xref" data-knowl="./knowl/fig_tanglefunctions.html" title="Figure 2.2.8">Figure 2.2.8</a> to discover a rational tangle \(G\) having the fraction \(F(G) = -\frac79\text{.}\)</p>
 <p id="p-258">Can you describe a general strategy for finding such a rational tangle, given its fraction invariant?</p></article><article class="activity project-like" id="act_tangledance"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.2.12</span><span class="period">.</span>
 </h6>
-<p id="p-259">Return to <a class="xref" data-knowl="./knowl/act_tangleinverse3.html" title="Activity 2.2.6">Activity 2.2.6</a>. Form the tangle \(G = T^4\) in the applet in <a class="xref" data-knowl="./knowl/fig_tanglefunctions.html" title="Figure 2.2.7">Figure 2.2.7</a>, and then spell out the remaining letters of its inverse.</p>
+<p id="p-259">Return to <a class="xref" data-knowl="./knowl/act_tangleinverse3.html" title="Activity 2.2.6">Activity 2.2.6</a>. Form the tangle \(G = T^4\) in the applet in <a class="xref" data-knowl="./knowl/fig_tanglefunctions.html" title="Figure 2.2.8">Figure 2.2.8</a>, and then spell out the remaining letters of its inverse.</p>
 <p id="p-260">Can you describe a general strategy for finding the inverse of a rational tangle, using its fraction invariant?</p></article><section class="exercises" id="ex_tangles"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">2.2.1</span> <span class="title">Exercises</span>
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-9"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-261">Find a rational tangle \(G\) whose fraction is \(F(G) = -4\text{,}\) and sketch it. What relationship does this tangle have to the tangle whose fraction is \(+4\text{?}\)</p>

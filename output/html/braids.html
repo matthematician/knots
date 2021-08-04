@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-28T18:29:31-04:00       *-->
+<!--*       on 2021-08-04T15:12:48-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>OAK Braids</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script>$(function () {
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script>$(function () {
     // Make *any* div with class 'sagecell-sage' an executable Sage cell
     // Their results will be linked, only within language type
     sagecell.makeSagecell({inputLocation: 'div.sagecell-sage',
@@ -65,7 +71,7 @@ MathJax.Hub.Config({
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\renewcommand\epsilon\varepsilon
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\renewcommand\epsilon\varepsilon
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -129,14 +135,14 @@ MathJax.Hub.Config({
 </h6>
 <p id="p-130">A <dfn class="terminology">braid</dfn> on \(n\) strands is a braid-a-gram, each of whose crossings is designated as either a <dfn class="terminology">positive</dfn> crossing (\(\backslash\) over \(/\)) or a <dfn class="terminology">negative</dfn> crossing (\(/\) over \(\backslash\)).</p>
 <figure class="figure figure-like" id="fig_braidcrossings"><div class="sidebyside"><div class="sbsrow" style="margin-left:20%;margin-right:20%;">
-<div class="sbspanel" style="width:16.6666666666667%;justify-content:flex-start;"><img src="images/poscrossing.png" style="width: 100%; height: auto;" alt=""></div>
-<div class="sbspanel" style="width:16.6666666666667%;justify-content:flex-start;"><img src="images/negcrossing.png" style="width: 100%; height: auto;" alt=""></div>
+<div class="sbspanel top" style="width:16.6666666666667%;"><img src="images/poscrossing.png" class="contained" alt=""></div>
+<div class="sbspanel top" style="width:16.6666666666667%;"><img src="images/negcrossing.png" class="contained" alt=""></div>
 </div></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.2<span class="period">.</span></span><span class="space"> </span>A positive crossing and a negative crossing, respectively.</figcaption></figure><p id="p-131">A braid whose crossings are all positive is called a <dfn class="terminology">positive braid</dfn>.</p></article><p id="p-132">We can use technology to both visualize and, later, perform algebra using braids. Execute the Sage cell below to visualize an example of a positive braid. <div class="sagecell-sage" id="sage-1"><script type="text/x-sage">B = BraidGroup(4);
 b = B([2,1,3,2]);
 b.plot( orientation='top-bottom', thickness=2 )
 </script></div></p>
-<p id="p-133">There is a one-to-one correspondence between positive braids and braid-a-grams. Given a positive braid, we can “flatten” all the crossings to make it a braid-a-gram; conversely, given a braid-a-gram, we can make each crossing positive to turn it into a positive braid. <figure class="figure figure-like" id="fig_yoyo"><div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="images/gif_yoyo.gif" style="width: 100%; height: auto;" alt=""></div>
+<p id="p-133">There is a one-to-one correspondence between positive braids and braid-a-grams. Given a positive braid, we can “flatten” all the crossings to make it a braid-a-gram; conversely, given a braid-a-gram, we can make each crossing positive to turn it into a positive braid. <figure class="figure figure-like" id="fig_yoyo"><div class="image-box" style="width: 35%; margin-left: 32.5%; margin-right: 32.5%;"><img src="images/gif_yoyo.gif" class="contained" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.3<span class="period">.</span></span><span class="space"> </span>A one-to-one correspondence of braid-a-grams to positive braids.</figcaption></figure> Accordingly, we can borrow the notation we used for adjacent transpositions to develop notation for braids as follows.</p>
 <article class="definition definition-like" id="def_artin"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span>
@@ -151,7 +157,7 @@ b.plot( orientation='top-bottom', thickness=2 )
 </h6>
 <p id="p-139">If \(b_1,b_2\) are two braids on \(n\) strands, we construct the <dfn class="terminology">composition</dfn> \(b_1b_2\) by placing \(b_2\) directly beneath, and as a continuation of, \(b_1\) in the braid diagram.</p>
 <p id="p-140">The <dfn class="terminology">trivial braid</dfn> \(e\) consists of a braid diagram with no crossings.</p>
-<figure class="figure figure-like" id="fig_braidops"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/gif_braidops.gif" style="width: 100%; height: auto;" alt=""></div>
+<figure class="figure figure-like" id="fig_braidops"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/gif_braidops.gif" class="contained" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.6<span class="period">.</span></span><span class="space"> </span>Composition of braids \(b_1,b_2\text{,}\) and identity braid \(e\text{.}\)</figcaption></figure></article></p>
 <article class="activity project-like" id="act_braid2"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span>
@@ -182,20 +188,20 @@ b.plot( orientation='top-bottom', thickness=2 )
 s_1,s_2,\ldots,s_{n-1}
 \end{equation*}
 </div>
-<p data-braille="continuation">and their inverses</p>
+<p class="continuation">and their inverses</p>
 <div class="displaymath">
 \begin{equation*}
 s_1^{-1}, s_2^{-1}, \ldots, s_{n-1}^{-1}
 \end{equation*}
 </div>
-<p data-braille="continuation">which are simplified by the <dfn class="terminology">braid relations</dfn>:</p>
+<p class="continuation">which are simplified by the <dfn class="terminology">braid relations</dfn>:</p>
 <div class="displaymath">
 \begin{align}
 s_is_j \amp= s_js_i \amp\amp\text{whenever }|i-j|\geq 2\label{eq_braidcommute}\tag{2.1.1}\\
 s_is_{i+1}s_i \amp= s_{i+1}s_is_{i+1} \amp\amp\text{for all }1 \leq i \leq n-2.\label{eq_skeinrelation}\tag{2.1.2}
 \end{align}
 </div>
-<p data-braille="continuation">We denote the braid group on \(n\) strands by \(B_n\text{.}\)</p></article><p id="p-154">As you might expect, the inverse generators represent <a class="xref" data-knowl="./knowl/fig_braidcrossings.html" title="Figure 2.1.2">negative crossings</a> in a braid.</p>
+<p class="continuation">We denote the braid group on \(n\) strands by \(B_n\text{.}\)</p></article><p id="p-154">As you might expect, the inverse generators represent <a class="xref" data-knowl="./knowl/fig_braidcrossings.html" title="Figure 2.1.2">negative crossings</a> in a braid.</p>
 <article class="activity project-like" id="act_braidalg1"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span>
 </h6>
@@ -205,7 +211,7 @@ s_is_{i+1}s_i \amp= s_{i+1}s_is_{i+1} \amp\amp\text{for all }1 \leq i \leq n-2.\
 u = s_2s_1s_3s_2 \quad  v = s_1s_3 \quad w = s_1^{-1}s_3^{-1}.
 \end{equation*}
 </div>
-<p data-braille="continuation">Use it to do the following.</p>
+<p class="continuation">Use it to do the following.</p>
 <ol class="decimal">
 <li id="li-51"><p id="p-156">Generate a diagram of the braid \(vw = s_1s_3s_1^{-1}s_3^{-1}\text{.}\)</p></li>
 <li id="li-52"><p id="p-157">Ask Sage to test whether \(vw = e\) using the command<pre class="code-block tex2jax_ignore">v*w == e
@@ -248,7 +254,7 @@ b.plot( orientation='top-bottom', thickness=4 )
 f\bigl( x\circ y \bigr) = f(x) * f(y) . 
 \end{equation*}
 </div></article><p id="p-171">One way of thinking of a group homomorphism is that it gives us a choice: given two elements in \(G\text{,}\) I can either perform the operation of \(G\) on them first, before applying the function, i.e., calculate \(f(\, x\circ y \,)\text{,}\) or I can apply the function to each element first and then perform the operation of \(H\) on the result, i.e., \(f(x) * f(y)\text{.}\) The two results always agree.</p>
-<figure class="figure figure-like" id="fig_homomorphism"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/gif_homomorphism.gif" style="width: 100%; height: auto;" alt=""></div>
+<figure class="figure figure-like" id="fig_homomorphism"><div class="image-box" style="width: 75%; margin-left: 12.5%; margin-right: 12.5%;"><img src="images/gif_homomorphism.gif" class="contained" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.10<span class="period">.</span></span><span class="space"> </span>A homomorphism means we can interchange the order of function application with group operation. This kind of figure is called a <em class="emphasis">commutative diagram</em>.</figcaption></figure><article class="example example-like" id="ex_homomorphism"><a data-knowl="" class="id-ref example-knowl original" data-refid="hk-ex_homomorphism"><h6 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Some examples of group homomorphisms.</span>
 </h6></a></article><div class="hidden-content tex2jax_ignore" id="hk-ex_homomorphism"><article class="example example-like"><p id="p-172">For the (abelian) group of integers under addition, \((\mathbb{Z},+)\) the function \(f\colon \mathbb{Z} \to \mathbb{Z}\) defined by \(f(x) = 5x\) is a homomorphism. This is because, for all integers \(x,y\text{,}\) we have</p>
@@ -265,7 +271,7 @@ f(x+y) \amp= 5(x+y)\\
 f\colon \mathbb{Z} \to \mathbb{Q}^+, \text{ defined } f(n) = 2^n,
 \end{equation*}
 </div>
-<p data-braille="continuation">is a group homomorphism. To see why, observe where the operations in each group show up in the following verification:</p>
+<p class="continuation">is a group homomorphism. To see why, observe where the operations in each group show up in the following verification:</p>
 <div class="displaymath">
 \begin{align*}
 f\bigl( x + y \bigr) \amp= 2^{x+y} \amp\amp \text{definition of }f\\
@@ -316,7 +322,7 @@ f(x) = e, \text{ where }e\text{ is the identity of }H.
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.1.13</span><span class="period">.</span>
 </h6>
 <p id="p-185">Let \(b \in B_n\) be a braid on \(n\) strands. We say that the <dfn class="terminology">permutation induced by</dfn> \(b\) is the permutation \(F(b) \in S_n\) describing how the top endpoints in the braid \(b\) are permuted into the bottom endpoints.</p></article><p id="p-186">This definition formalizes our relationship between braids and braid-a-grams discussed earlier in this section. For example, consider the braid \(b = s_2s_1s_3^2s_1 \in B_4\text{.}\) As shown below, the permutation induced by this braid is \(F(b) = (23) \in S_4\text{.}\)</p>
-<figure class="figure figure-like" id="fig_forget"><div class="image-box" style="width: 55%; margin-left: 22.5%; margin-right: 22.5%;"><img src="images/gif_forget.gif" style="width: 100%; height: auto;" alt=""></div>
+<figure class="figure figure-like" id="fig_forget"><div class="image-box" style="width: 55%; margin-left: 22.5%; margin-right: 22.5%;"><img src="images/gif_forget.gif" class="contained" alt=""></div>
 <figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">2.1.14<span class="period">.</span></span><span class="space"> </span>The permutation induced by a braid describes how the top endpoints are permuted by the braid into the bottom endpoints.</figcaption></figure><article class="activity project-like" id="act_forgetprops"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span>
 </h6>
@@ -337,7 +343,7 @@ f(x) = e, \text{ where }e\text{ is the identity of }H.
 b = s_1^2s_2s_1^2s_2 \text{ and } c = s_1^{-1}s_2^2s_1.
 \end{equation*}
 </div>
-<p data-braille="continuation">It may help to visualize using either physical strings or the <em class="emphasis">Sage</em> cell below.</p>
+<p class="continuation">It may help to visualize using either physical strings or the <em class="emphasis">Sage</em> cell below.</p>
 <div class="sagecell-sage" id="sage-4"><script type="text/x-sage">B.<s1,s2> = BraidGroup(3);
 b = s1^2*s2*s1^2*s2;  c =s1^(-1)*s2^2*s1 ;
 b.plot( orientation='top-bottom', thickness=4 )
@@ -345,7 +351,7 @@ b.plot( orientation='top-bottom', thickness=4 )
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">2.1.9</span><span class="period">.</span>
 </h6>
 <p id="p-193">Sketch a diagram and explain why, if \(b,c\in B_4\) are both <em class="emphasis">pure</em> braids, then \(bc\) is also a <em class="emphasis">pure</em> braid.</p></article><section class="exercises" id="ex_braids"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">2.1.1</span> <span class="title">Exercises</span>
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="exercise-7"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-194">Use the braid generators \(s_1,s_2\) to write notation for the traditional <a class="external" href="https://www.everydayhairinspiration.com/2019/08/31/basic-3-strand-braid/" target="_blank">three-strand French braid</a> hairstyle, as an element of the braid group \(B_3\text{.}\)</p>
@@ -367,7 +373,7 @@ X_t = \left[\begin{array}{cc} 1-t\amp t\\ 1\amp 0\end{array}\right].
 M = \left[\begin{array}{ccc} 1-t\amp t\amp \color{gray}{0}\\ 1\amp 0 \amp \color{gray}{0}\\ \color{gray}{0}\amp \color{gray}{0}\amp \color{gray}{1} \end{array}\right]\text{ and } N =  \left[\begin{array}{ccc} \color{gray}{1}\amp \color{gray}{0}\amp \color{gray}{0}\\ \color{gray}{0}\amp 1-t\amp t\\ \color{gray}{0}\amp 1 \amp 0\end{array}\right].
 \end{equation*}
 </div>
-<p data-braille="continuation">Use <em class="emphasis">Sage</em> to compute both the matrix products \(M\cdot N \cdot M\) and \(N\cdot M \cdot N\text{.}\) What do you notice? <div class="sagecell-sage" id="sage-5"><script type="text/x-sage">R.<t> = PolynomialRing(QQ);
+<p class="continuation">Use <em class="emphasis">Sage</em> to compute both the matrix products \(M\cdot N \cdot M\) and \(N\cdot M \cdot N\text{.}\) What do you notice? <div class="sagecell-sage" id="sage-5"><script type="text/x-sage">R.<t> = PolynomialRing(QQ);
 M = matrix(R,[[1-t,t,0],[1,0,0],[0,0,1]]);
 N = matrix(R,[[1,0,0],[0,1-t,t],[0,1,0]]);
 
@@ -381,7 +387,7 @@ pretty_print( M*N*M )
 b = s_1^2s_2s_1^3s_2
 \end{equation*}
 </div>
-<p data-braille="continuation">and then use that matrix to determine the induced permutation \(F(b)\text{.}\)</p>
+<p class="continuation">and then use that matrix to determine the induced permutation \(F(b)\text{.}\)</p>
 </li>
 </ol></article></section></section></div></main>
 </div>

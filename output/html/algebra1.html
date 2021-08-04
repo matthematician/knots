@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!--********************************************-->
 <!--*       Generated from PreTeXt source      *-->
-<!--*       on 2021-07-28T18:29:30-04:00       *-->
+<!--*       on 2021-08-04T15:12:47-04:00       *-->
 <!--*   A recent stable commit (2020-08-09):   *-->
 <!--* 98f21740783f166a773df4dc83cab5293ab63a4a *-->
 <!--*                                          *-->
@@ -14,36 +14,42 @@
 <title>OAK Algebraic Operations</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [['\\(','\\)']]
+<script src="https://sagecell.sagemath.org/embedded_sagecell.js"></script><script>window.MathJax = {
+  tex: {
+    inlineMath: [['\\(','\\)']],
+    tags: "none",
+    useLabelIds: true,
+    tagSide: "right",
+    tagIndent: ".8em",
+    packages: {'[+]': ['base', 'extpfeil', 'ams', 'amscd', 'newcommand', 'knowl']}
+  },
+  options: {
+    ignoreHtmlClass: "tex2jax_ignore",
+    processHtmlClass: "has_am",
+    renderActions: {
+        findScript: [10, function (doc) {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(function(node) {
+                var display = !!node.type.match(/; *mode=display/);
+                var math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                var text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = {node: text, delim: '', n: 0};
+                math.end = {node: text, delim: '', n: 0};
+                doc.math.push(math);
+            });
+        }, '']
     },
-    asciimath2jax: {
-        ignoreClass: ".*",
-        processClass: "has_am"
-    },
-    jax: ["input/AsciiMath"],
-    extensions: ["asciimath2jax.js"],
-    TeX: {
-        extensions: ["extpfeil.js", "autobold.js", "https://pretextbook.org/js/lib/mathjaxknowl.js", "AMScd.js", ],
-        // scrolling to fragment identifiers is controlled by other Javascript
-        positionToHash: false,
-        equationNumbers: { autoNumber: "none", useLabelIds: true, },
-        TagSide: "right",
-        TagIndent: ".8em",
-    },
-    // HTML-CSS output Jax to be dropped for MathJax 3.0
-    "HTML-CSS": {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-    CommonHTML: {
-        scale: 88,
-        mtextFontInherit: true,
-    },
-});
-</script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML-full"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
+  },
+  chtml: {
+    scale: 0.88,
+    mtextInheritFont: true
+  },
+  loader: {
+    load: ['input/asciimath', '[tex]/extpfeil', '[tex]/amscd', '[tex]/newcommand', '[pretext]/mathjaxknowl3.js'],
+    paths: {pretext: "https://pretextbook.org/js/lib"},
+  },
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.sticky.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/jquery.espy.min.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/0.13/pretext_add_on.js"></script><script xmlns:svg="http://www.w3.org/2000/svg" src="https://pretextbook.org/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script xmlns:svg="http://www.w3.org/2000/svg">sagecellEvalName='Evaluate (Sage)';
 </script><link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400italic,600,600italic" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://fonts.googleapis.com/css?family=Inconsolata:400,700&amp;subset=latin,latin-ext" rel="stylesheet" type="text/css">
 <link xmlns:svg="http://www.w3.org/2000/svg" href="https://pretextbook.org/css/0.31/pretext.css" rel="stylesheet" type="text/css">
@@ -57,7 +63,7 @@ MathJax.Hub.Config({
 <!-- 2019-10-12: Temporary - CSS file for experiments with styling --><link xmlns:svg="http://www.w3.org/2000/svg" href="developer.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mathbook-book has-toc has-sidebar-left">
-<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" class="hidden-content" style="display:none">\(\renewcommand\epsilon\varepsilon
+<a class="assistive" href="#content">Skip to main content</a><div xmlns:svg="http://www.w3.org/2000/svg" id="latex-macros" class="hidden-content" style="display:none">\(\renewcommand\epsilon\varepsilon
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -129,14 +135,14 @@ MathJax.Hub.Config({
 - \colon \mathbb{Z}\to\mathbb{Z}, \qquad n \mapsto -n.
 \end{equation*}
 </div>
-<p data-braille="continuation">Under this operation, for example, \(3 \mapsto -3\) and \(-15 \mapsto 15\text{.}\)</p>
+<p class="continuation">Under this operation, for example, \(3 \mapsto -3\) and \(-15 \mapsto 15\text{.}\)</p>
 <p id="p-8">An example of a binary operation on the set \(S = \mathbb{Q}\) of integers is the multiplication operation:</p>
 <div class="displaymath">
 \begin{equation*}
 \cdot \colon \mathbb{Q}\times\mathbb{Q} \to \mathbb{Q}, \qquad (x,y) \mapsto x\cdot y.
 \end{equation*}
 </div>
-<p data-braille="continuation">Under this operation, for example, \((\frac15, -20) \mapsto -4\) and \((-\frac25, -\frac52) \mapsto 1.\)</p>
+<p class="continuation">Under this operation, for example, \((\frac15, -20) \mapsto -4\) and \((-\frac25, -\frac52) \mapsto 1.\)</p>
 <p id="p-9">An example of a ternary operation on the set \(S = \mathbb{R}^3\) of vectors in 3-space is the vector sum:</p>
 <div class="displaymath">
 \begin{equation*}
@@ -160,43 +166,43 @@ MathJax.Hub.Config({
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span>
 </h6>
 <p id="p-17">Let \((S,\cdot)\) be a magma for which \(S\) is a finite set. An <dfn class="terminology">operation table</dfn> for \((S,\cdot)\) is a table showing, for all \(x,y\in S\text{,}\) the result of the operation \(x\cdot y\) on the same row as \(x\) and the same column as \(y\text{:}\)</p>
-<p id="p-18"><figure class="table table-like" id="table-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.6<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<p id="p-18"><figure class="table table-like" id="table-1"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.6<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b2 r2 l0 t0 lines">\((S,\cdot)\)</td>
 <td class="l m b2 r0 l0 t0 lines">\(\cdots\)</td>
 <td class="l m b2 r0 l0 t0 lines">\(\cdots\)</td>
 <td class="l m b2 r0 l0 t0 lines">\(y\)</td>
-<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">\(\cdots\)</td>
+<td class="l m b2 r0 l0 t0 lines">\(\cdots\)</td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines">\(\vdots\)</td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines">\(x\)</td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines">\(x\cdot y\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines">\(\vdots\)</td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines">\(\vdots\)</td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
-</table></figure></p></article><article class="activity project-like" id="act_magma1"><h6 class="heading">
+</table></div></figure></p></article><article class="activity project-like" id="act_magma1"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
 </h6>
 <p id="p-19">Shown below is the operation table for a magma on the set</p>
@@ -205,24 +211,24 @@ MathJax.Hub.Config({
 S = \{ {\rm positive}, {\rm negative}\}.
 \end{equation*}
 </div>
-<p data-braille="continuation"><dfn class="terminology">(a)</dfn> What do you think the operation of this magma is? Why?</p>
-<p id="p-20"><figure class="table table-like" id="table-2"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.7<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<p class="continuation"><dfn class="terminology">(a)</dfn> What do you think the operation of this magma is? Why?</p>
+<p id="p-20"><figure class="table table-like" id="table-2"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.7<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b2 r2 l0 t0 lines">\((S,\cdot)\)</td>
 <td class="l m b2 r0 l0 t0 lines">positive</td>
-<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">negative</td>
+<td class="l m b2 r0 l0 t0 lines">negative</td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines">positive</td>
 <td class="l m b0 r0 l0 t0 lines">positive</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">negative</td>
+<td class="l m b0 r0 l0 t0 lines">negative</td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines">negative</td>
 <td class="l m b0 r0 l0 t0 lines">negative</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">positive</td>
+<td class="l m b0 r0 l0 t0 lines">positive</td>
 </tr>
-</table></figure></p>
+</table></div></figure></p>
 <p id="p-21"><dfn class="terminology">(b)</dfn> Write an operation table for a magma on the set \(S = \{ {\rm even}, {\rm odd}\}\) that “looks the same” as the one above. Explain what the operation you chose is.</p>
 <p id="p-22"><dfn class="terminology">(c)</dfn> Write an operation table for a magma on the set \(S = \{ {\rm even}, {\rm odd}\}\) that “looks fundamentally different” as the one above. Explain what the operation you chose is.</p></article><p id="p-23">Magmas are like the “wild west” of algebraic structure; there are in general no rules that the operation in a magma must satisfy. That also means that magmas are, mathematically, rather uninteresting on their own. In order to study more interesting algebraic structures, we would like to have operations that satisfy nice properties. Some of these properties will be familiar to you from high-school algebra; others may be more baroque.</p>
 <article class="definition definition-like" id="def_algprop"><h6 class="heading">
@@ -257,107 +263,107 @@ S = \{ {\rm positive}, {\rm negative}\}.
 <li id="li-4"><p id="p-30">Can you think of a example of a magma having the idempotent property, that a grade school student would recognize?</p></li>
 </ol>
 <div class="solutions">
-<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Hint</span></a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><p id="p-31">For part (c), reflect on your answers to <a class="xref" data-knowl="./knowl/act_magma1.html" title="Activity 1.1.2">Activity 1.1.2</a>.</p></div></div>
+<a data-knowl="" class="id-ref hint-knowl original" data-refid="hk-hint-1" id="hint-1"><span class="type">Hint.</span> </a><div class="hidden-content tex2jax_ignore" id="hk-hint-1"><div class="hint solution-like"><p id="p-31">For part (c), reflect on your answers to <a class="xref" data-knowl="./knowl/act_magma1.html" title="Activity 1.1.2">Activity 1.1.2</a>.</p></div></div>
 </div></article><p id="p-32">Magmas with additional properties often are given more specialized names; of which some are as follows.</p>
 <article class="definition definition-like" id="def_namedmagmas"><h6 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.10</span><span class="period">.</span>
 </h6>
 <p id="p-33">We say that a magma \((S,\cdot)\) is a \(\underline{\hspace{1in}}\) if it enjoys the following combinations of properties:</p>
-<figure class="table table-like" id="table-3"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.11<span class="period">.</span></span><span class="space"> </span>A selection of named algebraic structures.</figcaption><table>
+<figure class="table table-like" id="table-3"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.11<span class="period">.</span></span><span class="space"> </span>A selection of named algebraic structures.</figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">unital magma</dfn></td>
 <td class="l m b0 r0 l0 t0 lines">identity</td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">quasi-group</dfn></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines">invertibility</td>
 <td class="l m b0 r0 l0 t0 lines"></td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">Moufang loop</dfn></td>
 <td class="l m b0 r0 l0 t0 lines">identity</td>
 <td class="l m b0 r0 l0 t0 lines">invertibility</td>
 <td class="l m b0 r0 l0 t0 lines"></td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">semi-group</dfn></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines">associative</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">inverse semi-group</dfn></td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines">invertibility</td>
 <td class="l m b0 r0 l0 t0 lines">associative</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">monoid</dfn></td>
 <td class="l m b0 r0 l0 t0 lines">identity</td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines">associative</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">commutative monoid</dfn></td>
 <td class="l m b0 r0 l0 t0 lines">identity</td>
 <td class="l m b0 r0 l0 t0 lines"></td>
 <td class="l m b0 r0 l0 t0 lines">associative</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">commutative</td>
+<td class="l m b0 r0 l0 t0 lines">commutative</td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">group</dfn></td>
 <td class="l m b0 r0 l0 t0 lines">identity</td>
 <td class="l m b0 r0 l0 t0 lines">invertibility</td>
 <td class="l m b0 r0 l0 t0 lines">associative</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell"></td>
+<td class="l m b0 r0 l0 t0 lines"></td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines"><dfn class="terminology">abelian group</dfn></td>
 <td class="l m b0 r0 l0 t0 lines">identity</td>
 <td class="l m b0 r0 l0 t0 lines">invertibility</td>
 <td class="l m b0 r0 l0 t0 lines">associative</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">commutative</td>
+<td class="l m b0 r0 l0 t0 lines">commutative</td>
 </tr>
-</table></figure></article><p id="p-34">Further examples of algebraic structures can be found on this Wikipedia entry: <a class="external" href="https://en.wikipedia.org/wiki/Magma_(algebra)#Classification_by_properties" target="_blank"><code class="code-inline tex2jax_ignore">https://en.wikipedia.org/wiki/Magma_(algebra)#Classification_by_properties</code></a></p>
+</table></div></figure></article><p id="p-34">Further examples of algebraic structures can be found on this Wikipedia entry: <a class="external" href="https://en.wikipedia.org/wiki/Magma_(algebra)#Classification_by_properties" target="_blank"><code class="code-inline tex2jax_ignore">https://en.wikipedia.org/wiki/Magma_(algebra)#Classification_by_properties</code></a></p>
 <article class="activity project-like" id="act_workprops"><h6 class="heading">
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span>
 </h6>
 <p id="p-35">Use the operation table below for the magma \((S,\cdot)\) on the set \(S=\{a,b,c\}\) to answer the questions that follow.</p>
-<p id="p-36"><figure class="table table-like" id="table-4"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.12<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<p id="p-36"><figure class="table table-like" id="table-4"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.12<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b2 r2 l0 t0 lines"></td>
 <td class="l m b2 r0 l0 t0 lines">a</td>
 <td class="l m b2 r0 l0 t0 lines">b</td>
-<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">c</td>
+<td class="l m b2 r0 l0 t0 lines">c</td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines">a</td>
 <td class="l m b0 r0 l0 t0 lines">a</td>
 <td class="l m b0 r0 l0 t0 lines">a</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">c</td>
+<td class="l m b0 r0 l0 t0 lines">c</td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines">b</td>
 <td class="l m b0 r0 l0 t0 lines">a</td>
 <td class="l m b0 r0 l0 t0 lines">b</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">c</td>
+<td class="l m b0 r0 l0 t0 lines">c</td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines">c</td>
 <td class="l m b0 r0 l0 t0 lines">b</td>
 <td class="l m b0 r0 l0 t0 lines">c</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">c</td>
+<td class="l m b0 r0 l0 t0 lines">c</td>
 </tr>
-</table></figure></p>
+</table></div></figure></p>
 <ol id="p-37" class="decimal">
 <li id="li-5"><p id="p-38">What is the value of \(c\cdot a\text{?}\)</p></li>
 <li id="li-6"><p id="p-39">What is/are the solution(s) of the equation \(a\cdot x = a\text{?}\)</p></li>
@@ -369,38 +375,38 @@ S = \{ {\rm positive}, {\rm negative}\}.
 <span class="type">Activity</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span>
 </h6>
 <p id="p-44">Use the operation table below for the magma \((S,\cdot)\) on the set \(S=\{a,b,c\}\) to answer the questions that follow. Four of the entries are missing.</p>
-<p id="p-45"><figure class="table table-like" id="table-5"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.13<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<p id="p-45"><figure class="table table-like" id="table-5"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.13<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b2 r2 l0 t0 lines"></td>
 <td class="l m b2 r0 l0 t0 lines">a</td>
 <td class="l m b2 r0 l0 t0 lines">b</td>
-<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">c</td>
+<td class="l m b2 r0 l0 t0 lines">c</td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines">a</td>
 <td class="l m b0 r0 l0 t0 lines">a</td>
 <td class="l m b0 r0 l0 t0 lines">b</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">c</td>
+<td class="l m b0 r0 l0 t0 lines">c</td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines">b</td>
 <td class="l m b0 r0 l0 t0 lines">b</td>
 <td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\underline{\hspace{2ex}}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines">c</td>
 <td class="l m b0 r0 l0 t0 lines">c</td>
 <td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\underline{\hspace{2ex}}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
 </tr>
-</table></figure></p>
+</table></div></figure></p>
 <ol id="p-46" class="decimal">
 <li id="li-11"><p id="p-47">Explain how we can already tell that \((S,\cdot)\) is a unital magma.</p></li>
 <li id="li-12"><p id="p-48">Fill in two of the four missing entries to make \((S,\cdot)\) into a Moufang loop.</p></li>
 <li id="li-13"><p id="p-49">Beginning with your previous answer, can you fill in the remaining two entries to make \((S,\cdot)\) into a group? Why or why not?</p></li>
 </ol></article><section class="exercises" id="exer_alg1"><h3 class="heading hide-type">
-<span class="type">Exercises</span> <span class="codenumber">1.1.1</span> <span class="title">Exercises</span>
+<span class="type">Exercises</span> <span class="codenumber"></span> <span class="title">Exercises</span>
 </h3>
 <article class="exercise exercise-like" id="ex_a1_1"><h6 class="heading"><span class="codenumber">1<span class="period">.</span></span></h6>
 <p id="p-50">Consider the magma whose elements are integers, \(\mathbb{Z} = \{ \ldots, -3,-2,-1,0,1,2,3,\ldots,\}\text{,}\) and whose binary operation called \(\triangleright\) is defined by</p>
@@ -421,43 +427,43 @@ x \triangleright y = 2y - x.
 <li id="li-19"><p id="p-57">Suppose that \((S,\cdot)\) has the identity property <em class="emphasis">and either</em> the left-cancel or right-cancel property. Show that if \((S,\cdot)\) has the idempotent property, then \(S\) has only one element.</p></li>
 </ol></article><article class="exercise exercise-like" id="ex_a1_3"><h6 class="heading"><span class="codenumber">3<span class="period">.</span></span></h6>
 <p id="p-58">Suppose \((S,\cdot)\) is a magma on the set \(S = \{e,a,b,c\}\) having the operation table shown below.</p>
-<figure class="table table-like" id="table-6"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.14<span class="period">.</span></span><span class="space"> </span></figcaption><table>
+<figure class="table table-like" id="table-6"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.1.14<span class="period">.</span></span><span class="space"> </span></figcaption><div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b2 r2 l0 t0 lines">\(\cdot\)</td>
 <td class="l m b2 r0 l0 t0 lines">e</td>
 <td class="l m b2 r0 l0 t0 lines">a</td>
 <td class="l m b2 r0 l0 t0 lines">b</td>
-<td class="l m b2 r0 l0 t0 lines" data-braille="last-cell">c</td>
+<td class="l m b2 r0 l0 t0 lines">c</td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines">e</td>
 <td class="l m b0 r0 l0 t0 lines">e</td>
 <td class="l m b0 r0 l0 t0 lines">a</td>
 <td class="l m b0 r0 l0 t0 lines">b</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">c</td>
+<td class="l m b0 r0 l0 t0 lines">c</td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines">a</td>
 <td class="l m b0 r0 l0 t0 lines">a</td>
 <td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
 <td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\underline{\hspace{2ex}}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines">b</td>
 <td class="l m b0 r0 l0 t0 lines">b</td>
 <td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
 <td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\underline{\hspace{2ex}}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
 </tr>
 <tr>
 <td class="l m b0 r2 l0 t0 lines">c</td>
 <td class="l m b0 r0 l0 t0 lines">c</td>
 <td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
 <td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
-<td class="l m b0 r0 l0 t0 lines" data-braille="last-cell">\(\underline{\hspace{2ex}}\)</td>
+<td class="l m b0 r0 l0 t0 lines">\(\underline{\hspace{2ex}}\)</td>
 </tr>
-</table></figure><p id="p-59">We can already see that \((S,\cdot)\) is a unital magma.</p>
+</table></div></figure><p id="p-59">We can already see that \((S,\cdot)\) is a unital magma.</p>
 <ol class="lower-alpha">
 <li id="li-20"><p id="p-60">Explain why, if \((S,\cdot)\) has the left-cancel property, there cannot be a repeated element in any <em class="emphasis">row</em> of its operation table. What property would give the corresponding result for the <em class="emphasis">columns</em>?</p></li>
 <li id="li-21"><p id="p-61">Find two fundamentally different ways of completing this operation table so that \((S,\cdot)\) has both the left-cancel and right-cancel properties.</p></li>

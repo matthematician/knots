@@ -1,0 +1,6 @@
+file:/C:/Users/msalo/OneDrive%20-%20Bridgewater%20State%20University/PreTeXt/knots/source/invariants.ptx:219:25:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: p line 215 and statement
+file:/C:/Users/msalo/OneDrive%20-%20Bridgewater%20State%20University/PreTeXt/knots/source/invariants.ptx:220:20:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: statement line 213 and exercise
+file:/C:/Users/msalo/OneDrive%20-%20Bridgewater%20State%20University/PreTeXt/knots/source/invariants.ptx:222:15:FATAL:PARSER:ERR_GT_REQUIRED: expected '>'
+file:/C:/Users/msalo/OneDrive%20-%20Bridgewater%20State%20University/PreTeXt/knots/source/invariants.ptx:225:11:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: exercises line 192 and section
+file:/C:/Users/msalo/OneDrive%20-%20Bridgewater%20State%20University/PreTeXt/knots/source/invariants.ptx:225:11:FATAL:PARSER:ERR_TAG_NOT_FINISHED: Premature end of data in tag section line 1
+./chap3.ptx:5:0:ERROR:XINCLUDE:XINCLUDE_NO_FALLBACK: could not load file:/C:/Users/msalo/OneDrive%20-%20Bridgewater%20State%20University/PreTeXt/knots/source/invariants.ptx, and no fallback was found
