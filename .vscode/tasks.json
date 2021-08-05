@@ -6,7 +6,7 @@
         {
             "label": "PreTeXt-CLI HTML",
             "type": "shell",
-            "command": "pretext build html",
+            "command": "python -m pretext build html",
             "problemMatcher": [],
             "group": {
                 "kind": "build",
