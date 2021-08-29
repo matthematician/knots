@@ -1,5 +1,4 @@
-file:/C:/Users/msalo/OneDrive%20-%20Bridgewater%20State%20University/PreTeXt/knots/source/keis.ptx:247:17:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: p line 246 and statement
-file:/C:/Users/msalo/OneDrive%20-%20Bridgewater%20State%20University/PreTeXt/knots/source/keis.ptx:248:14:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: statement line 245 and definition
-file:/C:/Users/msalo/OneDrive%20-%20Bridgewater%20State%20University/PreTeXt/knots/source/keis.ptx:255:11:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: definition line 244 and section
-file:/C:/Users/msalo/OneDrive%20-%20Bridgewater%20State%20University/PreTeXt/knots/source/keis.ptx:255:11:FATAL:PARSER:ERR_TAG_NOT_FINISHED: Premature end of data in tag section line 1
+file:/C:/Users/msalo/OneDrive%20-%20Bridgewater%20State%20University/PreTeXt/knots/source/keis.ptx:349:11:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: statement line 252 and example
+file:/C:/Users/msalo/OneDrive%20-%20Bridgewater%20State%20University/PreTeXt/knots/source/keis.ptx:365:11:FATAL:PARSER:ERR_TAG_NAME_MISMATCH: Opening and ending tag mismatch: example line 251 and section
+file:/C:/Users/msalo/OneDrive%20-%20Bridgewater%20State%20University/PreTeXt/knots/source/keis.ptx:365:11:FATAL:PARSER:ERR_TAG_NOT_FINISHED: Premature end of data in tag section line 1
 ./chap4.ptx:4:0:ERROR:XINCLUDE:XINCLUDE_NO_FALLBACK: could not load file:/C:/Users/msalo/OneDrive%20-%20Bridgewater%20State%20University/PreTeXt/knots/source/keis.ptx, and no fallback was found

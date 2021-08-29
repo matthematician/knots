@@ -123,11 +123,11 @@ print(A); print('\n'); A.echelon_form();</input>
 
 <p>We want to construct a magma <m>(S,\triangleright)</m> in which the elements of <m>S</m> are the <q>colors</q> of the arcs of a diagram of a knot, and in which the operation <m>\triangleright</m> can tell us, given the colors of two arcs incident at a crossing, what must the color of the third arc be.</p>
 
-<p>In other words, we want <m>\triangleright</m> to complete the picture shown below.</p>
+<p>In other words, we want <m>\triangleright</m> to complete the picture shown below. It might be useful to pronounce the operator as <q>under</q>:</p>
 
 <figure xml:id="fig_keiop">
     <image source="images/keiop.png" width="40%"/>
-    <caption>The element <m>x\triangleright y</m> completes this diagram of arc colorations. Our convention will be that <m>y</m> represents the <q>over-crossing</q> arc in this trio.</caption>
+    <caption>The element <m>x\triangleright y</m> completes this diagram of arc colorations, giving a name to the arc on the other side of the crossing of <q><m>x</m> under <m>y</m></q>.</caption>
 </figure>
 
 <activity xml:id="act_kei1">
@@ -241,11 +241,139 @@ print(A); print('\n'); A.echelon_form();</input>
     </statement>
 </activity>
 
+<definition xml:id="def_takasaki">
+    <statement>
+        <p>The magma <m>(\mathbb{Z}_n, \triangleright)</m> having <me>\text{elements } \mathbb{Z}_n = \{0, 1, 2, \ldots, n-1\} \text{ and operation } x\triangleright y = 2y-x\pmod{n}</me> is called the <term>Takasaki kei</term> on <m>n</m> elements.
+        </p>
+    </statement>
+</definition>
+
+<example xml:id="ex_takasaki"><title>The four-element Takasaki kei</title>
+    <statement>
+        <p>The Takasaki kei on four elements has the operation table shown below.</p>
+        <table>
+  <tabular>
+    <row bottom="medium">
+      <cell right="medium">
+        <m>\triangleright</m>
+      </cell>
+      <cell>
+        0
+      </cell>
+      <cell>
+        1
+      </cell>
+      <cell>
+        2
+      </cell>
+      <cell>
+        3
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        0
+      </cell>
+      <cell>
+        0
+      </cell>
+      <cell>
+        2
+      </cell>
+      <cell>
+        0
+      </cell>
+      <cell>
+        2
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        1
+      </cell>
+      <cell>
+        3
+      </cell>
+      <cell>
+        1
+      </cell>
+      <cell>
+        3
+      </cell>
+      <cell>
+        1
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        2
+      </cell>
+      <cell>
+        2
+      </cell>
+      <cell>
+        0
+      </cell>
+      <cell>
+        2
+      </cell>
+      <cell>
+        0
+      </cell>
+    </row>
+    <row>
+      <cell right="medium">
+        3
+      </cell>
+      <cell>
+        1
+      </cell>
+      <cell>
+        3
+      </cell>
+      <cell>
+        1
+      </cell>
+      <cell>
+        3
+      </cell>
+    </row>
+  </tabular>
+</table>
+<p>For example, in this kei we have <m>3\triangleright 2 = 2(2)-3 \equiv 1\pmod{4}.</m></p>
+<p>This kei somehow encodes four-colorability information about the figure-eight knot shown below.</p>
+<figure xml:id="fig_color8">
+    <image source="images/figure8-colored.png" width="50%"/>
+    <caption>The figure-eight knot <m>4_1</m>, with a four-coloration by the elements of the Takasaki kei <m>\mathbb{Z}_4</m>.</caption>
+    <p>For example, at the rightmost crossing on this diagram the overcrossing arc is <m>1</m> and the undercrossing arcs are <m>0</m> and <m>2</m>. So <xref ref="fig_keiop"/> gives us the two crossing relations <me>0\triangleright 1 = 2 \qquad \text{and} \qquad 2\triangleright 1=0.</me>
+    Both of those adjacencies agree exactly with the corresponding entries in the operation table for the four-element Takasaki kei above.</p>
+    <p>In this way, when the crossings of a knot diagram can be <q>mimicked</q> by an <m>n</m>-element Takasaki kei, we can be assured that that knot is <m>n</m>-colorable.</p>
+</figure>
+
+</statement>
+</example>
+
+<p>As <xref ref="ex_takasaki"/> suggests, the Takasaki keis <m>(\mathbb{Z}_k,\triangleright)</m> can serve as <m>k</m>-colorability <q>detectors</q> for a knot. When the adjacencies of the arcs in a knot diagram <em>themselves</em> can be mimicked by the operation of <m>(\mathbb{Z}_k,\triangleright)</m>, then the knot must be <m>k</m>-colorable. The word <q>mimicked</q> here is doing quite a bit of work, however; let's put that idea onto firmer ground.</p>
+
+<p>We begin with a desire to construct a kei that does <em>nothing more</em> than capture how the arcs of a knot diagram come together at its crossings. This kei -- which can be quite large! -- we can think of as the <q>Rosetta stone</q> kei of the knot: it contains the most information about the knot that a kei can capture. In a sense, it is the most general algebraic invariant for an unoriented knot.</p>
+
 <definition xml:id="def_fundkei">
     <statement>
         <p>Let <m>K</m> be a knot. Its <term>fundamental kei</term> <m>\mathcal{K}(K)</m> is the magma whose elements are words using the alphabet of its diagram's arcs <m>a_1,a_2,\ldots,a_n</m>, and which have relations (<q>simplification rules</q>) given by the diagram's crossings.</p>
     </statement>
 </definition>
+
+<remark xml:id="rem_fundkei">
+    <statement>
+        <p>The arcs of a knot diagram are <em>generators</em> for its fundamental kei, but in general they are not its only elements. There may be words we can write using these generators and the kei operation <m>\triangleright</m> which do not correspond to arcs in the knot diagram at all.</p>
+        <p>For example, in the video below we begin the construction of the fundamental kei of the figure-eight knot <m>4_1</m>. With the idempotent property we can fill in four entries in the operation table for this kei; the four crossings in the diagram give us eight further entries. However, this leaves four entries in the table undetermined. For example, <m>w\triangleright x</m> does not evaluate to any of the four arcs <m>w,x,y,z</m> of this diagram because there is no crossing at which <m>x</m> is the overcrossing arc and <m>w</m> one of its undercrossing arcs. So <m>w\triangleright x</m>, while it is an element of the fundamental kei, is not one of the diagram's arcs. </p>
+
+        <video youtube="AMpfx-ik69A" start="765"/>
+
+        <p>Indeed, the fundamental kei of the figure-eight knot can be shown to have eight elements, <me>\mathcal{K}(4_1) = \bigl\{ w, x, y, z, \; w\triangleright x, x\triangleright y, y\triangleright z, z\triangleright w \; \bigr\} .</me>The <xref ref="def_kei" text="custom">three kei properties</xref> can then be used to fill in all 64 entries in its operation table. For example, we can compute</p>
+        <md><mrow>(z\triangleright w) \triangleright w \amp= z \amp\amp \text{(kei property 2)}</mrow></md>
+    </statement>
+</remark>
 
 <activity xml:id="act_trefoilkei">
     <p>If the arcs of the diagram of the trefoil <m>3_1</m> below are labeled <m>x,y,z</m>, determine three relations their fundamental kei operation <m>\triangleright</m> must satisfy as a result of this diagram's three crossings.</p>
@@ -253,4 +381,45 @@ print(A); print('\n'); A.echelon_form();</input>
     <p>Then, determine a complete operation table for the fundamental kei <m>\mathcal{K}(3_1)</m>.</p>
 </activity>
 
+<activity xml:id="act_trefoilkei2">
+    <p>Write an operation table for the three-element <xref ref="def_takasaki" text="custom">Takasaki kei</xref> <m>(\mathbb{Z}_3,\triangleright)</m>.</p>
+    <p>Compare your table to the fundamental kei <m>\mathcal{K}(3_1)</m> you found in <xref ref="act_trefoilkei"/>. What does your answer tell you about the trefoil knot?</p>
+</activity>
+
+<exercises xml:id="ex_keisquandles">
+
+    <exercise>
+        <statement>
+            <p>Use modulo-3 linear algebra to determine whether the <em>square knot</em>, shown below, is tricolorable.
+            </p>
+            <figure xml:id="fig_squareknot">
+                <image source="images/Blue_Square_Knot.png" width="50%"/>
+                <caption>A six-crossing diagram of the square knot. Source: <url href="https://en.wikipedia.org/wiki/Square_knot_(mathematics)">Wikipedia</url>.</caption>
+            </figure>
+            <p>If your answer is <q>no</q>, explain how your linear algebra shows this. If your answer is <q>yes</q>, give a specific example of how your linear algebra can be used to determine a nontrivial 3-coloration for this knot.</p>
+        </statement>
+        <hint>
+            <p>You may use the same reasoning as in <xref ref="act_62color"/>.</p>
+        </hint>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <p>Use its operation table to explain why the Takasaki kei <m>(\mathbb{Z}_3,\triangleright)</m> has both the <xref ref="def_props" text="custom">left-cancel and right-cancel</xref> properties.
+            </p>
+            <p>What about <m>(\mathbb{Z}_4,\triangleright)</m>: does it have both the left- and right-cancel properties? (See <xref ref="ex_takasaki"/> for its operation table.) How can you tell?</p>
+            <p>Make a conjecture, and give a convincing explanation or a proof: <em>Every kei has the <m>\underline{\hspace{0.5in}}</m>-cancel property.</em></p>
+        </statement>
+    </exercise>
+
+    <exercise>
+        <statement>
+            <sidebyside>
+                <p>Find a complete operation table for the fundamental kei of the Hopf link shown at right. (There are two arcs in this diagram.)</p>
+                <image source="images/hopflink.png" width="40%"/>
+            </sidebyside>
+        </statement>
+    </exercise>
+
+</exercises>
 </section>
